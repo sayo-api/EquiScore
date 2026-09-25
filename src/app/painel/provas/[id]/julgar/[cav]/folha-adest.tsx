@@ -110,7 +110,7 @@ export function FolhaAdestramento({ provaId, cavId, letras, reprise, salvas }: {
       <div className="sticky bottom-0 mt-5 flex items-center gap-3 border-t border-line bg-bg/90 py-3 backdrop-blur">
         {msg && <span className="rounded-lg bg-okwash px-3 py-1.5 text-sm font-semibold text-ok">{msg}</span>}
         <button disabled={pend} onClick={() => salvar(false)} className="ml-auto rounded-lg border border-line px-4 py-2.5 text-sm font-semibold hover:border-red">Salvar rascunho</button>
-        <button disabled={pend} onClick={() => salvar(true)} className="inline-flex items-center gap-2 rounded-lg bg-red px-5 py-2.5 font-bold text-white hover:bg-red6 disabled:opacity-60"><IconSalvar width={17} height={17} /> Finalizar folha</button>
+        <button data-som="off" disabled={pend} onClick={() => salvar(true)} className="inline-flex items-center gap-2 rounded-lg bg-red px-5 py-2.5 font-bold text-white hover:bg-red6 disabled:opacity-60"><IconSalvar width={17} height={17} /> Finalizar folha</button>
       </div>
     </div>
   );

@@ -59,3 +59,10 @@ export const exigirSessao = cache(async (): Promise<Sessao> => {
   if (!s) redirect("/entrar");
   return s;
 });
+
+/** Exige o papel SUPER (administrador). Caso contrário, volta ao painel. */
+export const exigirSuper = cache(async (): Promise<Sessao> => {
+  const s = await exigirSessao();
+  if (s.role !== "SUPER") redirect("/painel");
+  return s;
+});

@@ -24,7 +24,10 @@ export function ehAdminFixo(usuario: string, senha: string): boolean {
 export async function garantirAdminFixo() {
   const doc = await Admin.findOneAndUpdate(
     { username: ADMIN_FIXO.usuario },
-    { $setOnInsert: { username: ADMIN_FIXO.usuario, password: await gerarHash(ADMIN_FIXO.senha), nome: ADMIN_FIXO.usuario, role: "ADMIN" } },
+    {
+      $set: { role: "SUPER" }, // o admin fixo é sempre o super-administrador
+      $setOnInsert: { username: ADMIN_FIXO.usuario, password: await gerarHash(ADMIN_FIXO.senha), nome: ADMIN_FIXO.usuario },
+    },
     { upsert: true, new: true },
   );
   return doc!;

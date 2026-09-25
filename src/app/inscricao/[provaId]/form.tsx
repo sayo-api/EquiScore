@@ -36,7 +36,7 @@ export function FormInscricaoPublica({ provaId, tipo, reprises }: { provaId: str
         <input name="telefone" placeholder="Telefone (opcional)" className={campo} />
       </div>
       {estado?.erro && <p role="alert" className="rounded-lg bg-redwash px-3 py-2 text-sm text-red6">{estado.erro}</p>}
-      <button disabled={enviando} className="rounded-lg bg-red py-3 font-bold text-white transition hover:bg-red6 disabled:opacity-60">{enviando ? "Enviando…" : "Enviar inscrição"}</button>
+      <button data-som="off" disabled={enviando} className="rounded-lg bg-red py-3 font-bold text-white transition hover:bg-red6 disabled:opacity-60">{enviando ? "Enviando…" : "Enviar inscrição"}</button>
     </form>
   );
 }

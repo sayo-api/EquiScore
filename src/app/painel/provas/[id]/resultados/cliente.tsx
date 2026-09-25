@@ -10,7 +10,7 @@ export function BotoesPublicar({ provaId, publicado, pdfUrl }: { provaId: string
   const [pub, setPub] = useState(publicado);
   return (
     <div className="flex flex-wrap items-center gap-3">
-      <button disabled={pend} onClick={() => start(async () => { const r = await publicar(provaId); setUrl(r.pdfUrl ?? url); setPub(true); somPublicar(); })}
+      <button data-som="off" disabled={pend} onClick={() => start(async () => { const r = await publicar(provaId); setUrl(r.pdfUrl ?? url); setPub(true); somPublicar(); })}
         className="inline-flex items-center gap-2 rounded-lg bg-red px-4 py-2.5 font-bold text-white shadow-sm hover:bg-red6 disabled:opacity-60">
         <IconTrofeu width={18} height={18} /> {pub ? "Republicar resultados" : "Publicar resultados"}
       </button>

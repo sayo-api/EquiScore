@@ -68,7 +68,7 @@ export function FolhaSalto({ provaId, cavId, baremo, tempoConcedido, inicial }: 
           <p className="text-sm text-mut">Faltas: <b className="text-ink">{res.penalidadesFaltas}</b> · Tempo: <b className="text-ink">{res.penalidadesTempo}</b></p>
         )}
         {msg && <p className="rounded-lg bg-okwash px-3 py-2 text-sm font-semibold text-ok">{msg}</p>}
-        <button disabled={pend} onClick={() => salvar(true)} className="inline-flex items-center justify-center gap-2 rounded-lg bg-red py-2.5 font-bold text-white hover:bg-red6 disabled:opacity-60"><IconSalvar width={17} height={17} /> Finalizar</button>
+        <button data-som="off" disabled={pend} onClick={() => salvar(true)} className="inline-flex items-center justify-center gap-2 rounded-lg bg-red py-2.5 font-bold text-white hover:bg-red6 disabled:opacity-60"><IconSalvar width={17} height={17} /> Finalizar</button>
         <button disabled={pend} onClick={() => salvar(false)} className="rounded-lg border border-line py-2 text-sm font-semibold hover:border-red">Salvar rascunho</button>
       </div>
     </div>
