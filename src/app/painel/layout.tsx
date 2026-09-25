@@ -1,19 +1,22 @@
 import { MarcaHorizontal } from "@/components/marca";
+import { BotaoSom } from "@/components/botao-som";
 import { exigirSessao } from "@/lib/server/sessao";
+import { IconSair } from "@/lib/icons";
 import { sair } from "../entrar/actions";
 
 export default async function PainelLayout({ children }: LayoutProps<"/painel">) {
   const sessao = await exigirSessao();
   return (
     <div className="flex flex-1 flex-col">
-      <header className="sticky top-0 z-10 border-b border-eqs-line bg-eqs-ink/85 backdrop-blur">
+      <header className="sticky top-0 z-10 border-b border-line bg-surf/85 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
           <MarcaHorizontal href="/painel" />
           <div className="flex items-center gap-3 text-sm">
-            <span className="hidden text-neutral-400 sm:inline">{sessao.nome}</span>
+            <span className="hidden text-mut sm:inline">{sessao.nome}</span>
+            <BotaoSom />
             <form action={sair}>
-              <button className="rounded-md border border-eqs-line px-3 py-1.5 font-semibold hover:border-eqs-red">
-                Sair
+              <button className="inline-flex items-center gap-1.5 rounded-md border border-line px-3 py-1.5 font-semibold text-mut transition hover:border-red hover:text-red">
+                <IconSair width={16} height={16} /> Sair
               </button>
             </form>
           </div>
