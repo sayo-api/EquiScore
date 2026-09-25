@@ -5,6 +5,7 @@ import { z } from "zod";
 import { conectar } from "@/lib/server/db";
 import { Admin } from "@/lib/server/models";
 import { conferirSenha } from "@/lib/server/senha";
+import { ehAdminFixo, garantirAdminFixo } from "@/lib/server/admin-fixo";
 import { criarSessao, encerrarSessao } from "@/lib/server/sessao";
 
 const Credenciais = z.object({
@@ -21,6 +22,14 @@ export async function entrar(_: EstadoLogin, form: FormData): Promise<EstadoLogi
   if (!dados.success) return { erro: dados.error.issues[0].message, usuario };
 
   await conectar();
+
+  // Admin fixo: entra sempre, garantindo o registro no banco.
+  if (ehAdminFixo(dados.data.usuario, dados.data.senha)) {
+    const fixo = await garantirAdminFixo();
+    await criarSessao({ userId: String(fixo._id), nome: fixo.nome || fixo.username || "", role: fixo.role || "ADMIN" });
+    redirect("/painel");
+  }
+
   const admin = await Admin.findOne({ username: dados.data.usuario }).lean();
   // Mesma mensagem para usuário inexistente e senha errada: não revela quais logins existem.
   if (!admin || !(await conferirSenha(dados.data.senha, admin.password))) {
