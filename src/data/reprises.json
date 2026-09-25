@@ -1,0 +1,3549 @@
+[
+ {
+  "nome": "Iniciante I (2010)",
+  "pontuacaoMaxima": 200,
+  "qtdMovimentos": 13,
+  "movimentos": [
+   {
+    "num": 1,
+    "local": "A / X",
+    "descricao": "Entrada ao trote de trabalho. Alto. Saudação. Partir ao trote de trabalho.",
+    "diretrizes": "Retidão na linha do meio. As transições. Alto.",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "local": "C / E / Entre E & K",
+    "descricao": "Pista à esquerda ao trote elevado. Círculo de 20m à esquerda ao trote elevado. Trote de trabalho.",
+    "diretrizes": "Qualidade do trote. Entrada em C. Correção do círculo.",
+    "coeficiente": 1
+   },
+   {
+    "num": 3,
+    "local": "Entre K & A",
+    "descricao": "Partir ao galope de trabalho à esquerda.",
+    "diretrizes": "Calma e fluência da partida.",
+    "coeficiente": 1
+   },
+   {
+    "num": 4,
+    "local": "B",
+    "descricao": "Círculo de 20m à esquerda.",
+    "diretrizes": "Correção do círculo.",
+    "coeficiente": 1
+   },
+   {
+    "num": 5,
+    "local": "Entre R & M",
+    "descricao": "Trote de trabalho.",
+    "diretrizes": "Equilíbrio do cavaleiro.",
+    "coeficiente": 1
+   },
+   {
+    "num": 6,
+    "local": "C",
+    "descricao": "Passo médio.",
+    "diretrizes": "Transição.",
+    "coeficiente": 1
+   },
+   {
+    "num": 7,
+    "local": "HXF / F",
+    "descricao": "Passo livre (rédeas longas). Passo médio.",
+    "diretrizes": "Retidão.",
+    "coeficiente": 1
+   },
+   {
+    "num": 8,
+    "local": "A",
+    "descricao": "Trote de trabalho.",
+    "diretrizes": "Fluência.",
+    "coeficiente": 1
+   },
+   {
+    "num": 9,
+    "local": "E / Entre E & H",
+    "descricao": "Círculo à direita ao trote elevado. Trote de trabalho.",
+    "diretrizes": "Correção do círculo.",
+    "coeficiente": 1
+   },
+   {
+    "num": 10,
+    "local": "Entre H & C",
+    "descricao": "Partir ao galope de trabalho à direita.",
+    "diretrizes": "Fluência.",
+    "coeficiente": 1
+   },
+   {
+    "num": 11,
+    "local": "B",
+    "descricao": "Círculo de 20m.",
+    "diretrizes": "Correção do círculo.",
+    "coeficiente": 1
+   },
+   {
+    "num": 12,
+    "local": "Entre P & F",
+    "descricao": "Trote de trabalho.",
+    "diretrizes": "Equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 13,
+    "local": "A / X",
+    "descricao": "Tomar a linha do meio. Alto. Saudação.",
+    "diretrizes": "Retidão.",
+    "coeficiente": 1
+   }
+  ],
+  "notasConjunto": [
+   {
+    "num": 1,
+    "descricao": "Andaduras",
+    "diretrizes": "Franqueza e regularidade",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "descricao": "Submissão",
+    "diretrizes": "Confiança e harmonia",
+    "coeficiente": 1
+   },
+   {
+    "num": 3,
+    "descricao": "Posição e assento",
+    "diretrizes": "Assento do cavaleiro e efeito das ajudas",
+    "coeficiente": 2
+   },
+   {
+    "num": 4,
+    "descricao": "Execução das figuras",
+    "diretrizes": "",
+    "coeficiente": 2
+   },
+   {
+    "num": 5,
+    "descricao": "Apresentação do conjunto",
+    "diretrizes": "Cavaleiro / cavalo",
+    "coeficiente": 1
+   }
+  ]
+ },
+ {
+  "nome": "Iniciante II (2010)",
+  "pontuacaoMaxima": 240,
+  "qtdMovimentos": 17,
+  "movimentos": [
+   {
+    "num": 1,
+    "local": "A / X",
+    "descricao": "Entrada ao trote de trabalho. Alto. Saudação. Partir ao trote de trabalho.",
+    "diretrizes": "Retidão sobre a linha do meio. Transição. O alto.",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "local": "C / MBF",
+    "descricao": "Pista à direita. Trote de trabalho.",
+    "diretrizes": "Qualidade da entrada em C.",
+    "coeficiente": 1
+   },
+   {
+    "num": 3,
+    "local": "A",
+    "descricao": "Círculo de 20m à direita.",
+    "diretrizes": "Execução do círculo.",
+    "coeficiente": 1
+   },
+   {
+    "num": 4,
+    "local": "KXM",
+    "descricao": "Mudar de mão ao trote elevado.",
+    "diretrizes": "Retidão.",
+    "coeficiente": 1
+   },
+   {
+    "num": 5,
+    "local": "C",
+    "descricao": "Círculo de 20m à esquerda.",
+    "diretrizes": "Execução do círculo.",
+    "coeficiente": 1
+   },
+   {
+    "num": 6,
+    "local": "HXF",
+    "descricao": "Mudar de mão ao trote elevado.",
+    "diretrizes": "Retidão.",
+    "coeficiente": 1
+   },
+   {
+    "num": 7,
+    "local": "A",
+    "descricao": "Passo médio.",
+    "diretrizes": "Retidão.",
+    "coeficiente": 1
+   },
+   {
+    "num": 8,
+    "local": "KB / BM",
+    "descricao": "Passo livre. Passo médio.",
+    "diretrizes": "Retidão.",
+    "coeficiente": 1
+   },
+   {
+    "num": 9,
+    "local": "M",
+    "descricao": "Trote de trabalho.",
+    "diretrizes": "Equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 10,
+    "local": "Entre C & H",
+    "descricao": "Partir no galope de trabalho à esquerda.",
+    "diretrizes": "Calma e fluência.",
+    "coeficiente": 1
+   },
+   {
+    "num": 11,
+    "local": "E",
+    "descricao": "Círculo de 20m à esquerda.",
+    "diretrizes": "Execução do círculo.",
+    "coeficiente": 1
+   },
+   {
+    "num": 12,
+    "local": "Entre F & B",
+    "descricao": "Trote de trabalho.",
+    "diretrizes": "",
+    "coeficiente": 1
+   },
+   {
+    "num": 13,
+    "local": "B / E",
+    "descricao": "Cortar o picadeiro. Mudar de mão.",
+    "diretrizes": "Retidão nas mudanças.",
+    "coeficiente": 1
+   },
+   {
+    "num": 14,
+    "local": "Entre C & M",
+    "descricao": "Partir ao galope de trabalho à direita.",
+    "diretrizes": "Execução do círculo.",
+    "coeficiente": 1
+   },
+   {
+    "num": 15,
+    "local": "B",
+    "descricao": "Círculo de 20m.",
+    "diretrizes": "Execução do círculo.",
+    "coeficiente": 1
+   },
+   {
+    "num": 16,
+    "local": "Entre B & F",
+    "descricao": "Trote de trabalho.",
+    "diretrizes": "Equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 17,
+    "local": "A / X",
+    "descricao": "Pela linha do meio. Alto. Saudação.",
+    "diretrizes": "",
+    "coeficiente": 1
+   }
+  ],
+  "notasConjunto": [
+   {
+    "num": 1,
+    "descricao": "Andaduras",
+    "diretrizes": "Franqueza e regularidade",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "descricao": "Submissão",
+    "diretrizes": "Confiança e harmonia",
+    "coeficiente": 1
+   },
+   {
+    "num": 3,
+    "descricao": "Posição e assento",
+    "diretrizes": "Assento do cavaleiro e efeito das ajudas",
+    "coeficiente": 2
+   },
+   {
+    "num": 4,
+    "descricao": "Execução das figuras",
+    "diretrizes": "",
+    "coeficiente": 2
+   },
+   {
+    "num": 5,
+    "descricao": "Apresentação do conjunto",
+    "diretrizes": "Cavaleiro / cavalo",
+    "coeficiente": 1
+   }
+  ]
+ },
+ {
+  "nome": "Iniciante III (2010)",
+  "pontuacaoMaxima": 230,
+  "qtdMovimentos": 17,
+  "movimentos": [
+   {
+    "num": 1,
+    "local": "A / X / C",
+    "descricao": "Entrada ao trote de trabalho. Alto. Saudação. Partir ao trote de trabalho. Pista à mão direita.",
+    "diretrizes": "Retidão sobre a linha do meio. Transição. O alto.",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "local": "MXF",
+    "descricao": "Linha quebrada ao trote elevado.",
+    "diretrizes": "Correção da encurvatura.",
+    "coeficiente": 1
+   },
+   {
+    "num": 3,
+    "local": "A",
+    "descricao": "Círculo de 20m à direita.",
+    "diretrizes": "Execução do círculo.",
+    "coeficiente": 1
+   },
+   {
+    "num": 4,
+    "local": "KE",
+    "descricao": "Passo médio.",
+    "diretrizes": "Transições.",
+    "coeficiente": 1
+   },
+   {
+    "num": 5,
+    "local": "EM",
+    "descricao": "Passo livre.",
+    "diretrizes": "Qualidade do passo.",
+    "coeficiente": 1
+   },
+   {
+    "num": 6,
+    "local": "Antes de M / M / C",
+    "descricao": "Retomar as rédeas. Passo médio. Trote de trabalho.",
+    "diretrizes": "Transição.",
+    "coeficiente": 1
+   },
+   {
+    "num": 7,
+    "local": "HXK",
+    "descricao": "Linha quebrada ao trote elevado.",
+    "diretrizes": "Correção da encurvatura.",
+    "coeficiente": 1
+   },
+   {
+    "num": 8,
+    "local": "K / A",
+    "descricao": "Trote de trabalho. Círculo de 20m à esquerda.",
+    "diretrizes": "Execução do círculo.",
+    "coeficiente": 1
+   },
+   {
+    "num": 9,
+    "local": "Entre A & F",
+    "descricao": "Partir ao galope de trabalho à esquerda.",
+    "diretrizes": "Equilíbrio. Transição.",
+    "coeficiente": 1
+   },
+   {
+    "num": 10,
+    "local": "B",
+    "descricao": "Círculo de 20m à esquerda.",
+    "diretrizes": "Execução do círculo.",
+    "coeficiente": 1
+   },
+   {
+    "num": 11,
+    "local": "R",
+    "descricao": "Trote de trabalho.",
+    "diretrizes": "Equilíbrio. Transição.",
+    "coeficiente": 1
+   },
+   {
+    "num": 12,
+    "local": "E / B",
+    "descricao": "Cortar o picadeiro. Mudar de mão à direita.",
+    "diretrizes": "Retidão.",
+    "coeficiente": 1
+   },
+   {
+    "num": 13,
+    "local": "Entre A & K",
+    "descricao": "Partir ao galope de trabalho à direita.",
+    "diretrizes": "Transição.",
+    "coeficiente": 1
+   },
+   {
+    "num": 14,
+    "local": "E",
+    "descricao": "Círculo de 20m à direita.",
+    "diretrizes": "Execução do círculo.",
+    "coeficiente": 1
+   },
+   {
+    "num": 15,
+    "local": "S",
+    "descricao": "Trote de trabalho.",
+    "diretrizes": "Transição.",
+    "coeficiente": 1
+   },
+   {
+    "num": 16,
+    "local": "MXK / K",
+    "descricao": "Diagonal ao trote elevado. Trote de trabalho.",
+    "diretrizes": "Equilíbrio. Qualidade do trote.",
+    "coeficiente": 1
+   },
+   {
+    "num": 17,
+    "local": "A / X",
+    "descricao": "Pela linha do meio. Alto. Saudação.",
+    "diretrizes": "Retidão. Alto.",
+    "coeficiente": 1
+   }
+  ],
+  "notasConjunto": [
+   {
+    "num": 1,
+    "descricao": "Andaduras",
+    "diretrizes": "Franqueza e regularidade",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "descricao": "Submissão",
+    "diretrizes": "Confiança e harmonia",
+    "coeficiente": 1
+   },
+   {
+    "num": 3,
+    "descricao": "Posição e assento",
+    "diretrizes": "Assento do cavaleiro e efeito das ajudas",
+    "coeficiente": 2
+   },
+   {
+    "num": 4,
+    "descricao": "Execução das figuras",
+    "diretrizes": "",
+    "coeficiente": 2
+   }
+  ]
+ },
+ {
+  "nome": "Série Elementar nº 01 (2023)",
+  "pontuacaoMaxima": 260,
+  "qtdMovimentos": 13,
+  "movimentos": [
+   {
+    "num": 1,
+    "local": "A / X",
+    "descricao": "Entrar ao trote de trabalho. Alto, saudação, prosseguir ao trote de trabalho.",
+    "diretrizes": "Regularidade e qualidade do trote; transições calmas e fluidas; retidão; atenção; imobilidade (mín. 3 seg.)",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "local": "C / E",
+    "descricao": "Pista à mão esquerda. Círculo de 20m à esquerda.",
+    "diretrizes": "Regularidade e qualidade do trote; formato e tamanho do círculo; encurvatura, equilíbrio.",
+    "coeficiente": 2
+   },
+   {
+    "num": 3,
+    "local": "A",
+    "descricao": "Círculo de 20m à esquerda partindo a galope no pé esquerdo no primeiro quarto do círculo.",
+    "diretrizes": "Transição calma e fluida, regularidade e qualidade das andaduras; formato e tamanho do círculo; encurvatura, equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 4,
+    "local": "A-F-B",
+    "descricao": "Galope de trabalho.",
+    "diretrizes": "Regularidade e qualidade do galope; encurvatura e equilíbrio no canto; retidão.",
+    "coeficiente": 1
+   },
+   {
+    "num": 5,
+    "local": "Entre B & M",
+    "descricao": "Trote de trabalho.",
+    "diretrizes": "Transição calma e fluida; regularidade e qualidade das andaduras; retidão; encurvatura e equilíbrio nos cantos.",
+    "coeficiente": 2
+   },
+   {
+    "num": 6,
+    "local": "Entre C & H",
+    "descricao": "Passo médio.",
+    "diretrizes": "Transição calma e fluida; regularidade e qualidade; encurvatura e equilíbrio nos cantos.",
+    "coeficiente": 2
+   },
+   {
+    "num": 7,
+    "local": "E-F / F",
+    "descricao": "Mudar de mão ao passo livre. Passo médio.",
+    "diretrizes": "Regularidade e qualidade dos passos. Alcance, transpiste e cobertura de solo no passo livre, permitindo completa liberdade para alongar o pescoço para frente e para baixo; retidão. Transições calmas e fluidas.",
+    "coeficiente": 2
+   },
+   {
+    "num": 8,
+    "local": "A",
+    "descricao": "Trote de trabalho.",
+    "diretrizes": "Transição calma e fluida. Regularidade e qualidade do trote. Encurvatura e equilíbrio no canto; retidão.",
+    "coeficiente": 1
+   },
+   {
+    "num": 9,
+    "local": "E",
+    "descricao": "Círculo de 20m à direita.",
+    "diretrizes": "Regularidade e qualidade do trote; formato e tamanho do círculo; encurvatura, equilíbrio.",
+    "coeficiente": 2
+   },
+   {
+    "num": 10,
+    "local": "C",
+    "descricao": "Círculo de 20m à direita, partindo a galope no pé direito no primeiro quarto do círculo.",
+    "diretrizes": "Transição calma e para frente, regularidade e qualidade das andaduras; formato e tamanho do círculo; encurvatura, equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 11,
+    "local": "C-M-B",
+    "descricao": "Galope de trabalho.",
+    "diretrizes": "Regularidade e qualidade do galope; encurvatura e equilíbrio no canto; retidão.",
+    "coeficiente": 1
+   },
+   {
+    "num": 12,
+    "local": "Entre B & F",
+    "descricao": "Trote de trabalho.",
+    "diretrizes": "Transição calma e fluida, regularidade e qualidade das andaduras; retidão, encurvatura e equilíbrio nos cantos.",
+    "coeficiente": 2
+   },
+   {
+    "num": 13,
+    "local": "A / X",
+    "descricao": "Tomar a linha do meio. Alto, saudação.",
+    "diretrizes": "Encurvatura e equilíbrio no canto. Regularidade e qualidade do trote; transição calma e fluida. Retidão, atenção, imobilidade (mín. 3 seg.)",
+    "coeficiente": 1
+   }
+  ],
+  "notasConjunto": [
+   {
+    "num": 1,
+    "descricao": "Andaduras",
+    "diretrizes": "Liberdade e regularidade",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "descricao": "Impulsão",
+    "diretrizes": "Desejo de mover-se para frente, elasticidade das passadas, descontração do dorso, engajamento dos posteriores",
+    "coeficiente": 2
+   },
+   {
+    "num": 3,
+    "descricao": "Submissão",
+    "diretrizes": "Cooperação, harmonia, atenção e confiança, aceitação da embocadura e ajudas, retidão, leveza dos anteriores, facilidade dos movimentos",
+    "coeficiente": 2
+   },
+   {
+    "num": 4,
+    "descricao": "Posição do cavaleiro e assento",
+    "diretrizes": "Alinhamento; postura, estabilidade, posicionamento do peso seguindo a mecânica das andaduras",
+    "coeficiente": 1
+   },
+   {
+    "num": 5,
+    "descricao": "Efeito das ajudas",
+    "diretrizes": "Clareza, sutileza, independência, precisão da prova",
+    "coeficiente": 1
+   }
+  ]
+ },
+ {
+  "nome": "Série Elementar nº 02 (2023)",
+  "pontuacaoMaxima": 290,
+  "qtdMovimentos": 16,
+  "movimentos": [
+   {
+    "num": 1,
+    "local": "A / X",
+    "descricao": "Entrada ao trote de trabalho. Alto, saudação. Prosseguir ao trote de trabalho.",
+    "diretrizes": "Regularidade e qualidade do trote. Transições calmas e fluidas. Retidão, atenção, imobilidade (mín. 3 seg.)",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "local": "C / B",
+    "descricao": "Pista à mão direita. Círculo de 20m à direita.",
+    "diretrizes": "Regularidade e qualidade do trote. Formato e tamanho do círculo, encurvatura, equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 3,
+    "local": "K-X-M",
+    "descricao": "Mudar de mão.",
+    "diretrizes": "Regularidade e qualidade do trote, encurvatura e equilíbrio no canto, retidão.",
+    "coeficiente": 2
+   },
+   {
+    "num": 4,
+    "local": "Entre C & H",
+    "descricao": "Galope de trabalho no pé esquerdo.",
+    "diretrizes": "Transição calma e fluida; andaduras regulares e de qualidade. Encurvatura e equilíbrio no canto; retidão.",
+    "coeficiente": 2
+   },
+   {
+    "num": 5,
+    "local": "E",
+    "descricao": "Círculo de 20m à esquerda.",
+    "diretrizes": "Regularidade e qualidade do galope; formato e tamanho do círculo; encurvatura, equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 6,
+    "local": "Entre E & K",
+    "descricao": "Trote de trabalho.",
+    "diretrizes": "Transição calma e fluida; andaduras regulares e de qualidade. Retidão; encurvatura e equilíbrio no canto.",
+    "coeficiente": 1
+   },
+   {
+    "num": 7,
+    "local": "A / Antes de A / A",
+    "descricao": "Círculo de 20m à esquerda, em trote elevado, permitindo que o cavalo se alongue para frente e para baixo mantendo contato. Encurtar as rédeas. Trote de trabalho.",
+    "diretrizes": "Alongamento de toda a coluna para frente e para baixo com um contato leve, mantendo equilíbrio e a qualidade do trote; encurvatura, formato e tamanho do círculo, transições calmas e para frente.",
+    "coeficiente": 1
+   },
+   {
+    "num": 8,
+    "local": "F / F-E",
+    "descricao": "Passo médio. Mudança de mão, passo médio.",
+    "diretrizes": "Transições calmas e fluidas, regularidade, transpiste, qualidade do passo.",
+    "coeficiente": 2
+   },
+   {
+    "num": 9,
+    "local": "E-M / M",
+    "descricao": "Mudança de mão ao passo livre. Passo médio.",
+    "diretrizes": "Regularidade e qualidade dos passos; alcance, transpiste e cobertura de solo do passo livre, permitindo completa liberdade para alongar o pescoço para frente e para baixo; retidão, transições calmas e fluidas.",
+    "coeficiente": 2
+   },
+   {
+    "num": 10,
+    "local": "C",
+    "descricao": "Trote de trabalho.",
+    "diretrizes": "Transição calma e fluida; andaduras regulares e de qualidade. Encurvatura e equilíbrio no canto; retidão.",
+    "coeficiente": 1
+   },
+   {
+    "num": 11,
+    "local": "E",
+    "descricao": "Círculo de 20m à esquerda.",
+    "diretrizes": "Regularidade e qualidade do trote. Formato e tamanho do círculo, encurvatura, equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 12,
+    "local": "F-X-H",
+    "descricao": "Mudar de mão.",
+    "diretrizes": "Regularidade e qualidade do trote; retidão, encurvatura e equilíbrio nos cantos.",
+    "coeficiente": 2
+   },
+   {
+    "num": 13,
+    "local": "Entre C & M",
+    "descricao": "Galope de trabalho no pé direito.",
+    "diretrizes": "Transição calma e fluida; andaduras regulares e de qualidade. Encurvatura e equilíbrio no canto; retidão.",
+    "coeficiente": 2
+   },
+   {
+    "num": 14,
+    "local": "B",
+    "descricao": "Círculo de 20m à direita.",
+    "diretrizes": "Regularidade e qualidade do galope; formato e tamanho do círculo; encurvatura, equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 15,
+    "local": "Entre B & F",
+    "descricao": "Trote de trabalho.",
+    "diretrizes": "Transição calma e fluida; andaduras regulares e de qualidade. Retidão, encurvatura e equilíbrio nos cantos.",
+    "coeficiente": 1
+   },
+   {
+    "num": 16,
+    "local": "A / X",
+    "descricao": "Tomar a linha do meio. Alto, saudação.",
+    "diretrizes": "Encurvatura e equilíbrio na curva. Regularidade e qualidade do trote, transição calma e fluida, retidão, atenção e imobilidade (mín. 3 seg.)",
+    "coeficiente": 1
+   }
+  ],
+  "notasConjunto": [
+   {
+    "num": 1,
+    "descricao": "Andaduras",
+    "diretrizes": "Liberdade e regularidade",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "descricao": "Impulsão",
+    "diretrizes": "Desejo de mover-se para frente, elasticidade das passadas, descontração do dorso, engajamento dos posteriores",
+    "coeficiente": 2
+   },
+   {
+    "num": 3,
+    "descricao": "Submissão",
+    "diretrizes": "Cooperação, harmonia, atenção e confiança, aceitação da embocadura e ajudas, retidão, leveza dos anteriores, facilidade dos movimentos",
+    "coeficiente": 2
+   },
+   {
+    "num": 4,
+    "descricao": "Posição do cavaleiro e assento",
+    "diretrizes": "Alinhamento; postura, estabilidade, posicionamento do peso seguindo a mecânica das andaduras",
+    "coeficiente": 1
+   },
+   {
+    "num": 5,
+    "descricao": "Efeito das ajudas",
+    "diretrizes": "Clareza, sutileza, independência, precisão da prova",
+    "coeficiente": 1
+   }
+  ]
+ },
+ {
+  "nome": "Série Preliminar nº 01 (2023)",
+  "pontuacaoMaxima": 270,
+  "qtdMovimentos": 15,
+  "movimentos": [
+   {
+    "num": 1,
+    "local": "A / X",
+    "descricao": "Entrar ao trote de trabalho. Alto, saudação. Prosseguir ao trote de trabalho.",
+    "diretrizes": "Regularidade e qualidade do trote, transições fluidas e calmas; retidão; atenção, imobilidade (mín. 3 seg.)",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "local": "C / E-X",
+    "descricao": "Pista à mão esquerda. Meia volta de 10m à esquerda, retornando à pista em H.",
+    "diretrizes": "Regularidade e qualidade do trote; formato e tamanho da meia volta, encurvatura, equilíbrio, retidão.",
+    "coeficiente": 1
+   },
+   {
+    "num": 3,
+    "local": "B-X",
+    "descricao": "Meia volta de 10m à direita, retornando à pista em M.",
+    "diretrizes": "Regularidade e qualidade do trote, formato e tamanho da meia volta. Encurvatura, equilíbrio, retidão.",
+    "coeficiente": 1
+   },
+   {
+    "num": 4,
+    "local": "C / Antes de C / C",
+    "descricao": "Círculo de 20m à esquerda ao trote elevado, permitindo que o cavalo se alongue para frente e para baixo, mantendo contato. Encurtar as rédeas. Trote de trabalho.",
+    "diretrizes": "Alongamento para frente e para baixo, desde o dorso até um contato leve, mantendo o equilíbrio e a qualidade do trote; encurvatura, formato e tamanho do círculo, transições calmas e fluidas.",
+    "coeficiente": 2
+   },
+   {
+    "num": 5,
+    "local": "H-P / P",
+    "descricao": "Mudar de mão alongando os lances do trote. Trote de trabalho.",
+    "diretrizes": "Aumento moderado da moldura e lances; regularidade e qualidade do trote; retidão, cadência consistente; transições fluidas e claras; encurvatura e equilíbrio no canto.",
+    "coeficiente": 1
+   },
+   {
+    "num": 6,
+    "local": "A",
+    "descricao": "Passo médio.",
+    "diretrizes": "Transição clara e fluida; regularidade, qualidade, transpiste; encurvatura e equilíbrio no canto; retidão.",
+    "coeficiente": 2
+   },
+   {
+    "num": 7,
+    "local": "V-R / R",
+    "descricao": "Mudar de mão no passo livre. Passo médio.",
+    "diretrizes": "Regularidade e qualidade dos passos, alcance e cobertura de solo com transpiste no passo livre, permitindo completa liberdade para alongar o pescoço para frente e para baixo; retidão; transições fluidas e claras.",
+    "coeficiente": 2
+   },
+   {
+    "num": 8,
+    "local": "M / C",
+    "descricao": "Trote de trabalho. Galope de trabalho no pé esquerdo.",
+    "diretrizes": "Transições claras e fluidas; regularidade e qualidade das andaduras; encurvatura e equilíbrio nos cantos.",
+    "coeficiente": 2
+   },
+   {
+    "num": 9,
+    "local": "E",
+    "descricao": "Círculo de 15m à esquerda.",
+    "diretrizes": "Regularidade e qualidade do galope; formato e tamanho do círculo; encurvatura, equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 10,
+    "local": "F-X-H / X",
+    "descricao": "Mudar de mão. Trote de trabalho.",
+    "diretrizes": "Transição clara e fluida; regularidade e qualidade das andaduras; retidão; encurvatura e equilíbrio no canto.",
+    "coeficiente": 1
+   },
+   {
+    "num": 11,
+    "local": "C",
+    "descricao": "Galope de trabalho no pé direito.",
+    "diretrizes": "Transição clara e fluida; regularidade e qualidade do galope, encurvatura e equilíbrio no canto.",
+    "coeficiente": 2
+   },
+   {
+    "num": 12,
+    "local": "B",
+    "descricao": "Círculo de 15m à direita.",
+    "diretrizes": "Regularidade e qualidade do galope; formato e tamanho do círculo; encurvatura, equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 13,
+    "local": "A",
+    "descricao": "Trote de trabalho.",
+    "diretrizes": "Transição clara e fluida; regularidade e qualidade do trote; retidão; encurvatura e equilíbrio no canto.",
+    "coeficiente": 1
+   },
+   {
+    "num": 14,
+    "local": "K-R / R",
+    "descricao": "Mudar de mão alongando os lances do trote. Trote de trabalho.",
+    "diretrizes": "Aumento moderado da moldura e lances; regularidade e qualidade do trote; retidão, cadência consistente; transições fluidas e claras; encurvatura e equilíbrio no canto.",
+    "coeficiente": 1
+   },
+   {
+    "num": 15,
+    "local": "E / X / G",
+    "descricao": "Meia volta de 10m à esquerda. Tomar a linha do meio. Alto, saudação.",
+    "diretrizes": "Encurvatura e equilíbrio na meia volta; transição clara e fluida; retidão, atenção, imobilidade (mín. 3 seg.)",
+    "coeficiente": 1
+   }
+  ],
+  "notasConjunto": [
+   {
+    "num": 1,
+    "descricao": "Andaduras",
+    "diretrizes": "Liberdade e regularidade",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "descricao": "Impulsão",
+    "diretrizes": "Desejo de mover-se para frente, elasticidade das passadas, descontração do dorso, engajamento dos posteriores",
+    "coeficiente": 2
+   },
+   {
+    "num": 3,
+    "descricao": "Submissão",
+    "diretrizes": "Cooperação, harmonia, atenção e confiança, aceitação da embocadura e ajudas, retidão, leveza dos anteriores, facilidade dos movimentos",
+    "coeficiente": 2
+   },
+   {
+    "num": 4,
+    "descricao": "Posição do cavaleiro e assento",
+    "diretrizes": "Alinhamento; postura, estabilidade, posicionamento do peso seguindo a mecânica das andaduras",
+    "coeficiente": 1
+   },
+   {
+    "num": 5,
+    "descricao": "Efeito das ajudas",
+    "diretrizes": "Clareza, sutileza, independência, precisão da prova",
+    "coeficiente": 1
+   }
+  ]
+ },
+ {
+  "nome": "Série Elementar nº 03 (2023)",
+  "pontuacaoMaxima": 250,
+  "qtdMovimentos": 13,
+  "movimentos": [
+   {
+    "num": 1,
+    "local": "A / X",
+    "descricao": "Entrada ao trote de trabalho. Alto, saudação, prosseguir ao trote de trabalho.",
+    "diretrizes": "Regularidade e qualidade do trote; transições calmas e fluidas; retidão; imobilidade (mín. 3 seg.)",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "local": "C / H-X-K",
+    "descricao": "Pista à mão esquerda. Logo após H, começar uma curva até X, retornando à pista logo antes de K.",
+    "diretrizes": "Regularidade e qualidade do trote; encurvatura e equilíbrio nas curvas; formato e tamanho da curva; mudanças de encurvatura; equilíbrio.",
+    "coeficiente": 2
+   },
+   {
+    "num": 3,
+    "local": "Entre A & F",
+    "descricao": "Galope de trabalho no pé esquerdo.",
+    "diretrizes": "Transição calma e fluida; regularidade e qualidade das andaduras; encurvatura nos cantos; retidão.",
+    "coeficiente": 1
+   },
+   {
+    "num": 4,
+    "local": "B",
+    "descricao": "Círculo de 20m à esquerda.",
+    "diretrizes": "Regularidade e qualidade do galope; formato e tamanho do círculo; encurvatura; equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 5,
+    "local": "H-X-F / X",
+    "descricao": "Mudar de mão. Trote de trabalho.",
+    "diretrizes": "Regularidade e qualidade das andaduras; transição calma e fluida; retidão; encurvatura no canto.",
+    "coeficiente": 1
+   },
+   {
+    "num": 6,
+    "local": "A",
+    "descricao": "Passo médio.",
+    "diretrizes": "Transição calma e fluida; regularidade e qualidade.",
+    "coeficiente": 2
+   },
+   {
+    "num": 7,
+    "local": "K-X-H / H",
+    "descricao": "Passo livre. Passo médio.",
+    "diretrizes": "Regularidade e qualidade dos passos; alcance, transpiste e cobertura de solo do passo livre, permitindo completa liberdade para alongar o pescoço para frente e para baixo; retidão; transições calmas e para frente.",
+    "coeficiente": 2
+   },
+   {
+    "num": 8,
+    "local": "C / M-X-F",
+    "descricao": "Trote de trabalho. Logo após M, começar uma curva até X, retornando à pista logo antes de F.",
+    "diretrizes": "Regularidade e qualidade do trote; encurvatura e equilíbrio nas curvas; formato e tamanho da curva; mudanças de encurvatura; equilíbrio.",
+    "coeficiente": 2
+   },
+   {
+    "num": 9,
+    "local": "Entre A & K",
+    "descricao": "Galope de trabalho no pé direito.",
+    "diretrizes": "Transição calma e fluida; regularidade e qualidade das andaduras; encurvatura nos cantos; retidão.",
+    "coeficiente": 1
+   },
+   {
+    "num": 10,
+    "local": "E",
+    "descricao": "Círculo de 20m à direita.",
+    "diretrizes": "Regularidade e qualidade do galope; formato e tamanho do círculo; encurvatura; equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 11,
+    "local": "C",
+    "descricao": "Trote de trabalho.",
+    "diretrizes": "Transição calma e fluida. Regularidade e qualidade do trote.",
+    "coeficiente": 1
+   },
+   {
+    "num": 12,
+    "local": "B / Antes de B / B",
+    "descricao": "Círculo de 20m à direita em trote elevado, permitindo que o cavalo se alongue para frente e para baixo. Encurtar as rédeas. Trote de trabalho.",
+    "diretrizes": "Alongamento para frente e para baixo desde o dorso até um contato leve das mãos, mantendo o equilíbrio e a qualidade do trote; encurvatura; formato e tamanho do círculo; transições calmas e fluidas.",
+    "coeficiente": 2
+   },
+   {
+    "num": 13,
+    "local": "A / X",
+    "descricao": "Tomar a linha do meio. Alto e saudação.",
+    "diretrizes": "Encurvatura e equilíbrio na curva; regularidade e qualidade do trote; transição calma e fluida; alto reto e atento; imobilidade.",
+    "coeficiente": 1
+   }
+  ],
+  "notasConjunto": [
+   {
+    "num": 1,
+    "descricao": "Andaduras",
+    "diretrizes": "Liberdade e regularidade",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "descricao": "Impulsão",
+    "diretrizes": "Desejo de mover-se para frente, elasticidade das passadas, descontração do dorso, engajamento dos posteriores",
+    "coeficiente": 2
+   },
+   {
+    "num": 3,
+    "descricao": "Submissão",
+    "diretrizes": "Cooperação, harmonia, atenção e confiança, aceitação da embocadura e ajudas, retidão, leveza dos anteriores, facilidade dos movimentos",
+    "coeficiente": 2
+   },
+   {
+    "num": 4,
+    "descricao": "Posição do cavaleiro e assento",
+    "diretrizes": "Alinhamento; postura, estabilidade, posicionamento do peso seguindo a mecânica das andaduras",
+    "coeficiente": 1
+   },
+   {
+    "num": 5,
+    "descricao": "Efeito das ajudas",
+    "diretrizes": "Clareza, sutileza, independência, precisão da prova",
+    "coeficiente": 1
+   }
+  ]
+ },
+ {
+  "nome": "Série Preliminar nº 02 (2023)",
+  "pontuacaoMaxima": 330,
+  "qtdMovimentos": 19,
+  "movimentos": [
+   {
+    "num": 1,
+    "local": "A / X",
+    "descricao": "Entrar ao trote de trabalho. Alto, saudação. Prosseguir ao trote de trabalho.",
+    "diretrizes": "Regularidade e qualidade do trote, transições fluidas e calmas; retidão; atenção, imobilidade (mín. 3 seg.)",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "local": "C / M-V / V",
+    "descricao": "Pista à mão direita. Mudar de mão, alongando os lances do trote. Trote de trabalho.",
+    "diretrizes": "Encurvatura e equilíbrio nas curvas, alongamento moderado da moldura e dos lances; regularidade e qualidade do trote; transições claras e fluidas; retidão, cadência consistente.",
+    "coeficiente": 1
+   },
+   {
+    "num": 3,
+    "local": "A / L-M",
+    "descricao": "Tomar a linha do meio. Ceder à perna à direita.",
+    "diretrizes": "Regularidade e qualidade do trote, retidão na linha do meio, cadência consistente, alinhamento, equilíbrio e fluência.",
+    "coeficiente": 2
+   },
+   {
+    "num": 4,
+    "local": "H-P / P",
+    "descricao": "Mudar de mão, alongando os lances do trote. Trote de trabalho.",
+    "diretrizes": "Alongamento moderado da moldura e lances; regularidade e qualidade do trote, transições claras e fluidas, retidão, cadência consistente.",
+    "coeficiente": 1
+   },
+   {
+    "num": 5,
+    "local": "A / L-H",
+    "descricao": "Tomar a linha do meio. Ceder à perna à esquerda.",
+    "diretrizes": "Regularidade e qualidade do trote, retidão na linha do meio, cadência consistente, alinhamento, equilíbrio e fluência.",
+    "coeficiente": 2
+   },
+   {
+    "num": 6,
+    "local": "C",
+    "descricao": "Passo médio.",
+    "diretrizes": "Transição clara e fluida; regularidade, qualidade, transpiste; encurvatura e equilíbrio no canto.",
+    "coeficiente": 2
+   },
+   {
+    "num": 7,
+    "local": "M-V / V",
+    "descricao": "Mudar de mão em passo livre. Passo médio.",
+    "diretrizes": "Regularidade e qualidade dos passos; alcance e cobertura de solo com transpiste do passo livre, permitindo completa liberdade para alongar o pescoço para frente e para baixo; retidão, transições claras e fluidas.",
+    "coeficiente": 2
+   },
+   {
+    "num": 8,
+    "local": "K / A",
+    "descricao": "Trote de trabalho. Galope de trabalho no pé esquerdo.",
+    "diretrizes": "Transições claras e fluidas, regularidade e qualidade das passadas; encurvatura e equilíbrio nos cantos.",
+    "coeficiente": 1
+   },
+   {
+    "num": 9,
+    "local": "P",
+    "descricao": "Círculo de 15m à esquerda.",
+    "diretrizes": "Regularidade e qualidade do galope. Formato e tamanho do círculo, encurvatura, equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 10,
+    "local": "P-M",
+    "descricao": "Alongar os lances de galope.",
+    "diretrizes": "Transição clara e fluida; alongamento moderado da moldura e dos lances; regularidade e qualidade do galope; retidão; cadência consistente.",
+    "coeficiente": 2
+   },
+   {
+    "num": 11,
+    "local": "Entre M & C",
+    "descricao": "Desenvolver galope de trabalho.",
+    "diretrizes": "Transição clara e fluida; regularidade e qualidade do galope; encurvatura e equilíbrio nos cantos.",
+    "coeficiente": 1
+   },
+   {
+    "num": 12,
+    "local": "H-X-F / X",
+    "descricao": "Mudar de mão. Trote de trabalho.",
+    "diretrizes": "Transição clara e fluida; regularidade e qualidade das passadas; retidão.",
+    "coeficiente": 1
+   },
+   {
+    "num": 13,
+    "local": "F",
+    "descricao": "Galope de trabalho no pé direito.",
+    "diretrizes": "Transição clara e fluida, regularidade e qualidade das passadas; encurvatura e equilíbrio nos cantos.",
+    "coeficiente": 1
+   },
+   {
+    "num": 14,
+    "local": "V",
+    "descricao": "Círculo de 15m à direita.",
+    "diretrizes": "Regularidade e qualidade do galope. Formato e tamanho do círculo, encurvatura, equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 15,
+    "local": "V-H",
+    "descricao": "Alongar os lances de galope.",
+    "diretrizes": "Transição clara e fluida; alongamento moderado da moldura e dos lances; regularidade e qualidade do galope; retidão; cadência consistente.",
+    "coeficiente": 2
+   },
+   {
+    "num": 16,
+    "local": "Entre H & C",
+    "descricao": "Desenvolver galope de trabalho.",
+    "diretrizes": "Transição clara e fluida; regularidade e qualidade do galope; encurvatura e equilíbrio nos cantos.",
+    "coeficiente": 1
+   },
+   {
+    "num": 17,
+    "local": "M",
+    "descricao": "Trote de trabalho.",
+    "diretrizes": "Transição calma e fluida, regularidade e qualidade do trote, retidão.",
+    "coeficiente": 1
+   },
+   {
+    "num": 18,
+    "local": "B / Antes de B / B",
+    "descricao": "Círculo de 20m à direita ao trote elevado, permitindo que o cavalo se alongue para frente e para baixo, mantendo contato. Encurtar as rédeas. Trote de trabalho.",
+    "diretrizes": "Alongamento para frente e para baixo, desde o dorso até um contato leve, mantendo o equilíbrio e a qualidade do trote; encurvatura, formato e tamanho do círculo, transições calmas e fluidas.",
+    "coeficiente": 2
+   },
+   {
+    "num": 19,
+    "local": "A / X",
+    "descricao": "Tomar a linha do meio. Alto, saudação.",
+    "diretrizes": "Encurvatura e equilíbrio na curva; regularidade e qualidade do trote; transição clara e fluida, retidão, atenção, imobilidade (mín. 3 seg.)",
+    "coeficiente": 1
+   }
+  ],
+  "notasConjunto": [
+   {
+    "num": 1,
+    "descricao": "Andaduras",
+    "diretrizes": "Liberdade e regularidade",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "descricao": "Impulsão",
+    "diretrizes": "Desejo de mover-se para frente, elasticidade das passadas, descontração do dorso, engajamento dos posteriores",
+    "coeficiente": 2
+   },
+   {
+    "num": 3,
+    "descricao": "Submissão",
+    "diretrizes": "Cooperação, harmonia, atenção e confiança, aceitação da embocadura e ajudas, retidão, leveza dos anteriores, facilidade dos movimentos",
+    "coeficiente": 2
+   },
+   {
+    "num": 4,
+    "descricao": "Posição do cavaleiro e assento",
+    "diretrizes": "Alinhamento; postura, estabilidade, posicionamento do peso seguindo a mecânica das andaduras",
+    "coeficiente": 1
+   },
+   {
+    "num": 5,
+    "descricao": "Efeito das ajudas",
+    "diretrizes": "Clareza, sutileza, independência, precisão da prova",
+    "coeficiente": 1
+   }
+  ]
+ },
+ {
+  "nome": "Série Média I nº 01 (2023)",
+  "pontuacaoMaxima": 350,
+  "qtdMovimentos": 21,
+  "movimentos": [
+   {
+    "num": 1,
+    "local": "A / X",
+    "descricao": "Entrar ao trote reunido. Alto, saudação. Prosseguir ao trote reunido.",
+    "diretrizes": "Engajamento, equilíbrio ascendente e qualidade do trote. Transições claras e equilibradas; retidão, atenção, imobilidade (mín. 3 seg.)",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "local": "C / H-P / P",
+    "descricao": "Pista à mão esquerda. Mudar de mão ao trote médio. Trote reunido.",
+    "diretrizes": "Encurvatura e equilíbrio nas curvas; aumento moderado da moldura e dos lances, com engajamento, elasticidade, suspensão, retidão e equilíbrio ascendente.",
+    "coeficiente": 1
+   },
+   {
+    "num": 3,
+    "local": "P-F-A-K",
+    "descricao": "(Transições H e P) Trote reunido.",
+    "diretrizes": "Transições claras e equilibradas; cadência consistente, qualidade do trote.",
+    "coeficiente": 1
+   },
+   {
+    "num": 4,
+    "local": "K-E / E",
+    "descricao": "Espádua à dentro. Virar à direita.",
+    "diretrizes": "Ângulo, encurvatura e equilíbrio; engajamento e qualidade do trote.",
+    "coeficiente": 2
+   },
+   {
+    "num": 5,
+    "local": "B / B-M",
+    "descricao": "Virar à esquerda. Espádua à dentro.",
+    "diretrizes": "Ângulo, encurvatura e equilíbrio; engajamento e qualidade do trote.",
+    "coeficiente": 2
+   },
+   {
+    "num": 6,
+    "local": "C",
+    "descricao": "Alto, recuar 3 a 4 passos, prosseguir em passo médio.",
+    "diretrizes": "Imobilidade, recuo fluente, com passos em ritmo e número correto; retidão, transições claras.",
+    "coeficiente": 2
+   },
+   {
+    "num": 7,
+    "local": "C-S",
+    "descricao": "Passo médio.",
+    "diretrizes": "Regularidade, qualidade, transpiste.",
+    "coeficiente": 2
+   },
+   {
+    "num": 8,
+    "local": "S-F / F",
+    "descricao": "Mudar de mão em passo livre. Passo médio.",
+    "diretrizes": "Regularidade, transpiste e qualidade dos passos; amplitude e cobertura de solo do passo livre, permitindo completa liberdade para que o pescoço se alongue para frente e para baixo; retidão; transições claras e equilibradas.",
+    "coeficiente": 2
+   },
+   {
+    "num": 9,
+    "local": "A",
+    "descricao": "Galope reunido no pé direito.",
+    "diretrizes": "Transição clara, reta e equilibrada; regularidade e qualidade do galope.",
+    "coeficiente": 1
+   },
+   {
+    "num": 10,
+    "local": "K-S / S",
+    "descricao": "Galope médio. Galope reunido.",
+    "diretrizes": "Aumento moderado da moldura e dos lances, com engajamento, elasticidade, suspensão, retidão e equilíbrio ascendente. Cadência consistente; transições claras e equilibradas.",
+    "coeficiente": 1
+   },
+   {
+    "num": 11,
+    "local": "C",
+    "descricao": "Volta de 10m à direita.",
+    "diretrizes": "Regularidade e qualidade do galope. Formato e tamanho do círculo; encurvatura; equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 12,
+    "local": "M-E / E-V",
+    "descricao": "Mudar de mão. Contra-galope.",
+    "diretrizes": "Regularidade, qualidade e equilíbrio do galope; retidão.",
+    "coeficiente": 2
+   },
+   {
+    "num": 13,
+    "local": "V / K",
+    "descricao": "Trote reunido. Passo médio.",
+    "diretrizes": "Regularidade e qualidade das passadas; transições claras e equilibradas.",
+    "coeficiente": 1
+   },
+   {
+    "num": 14,
+    "local": "A",
+    "descricao": "Galope reunido no pé esquerdo.",
+    "diretrizes": "Transição clara, reta e equilibrada; regularidade e qualidade do galope.",
+    "coeficiente": 1
+   },
+   {
+    "num": 15,
+    "local": "F-R / R",
+    "descricao": "Galope médio. Galope reunido.",
+    "diretrizes": "Aumento moderado da moldura e dos lances, com engajamento, elasticidade, suspensão, retidão e equilíbrio ascendente. Cadência consistente; transições claras e equilibradas.",
+    "coeficiente": 1
+   },
+   {
+    "num": 16,
+    "local": "C",
+    "descricao": "Volta de 10m à esquerda.",
+    "diretrizes": "Regularidade e qualidade do galope. Formato e tamanho do círculo; encurvatura; equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 17,
+    "local": "H-B / B-P",
+    "descricao": "Mudar de mão. Contra-galope.",
+    "diretrizes": "Regularidade, qualidade e equilíbrio do galope; retidão.",
+    "coeficiente": 2
+   },
+   {
+    "num": 18,
+    "local": "P",
+    "descricao": "Trote reunido.",
+    "diretrizes": "Regularidade e qualidade das passadas. Transição clara e equilibrada.",
+    "coeficiente": 1
+   },
+   {
+    "num": 19,
+    "local": "K-R / R",
+    "descricao": "Trote médio. Trote reunido.",
+    "diretrizes": "Aumento moderado da moldura e dos lances, com engajamento, elasticidade, suspensão, retidão e equilíbrio ascendente.",
+    "coeficiente": 1
+   },
+   {
+    "num": 20,
+    "local": "R-M-C-H-S",
+    "descricao": "(Transições K e R) Trote reunido.",
+    "diretrizes": "Transições claras e equilibradas; cadência consistente.",
+    "coeficiente": 1
+   },
+   {
+    "num": 21,
+    "local": "S / I / G",
+    "descricao": "Virar à esquerda. Virar à esquerda. Alto, saudação.",
+    "diretrizes": "Encurvatura e equilíbrio nas curvas; engajamento, equilíbrio ascendente e qualidade do trote; transições claras e equilibradas, retidão, atenção, imobilidade (mín. 3 seg.)",
+    "coeficiente": 1
+   }
+  ],
+  "notasConjunto": [
+   {
+    "num": 1,
+    "descricao": "Andaduras",
+    "diretrizes": "Liberdade e regularidade",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "descricao": "Impulsão",
+    "diretrizes": "Desejo de mover-se para frente, elasticidade das passadas, descontração do dorso, engajamento dos posteriores",
+    "coeficiente": 2
+   },
+   {
+    "num": 3,
+    "descricao": "Submissão",
+    "diretrizes": "Cooperação, harmonia, atenção e confiança, aceitação da embocadura e ajudas, retidão, leveza dos anteriores, facilidade dos movimentos",
+    "coeficiente": 2
+   },
+   {
+    "num": 4,
+    "descricao": "Posição do cavaleiro e assento",
+    "diretrizes": "Alinhamento; postura, estabilidade, posicionamento do peso seguindo a mecânica das andaduras",
+    "coeficiente": 1
+   },
+   {
+    "num": 5,
+    "descricao": "Efeito das ajudas",
+    "diretrizes": "Clareza, sutileza, independência, precisão da prova",
+    "coeficiente": 1
+   }
+  ]
+ },
+ {
+  "nome": "Série Média I nº 02",
+  "pontuacaoMaxima": 390,
+  "qtdMovimentos": 26,
+  "movimentos": [
+   {
+    "num": 1,
+    "local": "A / X",
+    "descricao": "Entrada ao trote reunido. Alto, saudação. Prosseguir em trote reunido.",
+    "diretrizes": "Engajamento, equilíbrio ascendente e qualidade do trote, transições equilibradas, retidão, atenção, imobilidade (mín. 3 seg.)",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "local": "C / M-V",
+    "descricao": "Pista à mão direita. Trote médio.",
+    "diretrizes": "Aumento moderado da moldura e lances com engajamento, elasticidade, suspensão e retidão.",
+    "coeficiente": 1
+   },
+   {
+    "num": 3,
+    "local": "V-K-A-F",
+    "descricao": "(Transições M e V) Trote reunido.",
+    "diretrizes": "Transições claras e equilibradas; qualidade do trote, cadência consistente.",
+    "coeficiente": 1
+   },
+   {
+    "num": 4,
+    "local": "F-B / B-X",
+    "descricao": "Espádua à dentro à esquerda. Meia volta de 10m à esquerda.",
+    "diretrizes": "Ângulo, encurvatura e equilíbrio; formato e tamanho da meia volta; engajamento e qualidade do trote.",
+    "coeficiente": 1
+   },
+   {
+    "num": 5,
+    "local": "X-E / E-H",
+    "descricao": "Meia volta de 10m à direita. Espádua à dentro à direita.",
+    "diretrizes": "Formato e tamanho da meia volta; ângulo, encurvatura e equilíbrio; engajamento e qualidade do trote.",
+    "coeficiente": 1
+   },
+   {
+    "num": 6,
+    "local": "M-P",
+    "descricao": "Trote médio.",
+    "diretrizes": "Aumento moderado da moldura e lances com engajamento, elasticidade, suspensão e retidão.",
+    "coeficiente": 1
+   },
+   {
+    "num": 7,
+    "local": "P-F-A-K",
+    "descricao": "(Transições M e P) Trote reunido.",
+    "diretrizes": "Transições claras e equilibradas; qualidade do trote, cadência consistente.",
+    "coeficiente": 1
+   },
+   {
+    "num": 8,
+    "local": "K-E / E-X",
+    "descricao": "Travers à direita. Meia volta de 10m à direita.",
+    "diretrizes": "Ângulo, encurvatura e equilíbrio; formato e tamanho da meia volta; engajamento e qualidade do trote.",
+    "coeficiente": 2
+   },
+   {
+    "num": 9,
+    "local": "X-B / B-M",
+    "descricao": "Meia volta de 10m à esquerda. Travers à esquerda.",
+    "diretrizes": "Formato e tamanho da meia volta; ângulo, encurvatura e equilíbrio; engajamento e qualidade do trote.",
+    "coeficiente": 2
+   },
+   {
+    "num": 10,
+    "local": "C / H / Entre G & M",
+    "descricao": "Passo médio. Virar à esquerda. Reunir e fazer meia volta sobre as ancas à esquerda. Prosseguir em passo médio.",
+    "diretrizes": "Transição clara. Atividade e qualidade da preparação e execução, encurvatura, equilíbrio, cadência, regularidade e fluência.",
+    "coeficiente": 1
+   },
+   {
+    "num": 11,
+    "local": "Entre G & H",
+    "descricao": "Reunir e fazer uma meia volta sobre as ancas à direita. Prosseguir em passo médio.",
+    "diretrizes": "Atividade e qualidade da preparação e execução, encurvatura, equilíbrio, cadência, regularidade e fluência.",
+    "coeficiente": 1
+   },
+   {
+    "num": 12,
+    "local": "[CHG(M)G(H)GMR]",
+    "descricao": "Passo médio.",
+    "diretrizes": "Regularidade, qualidade, transpiste.",
+    "coeficiente": 2
+   },
+   {
+    "num": 13,
+    "local": "M / R-K / K-A",
+    "descricao": "Virar à direita. Passo livre. Passo médio.",
+    "diretrizes": "Regularidade e qualidade dos passos. Alcance, transpiste e cobertura de solo do passo livre, permitindo completa liberdade para alongar o pescoço para frente e para baixo; retidão; transições claras e equilibradas.",
+    "coeficiente": 2
+   },
+   {
+    "num": 14,
+    "local": "A",
+    "descricao": "Galope reunido no pé esquerdo.",
+    "diretrizes": "Transição clara, equilibrada e reta. Regularidade e qualidade das andaduras.",
+    "coeficiente": 1
+   },
+   {
+    "num": 15,
+    "local": "F-R / R",
+    "descricao": "Galope médio. Galope reunido.",
+    "diretrizes": "Aumento moderado da moldura e lances com engajamento, elasticidade, suspensão e retidão.",
+    "coeficiente": 1
+   },
+   {
+    "num": 16,
+    "local": "R-M-C",
+    "descricao": "(Transições F e R) Galope reunido.",
+    "diretrizes": "Transições equilibradas e retas; qualidade do galope, cadência consistente.",
+    "coeficiente": 1
+   },
+   {
+    "num": 17,
+    "local": "C-A",
+    "descricao": "Serpentina de 3 laços iguais do tamanho do picadeiro, com mudanças de pé simples na linha do meio: nota para a primeira mudança simples.",
+    "diretrizes": "Transição clara, equilibrada e reta. Regularidade e qualidade das andaduras.",
+    "coeficiente": 1
+   },
+   {
+    "num": 18,
+    "local": "C-A",
+    "descricao": "Serpentina: nota para a segunda mudança simples.",
+    "diretrizes": "Transição clara, equilibrada e reta. Regularidade e qualidade das andaduras.",
+    "coeficiente": 1
+   },
+   {
+    "num": 19,
+    "local": "C-A",
+    "descricao": "Serpentina: nota para a qualidade da serpentina.",
+    "diretrizes": "Regularidade e qualidade das andaduras; posicionamento; geometria.",
+    "coeficiente": 1
+   },
+   {
+    "num": 20,
+    "local": "F-E / E-H",
+    "descricao": "Mudar de mão. Galope reunido.",
+    "diretrizes": "Regularidade, qualidade e equilíbrio do galope; retidão.",
+    "coeficiente": 2
+   },
+   {
+    "num": 21,
+    "local": "H / Antes de C",
+    "descricao": "Passo médio. Galope reunido no pé direito.",
+    "diretrizes": "Transição clara, equilibrada e reta. Regularidade e qualidade das andaduras.",
+    "coeficiente": 1
+   },
+   {
+    "num": 22,
+    "local": "M-P / P",
+    "descricao": "Galope médio. Galope reunido.",
+    "diretrizes": "Aumento moderado da moldura e lances com engajamento, elasticidade, suspensão e retidão.",
+    "coeficiente": 1
+   },
+   {
+    "num": 23,
+    "local": "P-F-A-K",
+    "descricao": "(Transições M e P) Galope reunido.",
+    "diretrizes": "Regularidade, qualidade e equilíbrio do galope; retidão. Transições claras e equilibradas.",
+    "coeficiente": 1
+   },
+   {
+    "num": 24,
+    "local": "K-B / B-M",
+    "descricao": "Mudar de mão. Contra-galope.",
+    "diretrizes": "Regularidade, qualidade e equilíbrio do galope; retidão.",
+    "coeficiente": 2
+   },
+   {
+    "num": 25,
+    "local": "M",
+    "descricao": "Trote reunido.",
+    "diretrizes": "Transição clara, equilibrada e reta. Regularidade e qualidade do trote.",
+    "coeficiente": 1
+   },
+   {
+    "num": 26,
+    "local": "E / X / G",
+    "descricao": "Virar à esquerda. Virar à esquerda. Alto, saudação.",
+    "diretrizes": "Engajamento, equilíbrio ascendente e qualidade do trote, transição clara e equilibrada, retidão, atenção, imobilidade (mín. 3 seg.)",
+    "coeficiente": 1
+   }
+  ],
+  "notasConjunto": [
+   {
+    "num": 1,
+    "descricao": "Andaduras",
+    "diretrizes": "Liberdade e regularidade",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "descricao": "Impulsão",
+    "diretrizes": "Desejo de mover-se para frente, elasticidade das passadas, descontração do dorso, engajamento dos posteriores",
+    "coeficiente": 2
+   },
+   {
+    "num": 3,
+    "descricao": "Submissão",
+    "diretrizes": "Cooperação, harmonia, atenção e confiança, aceitação da embocadura e ajudas, retidão, leveza dos anteriores, facilidade dos movimentos",
+    "coeficiente": 2
+   },
+   {
+    "num": 4,
+    "descricao": "Posição do cavaleiro e assento",
+    "diretrizes": "Alinhamento; postura, estabilidade, posicionamento do peso seguindo a mecânica das andaduras",
+    "coeficiente": 1
+   },
+   {
+    "num": 5,
+    "descricao": "Efeito das ajudas",
+    "diretrizes": "Clareza, sutileza, independência, precisão da prova",
+    "coeficiente": 1
+   }
+  ]
+ },
+ {
+  "nome": "Série Média II nº 01 (2023)",
+  "pontuacaoMaxima": 370,
+  "qtdMovimentos": 23,
+  "movimentos": [
+   {
+    "num": 1,
+    "local": "A / X",
+    "descricao": "Entrada ao trote reunido. Alto, saudação. Prosseguir em trote reunido.",
+    "diretrizes": "Engajamento, equilíbrio ascendente e qualidade do trote, transições equilibradas, retidão, atenção, imobilidade (mín. 3 seg.)",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "local": "C / S-V",
+    "descricao": "Pista à mão esquerda. Espádua esquerda à dentro.",
+    "diretrizes": "Ângulo, encurvatura e equilíbrio; engajamento e autossustentação.",
+    "coeficiente": 1
+   },
+   {
+    "num": 3,
+    "local": "V-L / L-H",
+    "descricao": "Meia volta de 10m à esquerda. Apoiar à esquerda.",
+    "diretrizes": "Formato e tamanho da meia volta; alinhamento, encurvatura, fluência e cruzamento dos membros; engajamento e autossustentação.",
+    "coeficiente": 2
+   },
+   {
+    "num": 4,
+    "local": "R-P",
+    "descricao": "Espádua direita à dentro.",
+    "diretrizes": "Ângulo, encurvatura e equilíbrio; engajamento e autossustentação.",
+    "coeficiente": 1
+   },
+   {
+    "num": 5,
+    "local": "P-L / L-M",
+    "descricao": "Meia volta de 10m à direita. Apoiar à direita.",
+    "diretrizes": "Formato e tamanho da meia volta; alinhamento, encurvatura, fluência e cruzamento dos membros; engajamento e autossustentação.",
+    "coeficiente": 2
+   },
+   {
+    "num": 6,
+    "local": "H-X-F / F",
+    "descricao": "Trote médio. Trote reunido.",
+    "diretrizes": "Aumento moderado da moldura e lance com engajamento, elasticidade, suspensão, retidão e equilíbrio ascendente; cadência consistente; transições bem definidas.",
+    "coeficiente": 1
+   },
+   {
+    "num": 7,
+    "local": "A",
+    "descricao": "Alto, recuar 4 passos, prosseguir ao passo médio.",
+    "diretrizes": "Imobilidade, fluência nos passos para trás, com número e ritmos corretos; transições claras.",
+    "coeficiente": 2
+   },
+   {
+    "num": 8,
+    "local": "K-R / R",
+    "descricao": "Mudar de mão ao passo alongado. Passo médio.",
+    "diretrizes": "Regularidade, descontração da garupa, atividade, transpiste, liberdade das espáduas, se estendendo em direção à embocadura; transições claras.",
+    "coeficiente": 2
+   },
+   {
+    "num": 9,
+    "local": "M / Entre G & H",
+    "descricao": "Virar à esquerda. Reunir e executar meia volta sobre as ancas à esquerda. Prosseguir ao passo médio.",
+    "diretrizes": "Atividade e qualidade da preparação e execução, encurvatura, equilíbrio, cadência, regularidade e fluência.",
+    "coeficiente": 1
+   },
+   {
+    "num": 10,
+    "local": "Entre G & M / H",
+    "descricao": "Reunir e executar meia volta sobre as ancas à direita. Prosseguir ao passo médio. Pista à mão direita.",
+    "diretrizes": "Atividade e qualidade da preparação e execução, encurvatura, equilíbrio, cadência, regularidade e fluência.",
+    "coeficiente": 1
+   },
+   {
+    "num": 11,
+    "local": "[RMG(H)G(M)GHC]",
+    "descricao": "Passo médio.",
+    "diretrizes": "Regularidade, qualidade, transpiste.",
+    "coeficiente": 2
+   },
+   {
+    "num": 12,
+    "local": "C",
+    "descricao": "Galope reunido à mão direita.",
+    "diretrizes": "Transição bem definida; regularidade e autossustentação; engajamento e qualidade do galope.",
+    "coeficiente": 1
+   },
+   {
+    "num": 13,
+    "local": "M-F / F",
+    "descricao": "Galope médio. Galope reunido.",
+    "diretrizes": "Aumento moderado da moldura e lance com engajamento, elasticidade, suspensão, retidão e equilíbrio ascendente; cadência consistente; transições bem definidas.",
+    "coeficiente": 1
+   },
+   {
+    "num": 14,
+    "local": "V",
+    "descricao": "Volta de 10m à direita.",
+    "diretrizes": "Formato e tamanho da volta; encurvatura; engajamento e autossustentação.",
+    "coeficiente": 1
+   },
+   {
+    "num": 15,
+    "local": "V-R",
+    "descricao": "Mudar de mão, mudança de pé entre a linha do meio e R.",
+    "diretrizes": "Mudança de pé clara, equilibrada, fluente e reta; engajamento e autossustentação.",
+    "coeficiente": 2
+   },
+   {
+    "num": 16,
+    "local": "H-K / K",
+    "descricao": "Galope alongado. Galope reunido.",
+    "diretrizes": "Cobertura de solo extrema com aumento da moldura; elasticidade; engajamento; suspensão, retidão e equilíbrio ascendente.",
+    "coeficiente": 1
+   },
+   {
+    "num": 17,
+    "local": "K-A-P",
+    "descricao": "(Transições H e K) Galope reunido.",
+    "diretrizes": "Bem definidas, mantendo cadência e equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 18,
+    "local": "P",
+    "descricao": "Volta de 10m à esquerda.",
+    "diretrizes": "Formato e tamanho da volta; encurvatura; engajamento e autossustentação.",
+    "coeficiente": 1
+   },
+   {
+    "num": 19,
+    "local": "P-S",
+    "descricao": "Mudar de mão, mudança de pé entre a linha do meio e S.",
+    "diretrizes": "Mudança de pé clara, equilibrada, fluente e reta; engajamento e autossustentação.",
+    "coeficiente": 2
+   },
+   {
+    "num": 20,
+    "local": "C",
+    "descricao": "Trote reunido.",
+    "diretrizes": "Transição bem definida e equilibrada; engajamento e reunião.",
+    "coeficiente": 1
+   },
+   {
+    "num": 21,
+    "local": "M-X-K / K",
+    "descricao": "Trote alongado. Trote reunido.",
+    "diretrizes": "Cobertura de solo extrema com aumento da moldura; elasticidade; engajamento; suspensão, retidão e equilíbrio ascendente.",
+    "coeficiente": 1
+   },
+   {
+    "num": 22,
+    "local": "K-A",
+    "descricao": "(Transições M e K) Trote reunido.",
+    "diretrizes": "Bem definidas, mantendo cadência e equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 23,
+    "local": "A / X",
+    "descricao": "Tomar a linha do meio. Alto, saudação.",
+    "diretrizes": "Encurvatura e equilíbrio na curva; engajamento, autossustentação e qualidade do trote; transição bem definida; retidão; atenção; imobilidade (mín. 3 seg.)",
+    "coeficiente": 1
+   }
+  ],
+  "notasConjunto": [
+   {
+    "num": 1,
+    "descricao": "Andaduras",
+    "diretrizes": "Liberdade e regularidade",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "descricao": "Impulsão",
+    "diretrizes": "Desejo de mover-se para frente, elasticidade das passadas, descontração do dorso, engajamento dos posteriores",
+    "coeficiente": 2
+   },
+   {
+    "num": 3,
+    "descricao": "Submissão",
+    "diretrizes": "Cooperação, harmonia, atenção e confiança, aceitação da embocadura e ajudas, retidão, leveza dos anteriores, facilidade dos movimentos",
+    "coeficiente": 2
+   },
+   {
+    "num": 4,
+    "descricao": "Posição do cavaleiro e assento",
+    "diretrizes": "Alinhamento; postura, estabilidade, posicionamento do peso seguindo a mecânica das andaduras",
+    "coeficiente": 1
+   },
+   {
+    "num": 5,
+    "descricao": "Efeito das ajudas",
+    "diretrizes": "Clareza, sutileza, independência, precisão da prova",
+    "coeficiente": 1
+   }
+  ]
+ },
+ {
+  "nome": "Série Média II nº 02 (2023)",
+  "pontuacaoMaxima": 380,
+  "qtdMovimentos": 22,
+  "movimentos": [
+   {
+    "num": 1,
+    "local": "A / X",
+    "descricao": "Entrada ao trote reunido. Alto, saudação. Prosseguir em trote reunido.",
+    "diretrizes": "Engajamento, equilíbrio ascendente e qualidade do trote, transições equilibradas, retidão, atenção, imobilidade (mín. 3 seg.)",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "local": "C / M-X-K / K",
+    "descricao": "Pista à mão direita. Mudar de mão ao trote médio. Trote reunido.",
+    "diretrizes": "Alongamento moderado da moldura e lances, com engajamento, elasticidade, suspensão, retidão e equilíbrio ascendente; cadência consistente, transições bem definidas.",
+    "coeficiente": 1
+   },
+   {
+    "num": 3,
+    "local": "F-B",
+    "descricao": "Espádua esquerda à dentro.",
+    "diretrizes": "Ângulo, encurvatura e equilíbrio; engajamento e autossustentação.",
+    "coeficiente": 1
+   },
+   {
+    "num": 4,
+    "local": "B-M",
+    "descricao": "Renvers à direita.",
+    "diretrizes": "Ângulo, encurvatura e equilíbrio; engajamento e autossustentação.",
+    "coeficiente": 2
+   },
+   {
+    "num": 5,
+    "local": "H-X-F / F",
+    "descricao": "Mudar de mão ao trote alongado. Trote reunido.",
+    "diretrizes": "Cobertura de solo extrema com aumento da moldura; elasticidade; engajamento; suspensão, retidão e equilíbrio ascendente.",
+    "coeficiente": 2
+   },
+   {
+    "num": 6,
+    "local": "F-A-K",
+    "descricao": "(Transições H e F) Trote reunido.",
+    "diretrizes": "Bem definidas, mantendo cadência e equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 7,
+    "local": "K-E",
+    "descricao": "Espádua direita à dentro.",
+    "diretrizes": "Ângulo, encurvatura e equilíbrio; engajamento e autossustentação.",
+    "coeficiente": 1
+   },
+   {
+    "num": 8,
+    "local": "E-H",
+    "descricao": "Renvers à esquerda.",
+    "diretrizes": "Ângulo, encurvatura e equilíbrio; engajamento e autossustentação.",
+    "coeficiente": 2
+   },
+   {
+    "num": 9,
+    "local": "C / M / Entre G & H",
+    "descricao": "Passo médio. Virar à direita. Reunir e executar meia volta sobre as ancas à direita. Prosseguir em passo médio.",
+    "diretrizes": "Atividade e qualidade da preparação e execução, encurvatura, equilíbrio, cadência, regularidade e fluência.",
+    "coeficiente": 1
+   },
+   {
+    "num": 10,
+    "local": "Entre G & M / H",
+    "descricao": "Reunir e executar meia volta sobre as ancas à esquerda. Prosseguir em passo médio. Virar à esquerda.",
+    "diretrizes": "Atividade e qualidade da preparação e execução, encurvatura, equilíbrio, cadência, regularidade e fluência.",
+    "coeficiente": 1
+   },
+   {
+    "num": 11,
+    "local": "[CMG(H)G(M)GHS]",
+    "descricao": "Passo médio.",
+    "diretrizes": "Regularidade, qualidade, transpiste.",
+    "coeficiente": 2
+   },
+   {
+    "num": 12,
+    "local": "S-P / P",
+    "descricao": "Mudar de mão ao passo alongado. Passo médio.",
+    "diretrizes": "Regularidade, descontração do dorso, atividade, transpiste, liberdade das espáduas; alongando para a embocadura; transições bem definidas.",
+    "coeficiente": 2
+   },
+   {
+    "num": 13,
+    "local": "F",
+    "descricao": "Galope reunido no pé direito.",
+    "diretrizes": "Transição bem definida; regularidade e autossustentação; engajamento e qualidade da andadura.",
+    "coeficiente": 1
+   },
+   {
+    "num": 14,
+    "local": "A / D-R",
+    "descricao": "Tomar a linha do meio. Apoiar à direita.",
+    "diretrizes": "Alinhamento e encurvatura enquanto se move fluentemente para frente e para o lado; engajamento e autossustentação.",
+    "coeficiente": 1
+   },
+   {
+    "num": 15,
+    "local": "Entre R & M",
+    "descricao": "Mudança de pé.",
+    "diretrizes": "Transição clara, equilibrada, fluente e reta. Engajamento e autossustentação.",
+    "coeficiente": 2
+   },
+   {
+    "num": 16,
+    "local": "H-K / K",
+    "descricao": "Galope médio. Galope reunido.",
+    "diretrizes": "Alongamento moderado da moldura e lances, com engajamento, elasticidade, suspensão, retidão e equilíbrio ascendente; cadência consistente, transições bem definidas.",
+    "coeficiente": 1
+   },
+   {
+    "num": 17,
+    "local": "A / D-S",
+    "descricao": "Tomar a linha do meio. Apoiar à esquerda.",
+    "diretrizes": "Alinhamento e encurvatura enquanto se move fluentemente para frente e para o lado; engajamento e autossustentação.",
+    "coeficiente": 1
+   },
+   {
+    "num": 18,
+    "local": "Entre S & H",
+    "descricao": "Mudança de pé.",
+    "diretrizes": "Transição clara, equilibrada, fluente e reta. Engajamento e autossustentação.",
+    "coeficiente": 2
+   },
+   {
+    "num": 19,
+    "local": "C",
+    "descricao": "Círculo de 20m à direita, soltando claramente ambas as rédeas por 4-5 lances sobre a linha do meio.",
+    "diretrizes": "Soltura clara das rédeas mantendo a autossustentação, engajamento e reunião. Tamanho do círculo e encurvatura.",
+    "coeficiente": 2
+   },
+   {
+    "num": 20,
+    "local": "M-F / F",
+    "descricao": "Galope alongado. Galope reunido.",
+    "diretrizes": "Cobertura de solo extrema com aumento da moldura; elasticidade; engajamento; suspensão, retidão e equilíbrio ascendente.",
+    "coeficiente": 2
+   },
+   {
+    "num": 21,
+    "local": "F-A",
+    "descricao": "(Transições M e F) Galope reunido.",
+    "diretrizes": "Bem definidas, mantendo cadência e equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 22,
+    "local": "A / L / I",
+    "descricao": "Tomar a linha do meio. Trote reunido. Alto, saudação.",
+    "diretrizes": "Encurvatura e equilíbrio na curva, autossustentação e qualidade das andaduras, transição bem definida, retidão, atenção, imobilidade (mín. 3 seg.)",
+    "coeficiente": 1
+   }
+  ],
+  "notasConjunto": [
+   {
+    "num": 1,
+    "descricao": "Andaduras",
+    "diretrizes": "Liberdade e regularidade",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "descricao": "Impulsão",
+    "diretrizes": "Desejo de mover-se para frente, elasticidade das passadas, descontração do dorso, engajamento dos posteriores",
+    "coeficiente": 2
+   },
+   {
+    "num": 3,
+    "descricao": "Submissão",
+    "diretrizes": "Cooperação, harmonia, atenção e confiança, aceitação da embocadura e ajudas, retidão, leveza dos anteriores, facilidade dos movimentos",
+    "coeficiente": 2
+   },
+   {
+    "num": 4,
+    "descricao": "Posição do cavaleiro e assento",
+    "diretrizes": "Alinhamento; postura, estabilidade, posicionamento do peso seguindo a mecânica das andaduras",
+    "coeficiente": 1
+   },
+   {
+    "num": 5,
+    "descricao": "Efeito das ajudas",
+    "diretrizes": "Clareza, sutileza, independência, precisão da prova",
+    "coeficiente": 1
+   }
+  ]
+ },
+ {
+  "nome": "Série Preliminar nº 03 (2023)",
+  "pontuacaoMaxima": 360,
+  "qtdMovimentos": 22,
+  "movimentos": [
+   {
+    "num": 1,
+    "local": "A / X",
+    "descricao": "Entrar ao trote de trabalho. Alto, saudação. Prosseguir ao trote de trabalho.",
+    "diretrizes": "Regularidade e qualidade do trote, transições fluidas e calmas; retidão; atenção, imobilidade (mín. 3 seg.)",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "local": "C / H-X-F / F",
+    "descricao": "Pista à esquerda. Mudar de mão alongando os lances de trote. Trote de trabalho.",
+    "diretrizes": "Encurvatura e equilíbrio na curva; alongamento moderado na moldura e nos lances; regularidade e qualidade do trote. Transições claras e fluidas; retidão, cadência constante.",
+    "coeficiente": 1
+   },
+   {
+    "num": 3,
+    "local": "V-I",
+    "descricao": "Ceder à perna à direita.",
+    "diretrizes": "Regularidade e qualidade do trote; cadência consistente; alinhamento, equilíbrio e fluência.",
+    "coeficiente": 2
+   },
+   {
+    "num": 4,
+    "local": "I / I / C",
+    "descricao": "Volta de 10m à esquerda. Seguir em frente. Pista à mão direita.",
+    "diretrizes": "Regularidade e qualidade do trote; formato e tamanho da volta; encurvatura, equilíbrio, retidão na linha do meio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 5,
+    "local": "B / Antes de B",
+    "descricao": "Círculo de 20m à direita ao trote elevado, permitindo que o cavalo se alongue para frente e para baixo, mantendo contato. Encurtar as rédeas.",
+    "diretrizes": "Alongamento para frente e para baixo, desde o dorso até um contato leve, mantendo o equilíbrio e a qualidade do trote; encurvatura, formato e tamanho do círculo, transições calmas e fluidas.",
+    "coeficiente": 2
+   },
+   {
+    "num": 6,
+    "local": "A",
+    "descricao": "Galope de trabalho à mão direita.",
+    "diretrizes": "Transição clara e fluida; regularidade e qualidade do galope; encurvatura e equilíbrio no canto.",
+    "coeficiente": 1
+   },
+   {
+    "num": 7,
+    "local": "K-X-H",
+    "descricao": "Logo após K, começar uma curva até X, retornando à pista logo antes de H, sem mudar de pé.",
+    "diretrizes": "Regularidade e qualidade do galope; forma e tamanho da curva, posicionamento e equilíbrio.",
+    "coeficiente": 2
+   },
+   {
+    "num": 8,
+    "local": "C",
+    "descricao": "Círculo de 15m à direita.",
+    "diretrizes": "Regularidade e qualidade do galope; forma e tamanho do círculo, encurvatura, equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 9,
+    "local": "M-F / F",
+    "descricao": "Alongar os lances no galope. Galope de trabalho.",
+    "diretrizes": "Alongamento moderado da moldura e lance; regularidade e qualidade do galope; transições claras e fluidas; retidão; cadência consistente.",
+    "coeficiente": 1
+   },
+   {
+    "num": 10,
+    "local": "K-X-M / X",
+    "descricao": "Mudar de mão. Trote de trabalho.",
+    "diretrizes": "Transição clara e fluida; regularidade e qualidade das andaduras; encurvatura e equilíbrio no canto.",
+    "coeficiente": 1
+   },
+   {
+    "num": 11,
+    "local": "C",
+    "descricao": "Passo médio.",
+    "diretrizes": "Transição clara e fluida; regularidade, qualidade, transpiste.",
+    "coeficiente": 2
+   },
+   {
+    "num": 12,
+    "local": "H-X-K / K",
+    "descricao": "Passo livre. Passo médio.",
+    "diretrizes": "Regularidade e qualidade dos passos. Alcance e cobertura de solo com transpiste do passo livre, permitindo completa liberdade para alongar o pescoço para frente e para baixo, retidão, transições claras e fluidas.",
+    "coeficiente": 2
+   },
+   {
+    "num": 13,
+    "local": "A",
+    "descricao": "Trote de trabalho.",
+    "diretrizes": "Transição clara e fluida. Encurvatura e equilíbrio no canto.",
+    "coeficiente": 1
+   },
+   {
+    "num": 14,
+    "local": "P-I",
+    "descricao": "Ceder à perna à esquerda.",
+    "diretrizes": "Regularidade e qualidade do trote; cadência consistente; alinhamento, equilíbrio e fluência.",
+    "coeficiente": 2
+   },
+   {
+    "num": 15,
+    "local": "I / I / C",
+    "descricao": "Volta de 10m à direita. Seguir em frente. Pista à mão direita.",
+    "diretrizes": "Regularidade e qualidade do trote; formato e tamanho da volta; encurvatura, equilíbrio, retidão na linha do meio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 16,
+    "local": "M-X-K / K",
+    "descricao": "Alongar o trote. Trote de trabalho.",
+    "diretrizes": "Alongamento moderado da moldura e lance; regularidade e qualidade do trote; transições claras e fluidas; retidão; cadência consistente.",
+    "coeficiente": 1
+   },
+   {
+    "num": 17,
+    "local": "A",
+    "descricao": "Galope de trabalho à mão esquerda.",
+    "diretrizes": "Transição clara e fluida; regularidade e qualidade da andadura; encurvatura e equilíbrio no galope.",
+    "coeficiente": 1
+   },
+   {
+    "num": 18,
+    "local": "F-X-M",
+    "descricao": "Logo após F, começar uma curva até X, retornando à pista logo antes de M, sem mudar de pé.",
+    "diretrizes": "Regularidade e qualidade do galope; forma e tamanho da curva, posicionamento e equilíbrio.",
+    "coeficiente": 2
+   },
+   {
+    "num": 19,
+    "local": "C",
+    "descricao": "Círculo de 15m à esquerda.",
+    "diretrizes": "Regularidade e qualidade do galope, formato e tamanho do círculo; encurvatura, equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 20,
+    "local": "H-K / K",
+    "descricao": "Alongar os lances no galope. Galope de trabalho.",
+    "diretrizes": "Alongamento moderado da moldura e lance; regularidade e qualidade do galope; transições claras e fluidas; retidão; cadência consistente.",
+    "coeficiente": 1
+   },
+   {
+    "num": 21,
+    "local": "F-X-H / X",
+    "descricao": "Mudar de mão. Mudança de pé através do trote.",
+    "diretrizes": "Transições claras e fluidas; regularidade e qualidade das andaduras; retidão.",
+    "coeficiente": 1
+   },
+   {
+    "num": 22,
+    "local": "C / B / X / G",
+    "descricao": "Trote de trabalho. Meia volta de 10m à direita. Tomar a linha do meio. Alto, saudação.",
+    "diretrizes": "Encurvatura e equilíbrio no canto e na meia volta; regularidade e qualidade do trote. Transição clara e fluida; retidão, atenção, imobilidade (mín. 3 seg.)",
+    "coeficiente": 1
+   }
+  ],
+  "notasConjunto": [
+   {
+    "num": 1,
+    "descricao": "Andaduras",
+    "diretrizes": "Liberdade e regularidade",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "descricao": "Impulsão",
+    "diretrizes": "Desejo de mover-se para frente, elasticidade das passadas, descontração do dorso, engajamento dos posteriores",
+    "coeficiente": 2
+   },
+   {
+    "num": 3,
+    "descricao": "Submissão",
+    "diretrizes": "Cooperação, harmonia, atenção e confiança, aceitação da embocadura e ajudas, retidão, leveza dos anteriores, facilidade dos movimentos",
+    "coeficiente": 2
+   },
+   {
+    "num": 4,
+    "descricao": "Posição do cavaleiro e assento",
+    "diretrizes": "Alinhamento; postura, estabilidade, posicionamento do peso seguindo a mecânica das andaduras",
+    "coeficiente": 1
+   },
+   {
+    "num": 5,
+    "descricao": "Efeito das ajudas",
+    "diretrizes": "Clareza, sutileza, independência, precisão da prova",
+    "coeficiente": 1
+   }
+  ]
+ },
+ {
+  "nome": "Série Forte I nº 01 (2023)",
+  "pontuacaoMaxima": 380,
+  "qtdMovimentos": 24,
+  "movimentos": [
+   {
+    "num": 1,
+    "local": "A / X",
+    "descricao": "Entrada ao galope reunido. Alto, saudação. Prosseguir em trote reunido.",
+    "diretrizes": "Engajamento, reunião e qualidade das andaduras; transições bem definidas; retidão; atenção; imobilidade (mín. 3 seg.)",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "local": "C / H-X-F / Sobre X / F",
+    "descricao": "Pista à mão esquerda. Mudar de mão ao trote médio. 6-7 passos de trote reunido. Trote reunido.",
+    "diretrizes": "Alongamento moderado da moldura e das passadas com engajamento, elasticidade, suspensão, retidão e equilíbrio ascendente; regularidade e atividade nas passadas reunidas; cadência consistente; transições bem definidas.",
+    "coeficiente": 2
+   },
+   {
+    "num": 3,
+    "local": "K-X",
+    "descricao": "Apoiar à direita.",
+    "diretrizes": "Alinhamento, encurvatura, fluência e cruzamento dos membros; engajamento e reunião.",
+    "coeficiente": 2
+   },
+   {
+    "num": 4,
+    "local": "X-H",
+    "descricao": "Apoiar à esquerda.",
+    "diretrizes": "Alinhamento, encurvatura, fluência e cruzamento dos membros; engajamento e reunião.",
+    "coeficiente": 2
+   },
+   {
+    "num": 5,
+    "local": "M-X-K / K",
+    "descricao": "Mudar de mão ao trote alongado. Trote reunido.",
+    "diretrizes": "Cobertura máxima de solo com alongamento da moldura, engajamento, elasticidade, suspensão, retidão e equilíbrio ascendente.",
+    "coeficiente": 1
+   },
+   {
+    "num": 6,
+    "local": "K-A-F",
+    "descricao": "(Transições M e K) Trote reunido.",
+    "diretrizes": "Transições bem definidas, mantendo cadência e equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 7,
+    "local": "F-B / B",
+    "descricao": "Espádua esquerda à dentro. Virar à esquerda.",
+    "diretrizes": "Ângulo, encurvatura e equilíbrio; engajamento e reunião.",
+    "coeficiente": 1
+   },
+   {
+    "num": 8,
+    "local": "E / E-H",
+    "descricao": "Virar à direita. Espádua direita à dentro.",
+    "diretrizes": "Ângulo, encurvatura e equilíbrio; engajamento e reunião.",
+    "coeficiente": 1
+   },
+   {
+    "num": 9,
+    "local": "C / M / Entre G & H",
+    "descricao": "Passo reunido. Virar à direita. Meia pirueta à direita, prosseguir em passo reunido.",
+    "diretrizes": "Qualidade da transição, regularidade; descontração do dorso; atividade dos posteriores; encurvatura; fluência; tamanho; autossustentação.",
+    "coeficiente": 1
+   },
+   {
+    "num": 10,
+    "local": "Entre G & M / H",
+    "descricao": "Meia pirueta à esquerda, prosseguir em passo reunido. Virar à esquerda.",
+    "diretrizes": "Regularidade, atividade dos posteriores, encurvatura, fluência, tamanho, autossustentação.",
+    "coeficiente": 1
+   },
+   {
+    "num": 11,
+    "local": "[CMG(H)G(M)GHS]",
+    "descricao": "Passo reunido.",
+    "diretrizes": "Regularidade, descontração do dorso; atividade; reunião; autossustentação.",
+    "coeficiente": 2
+   },
+   {
+    "num": 12,
+    "local": "S-P / P",
+    "descricao": "Passo alongado. Passo reunido.",
+    "diretrizes": "Regularidade; descontração do dorso; atividade; transpiste; liberdade das espáduas; alongando para a embocadura; transições bem definidas.",
+    "coeficiente": 2
+   },
+   {
+    "num": 13,
+    "local": "F",
+    "descricao": "Galope reunido no pé direito.",
+    "diretrizes": "Transição precisa e fluente; engajamento; reunião; qualidade do galope.",
+    "coeficiente": 1
+   },
+   {
+    "num": 14,
+    "local": "A / D-B",
+    "descricao": "Tomar a linha do meio. Apoiar à direita.",
+    "diretrizes": "Alinhamento e encurvatura, enquanto se move fluentemente para frente e para o lado; engajamento e reunião.",
+    "coeficiente": 1
+   },
+   {
+    "num": 15,
+    "local": "B-M / M",
+    "descricao": "Contra-galope. Mudança de pé.",
+    "diretrizes": "Retidão, engajamento e reunião; mudança clara, equilibrada e fluente.",
+    "coeficiente": 1
+   },
+   {
+    "num": 16,
+    "local": "C",
+    "descricao": "Círculo de 20m à esquerda, 5-6 lances de galope muito reunido entre as linhas de quarto.",
+    "diretrizes": "Transições bem definidas; engajamento e reunião o tempo todo; tamanho do círculo e encurvatura.",
+    "coeficiente": 2
+   },
+   {
+    "num": 17,
+    "local": "H-K / K",
+    "descricao": "Galope médio. Galope reunido.",
+    "diretrizes": "Alongamento moderado da moldura; elasticidade; engajamento; suspensão; retidão e equilíbrio ascendente; cadência consistente; transições bem definidas.",
+    "coeficiente": 1
+   },
+   {
+    "num": 18,
+    "local": "A / D-E",
+    "descricao": "Tomar a linha do meio. Apoiar à esquerda.",
+    "diretrizes": "Alinhamento e encurvatura, enquanto se move fluentemente para frente e para o lado; engajamento e reunião.",
+    "coeficiente": 1
+   },
+   {
+    "num": 19,
+    "local": "E-H / H",
+    "descricao": "Contra-galope. Mudança de pé.",
+    "diretrizes": "Retidão, engajamento e reunião; mudança clara, equilibrada e fluente.",
+    "coeficiente": 1
+   },
+   {
+    "num": 20,
+    "local": "M-F / F",
+    "descricao": "Galope alongado. Galope reunido.",
+    "diretrizes": "Cobertura máxima de solo com alongamento da moldura, engajamento, elasticidade, suspensão, retidão e equilíbrio ascendente.",
+    "coeficiente": 1
+   },
+   {
+    "num": 21,
+    "local": "F-A-K",
+    "descricao": "(Transições M e F) Galope reunido.",
+    "diretrizes": "Transições bem definidas mantendo cadência e equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 22,
+    "local": "K-X-M",
+    "descricao": "Mudar de mão, três mudanças de pé, próximo à primeira linha de quarto, próximo a X e próximo à última linha de quarto.",
+    "diretrizes": "Qualidade do galope, mudança de pé clara, equilibrada, fluente e reta; engajamento.",
+    "coeficiente": 2
+   },
+   {
+    "num": 23,
+    "local": "H",
+    "descricao": "Trote reunido.",
+    "diretrizes": "Transição bem definida mantendo cadência e equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 24,
+    "local": "E / X / G",
+    "descricao": "Virar à esquerda. Virar à esquerda. Alto, saudação.",
+    "diretrizes": "Encurvatura e equilíbrio nas curvas; engajamento, reunião e qualidade do trote; retidão; atenção; imobilidade (mín. 3 seg.)",
+    "coeficiente": 1
+   }
+  ],
+  "notasConjunto": [
+   {
+    "num": 1,
+    "descricao": "Andaduras",
+    "diretrizes": "Liberdade e regularidade",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "descricao": "Impulsão",
+    "diretrizes": "Desejo de mover-se para frente, elasticidade das passadas, descontração do dorso, engajamento dos posteriores",
+    "coeficiente": 2
+   },
+   {
+    "num": 3,
+    "descricao": "Submissão",
+    "diretrizes": "Cooperação, harmonia, atenção e confiança, aceitação da embocadura e ajudas, retidão, leveza dos anteriores, facilidade dos movimentos",
+    "coeficiente": 2
+   },
+   {
+    "num": 4,
+    "descricao": "Posição do cavaleiro e assento",
+    "diretrizes": "Alinhamento; postura, estabilidade, posicionamento do peso seguindo a mecânica das andaduras",
+    "coeficiente": 1
+   },
+   {
+    "num": 5,
+    "descricao": "Efeito das ajudas",
+    "diretrizes": "Clareza, sutileza, independência, precisão da prova",
+    "coeficiente": 1
+   }
+  ]
+ },
+ {
+  "nome": "Série Forte I nº 02 (2023)",
+  "pontuacaoMaxima": 380,
+  "qtdMovimentos": 23,
+  "movimentos": [
+   {
+    "num": 1,
+    "local": "A / X",
+    "descricao": "Entrada ao galope reunido. Alto, saudação. Prosseguir ao trote reunido.",
+    "diretrizes": "Engajamento, reunião e qualidade das andaduras; transições bem definidas; retidão; atenção; imobilidade (mín. 3 seg.)",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "local": "C / M-B",
+    "descricao": "Pista à mão direita. Espádua direita à dentro.",
+    "diretrizes": "Ângulo, encurvatura e equilíbrio; engajamento e reunião.",
+    "coeficiente": 1
+   },
+   {
+    "num": 3,
+    "local": "B-K / K",
+    "descricao": "Mudar de mão ao trote médio. Trote reunido.",
+    "diretrizes": "Alongamento moderado da moldura e das passadas, com engajamento, elasticidade, suspensão, retidão e equilíbrio ascendente; cadência consistente, transições bem definidas.",
+    "coeficiente": 1
+   },
+   {
+    "num": 4,
+    "local": "A / D-E",
+    "descricao": "Tomar a linha do meio. Apoiar à esquerda.",
+    "diretrizes": "Alinhamento, encurvatura, fluência e cruzamento dos membros; engajamento e reunião.",
+    "coeficiente": 1
+   },
+   {
+    "num": 5,
+    "local": "E-G / C",
+    "descricao": "Apoiar à direita. Pista à mão esquerda.",
+    "diretrizes": "Mudança de encurvatura flexível; alinhamento, fluência e cruzamento dos membros; engajamento e reunião.",
+    "coeficiente": 1
+   },
+   {
+    "num": 6,
+    "local": "H-E",
+    "descricao": "Espádua esquerda à dentro.",
+    "diretrizes": "Ângulo, encurvatura e equilíbrio; engajamento e reunião.",
+    "coeficiente": 1
+   },
+   {
+    "num": 7,
+    "local": "E-F / F",
+    "descricao": "Mudar de mão ao trote médio. Trote reunido.",
+    "diretrizes": "Alongamento moderado da moldura e das passadas, com engajamento, elasticidade, suspensão, retidão e equilíbrio ascendente; cadência consistente, transições bem definidas.",
+    "coeficiente": 1
+   },
+   {
+    "num": 8,
+    "local": "A / K-R",
+    "descricao": "Passo reunido. Mudar de mão ao passo alongado.",
+    "diretrizes": "Regularidade, descontração da garupa; atividade; transpiste; liberdade das espáduas; alongando para a embocadura; transições bem definidas.",
+    "coeficiente": 2
+   },
+   {
+    "num": 9,
+    "local": "R / M / Entre G & H",
+    "descricao": "Passo reunido. Virar à esquerda. Meia pirueta à esquerda. Prosseguir ao passo reunido.",
+    "diretrizes": "Regularidade; atividade dos posteriores; encurvatura; fluência; tamanho; autossustentação.",
+    "coeficiente": 2
+   },
+   {
+    "num": 10,
+    "local": "Entre G & M / H",
+    "descricao": "Meia pirueta à direita. Prosseguir em passo reunido. Virar à direita.",
+    "diretrizes": "Regularidade; atividade dos posteriores; encurvatura; fluência; tamanho; autossustentação.",
+    "coeficiente": 2
+   },
+   {
+    "num": 11,
+    "local": "[AK/RMG(H)G(M)GHC]",
+    "descricao": "Passo reunido.",
+    "diretrizes": "Regularidade; descontração da garupa; atividade; reunião; autossustentação.",
+    "coeficiente": 1
+   },
+   {
+    "num": 12,
+    "local": "C",
+    "descricao": "Galope reunido no pé direito.",
+    "diretrizes": "Transição precisa e fluente; engajamento, reunião e qualidade do galope.",
+    "coeficiente": 1
+   },
+   {
+    "num": 13,
+    "local": "M-F / F",
+    "descricao": "Galope médio. Galope reunido.",
+    "diretrizes": "Alongamento moderado da moldura e das passadas, com engajamento, elasticidade, suspensão, retidão e equilíbrio ascendente; cadência consistente, transições bem definidas.",
+    "coeficiente": 1
+   },
+   {
+    "num": 14,
+    "local": "A / D-B",
+    "descricao": "Tomar a linha do meio. Apoiar à direita.",
+    "diretrizes": "Alinhamento e encurvatura, enquanto se move fluentemente para frente e para o lado; engajamento e reunião.",
+    "coeficiente": 2
+   },
+   {
+    "num": 15,
+    "local": "B",
+    "descricao": "Mudança de pé.",
+    "diretrizes": "Mudança de pé clara, equilibrada, fluente e reta; engajamento e reunião.",
+    "coeficiente": 1
+   },
+   {
+    "num": 16,
+    "local": "B-G / C",
+    "descricao": "Apoiar à esquerda. Pista à mão esquerda.",
+    "diretrizes": "Alinhamento e encurvatura, enquanto se move fluentemente para frente e para o lado; engajamento e reunião.",
+    "coeficiente": 2
+   },
+   {
+    "num": 17,
+    "local": "H-X-F / F",
+    "descricao": "Mudar de mão ao galope alongado. Galope reunido e mudança de pé.",
+    "diretrizes": "Cobertura máxima de solo com aumento da moldura, engajamento, elasticidade, suspensão, retidão e equilíbrio ascendente; transições bem definidas; mudança de pé clara, equilibrada, fluente e reta.",
+    "coeficiente": 1
+   },
+   {
+    "num": 18,
+    "local": "K-X / Antes de X / Indo para F",
+    "descricao": "Na diagonal, desenvolver galope muito reunido. 1/4 de pirueta à direita para F. Prosseguir em galope reunido.",
+    "diretrizes": "Encurvatura e equilíbrio na pirueta de trabalho; retidão, regularidade, engajamento e reunião do galope.",
+    "coeficiente": 2
+   },
+   {
+    "num": 19,
+    "local": "K-X-M",
+    "descricao": "Mudar de mão, três mudanças de pé a cada quatro lances.",
+    "diretrizes": "Transições claras, equilibradas, fluentes e retas; engajamento; qualidade do galope.",
+    "coeficiente": 2
+   },
+   {
+    "num": 20,
+    "local": "H-X / Antes de X / Indo para M",
+    "descricao": "Na diagonal, desenvolver galope muito reunido. 1/4 de pirueta à esquerda para M. Prosseguir em galope reunido.",
+    "diretrizes": "Encurvatura e equilíbrio na pirueta de trabalho; retidão, regularidade, engajamento e reunião do galope.",
+    "coeficiente": 2
+   },
+   {
+    "num": 21,
+    "local": "H",
+    "descricao": "Trote reunido.",
+    "diretrizes": "Transição bem definida e equilibrada; engajamento e reunião.",
+    "coeficiente": 1
+   },
+   {
+    "num": 22,
+    "local": "S-F / F",
+    "descricao": "Mudar de mão ao trote alongado. Trote reunido.",
+    "diretrizes": "Cobertura máxima de solo com aumento da moldura, engajamento, elasticidade, suspensão, retidão; transições bem definidas mantendo cadência e equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 23,
+    "local": "A / X",
+    "descricao": "Tomar a linha do meio. Alto, saudação.",
+    "diretrizes": "Encurvatura e equilíbrio na curva; engajamento, reunião e qualidade do trote; transição bem definida; retidão; atenção; imobilidade (mín. 3 seg.)",
+    "coeficiente": 1
+   }
+  ],
+  "notasConjunto": [
+   {
+    "num": 1,
+    "descricao": "Andaduras",
+    "diretrizes": "Liberdade e regularidade",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "descricao": "Impulsão",
+    "diretrizes": "Desejo de mover-se para frente, elasticidade das passadas, descontração do dorso, engajamento dos posteriores",
+    "coeficiente": 2
+   },
+   {
+    "num": 3,
+    "descricao": "Submissão",
+    "diretrizes": "Cooperação, harmonia, atenção e confiança, aceitação da embocadura e ajudas, retidão, leveza dos anteriores, facilidade dos movimentos",
+    "coeficiente": 2
+   },
+   {
+    "num": 4,
+    "descricao": "Posição do cavaleiro e assento",
+    "diretrizes": "Alinhamento; postura, estabilidade, posicionamento do peso seguindo a mecânica das andaduras",
+    "coeficiente": 1
+   },
+   {
+    "num": 5,
+    "descricao": "Efeito das ajudas",
+    "diretrizes": "Clareza, sutileza, independência, precisão da prova",
+    "coeficiente": 1
+   }
+  ]
+ },
+ {
+  "nome": "Pônei Escola — Teste A (2023)",
+  "pontuacaoMaxima": 160,
+  "qtdMovimentos": 9,
+  "movimentos": [
+   {
+    "num": 1,
+    "local": "A / Entre X & C",
+    "descricao": "Entrar ao trote de trabalho elevado. Passo médio.",
+    "diretrizes": "Regularidade e qualidade do trote; retidão, vontade de se movimentar, transição calma. Regularidade e qualidade do passo.",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "local": "C / M",
+    "descricao": "Pista à direita. Trote de trabalho elevado.",
+    "diretrizes": "Encurvatura e equilíbrio; transição calma e para frente.",
+    "coeficiente": 1
+   },
+   {
+    "num": 3,
+    "local": "A",
+    "descricao": "Círculo de 20m à direita, trote de trabalho elevado.",
+    "diretrizes": "Regularidade; formato e tamanho do círculo; encurvatura, equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 4,
+    "local": "K-X-M",
+    "descricao": "Mudar de mão ao trote elevado.",
+    "diretrizes": "Regularidade do trote; retidão; encurvatura e equilíbrio no canto.",
+    "coeficiente": 1
+   },
+   {
+    "num": 5,
+    "local": "C",
+    "descricao": "Círculo de 20m à esquerda, trote de trabalho elevado.",
+    "diretrizes": "Regularidade, formato e tamanho do círculo; encurvatura, equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 6,
+    "local": "Entre C & H",
+    "descricao": "Passo médio.",
+    "diretrizes": "Transição pronta e calma. Regularidade, qualidade.",
+    "coeficiente": 1
+   },
+   {
+    "num": 7,
+    "local": "H-X-F",
+    "descricao": "Passo livre.",
+    "diretrizes": "Regularidade, alcance e cobertura de solo com transpiste no passo livre, permitindo completa liberdade para alongar o pescoço para frente e para baixo.",
+    "coeficiente": 1
+   },
+   {
+    "num": 8,
+    "local": "F-A / A",
+    "descricao": "Passo médio. Tomar a linha do meio.",
+    "diretrizes": "Regularidade, transição calma e de qualidade, encurvatura e equilíbrio na curva, retidão na linha do meio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 9,
+    "local": "X",
+    "descricao": "Alto e saudação.",
+    "diretrizes": "Retidão; atenção; imobilidade (mín. 3 seg.)",
+    "coeficiente": 1
+   }
+  ],
+  "notasConjunto": [
+   {
+    "num": 1,
+    "descricao": "Andaduras",
+    "diretrizes": "Liberdade e regularidade",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "descricao": "Impulsão",
+    "diretrizes": "Desejo de se mover para frente, com descontração do dorso e cadência",
+    "coeficiente": 1
+   },
+   {
+    "num": 3,
+    "descricao": "Submissão",
+    "diretrizes": "Aceitação de um contato estável, atenção e confiança",
+    "coeficiente": 2
+   },
+   {
+    "num": 4,
+    "descricao": "Posição do cavaleiro e assento",
+    "diretrizes": "Mantendo-se em equilíbrio com o cavalo",
+    "coeficiente": 1
+   },
+   {
+    "num": 5,
+    "descricao": "Efeito das ajudas",
+    "diretrizes": "Encurvatura correta e preparação das transições",
+    "coeficiente": 1
+   },
+   {
+    "num": 6,
+    "descricao": "Desenho e precisão",
+    "diretrizes": "Tamanho correto e formato dos círculos e curvas",
+    "coeficiente": 1
+   }
+  ]
+ },
+ {
+  "nome": "Pônei Escola — Teste B (2023)",
+  "pontuacaoMaxima": 160,
+  "qtdMovimentos": 9,
+  "movimentos": [
+   {
+    "num": 1,
+    "local": "A / X",
+    "descricao": "Entrada ao trote de trabalho elevado. Alto através do passo médio. Saudação. Prosseguir em trote de trabalho elevado.",
+    "diretrizes": "Retidão na linha do meio e nas transições, ritmo claro no passo e no trote. Imobilidade (mín. 3 seg.)",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "local": "C",
+    "descricao": "Pista à mão esquerda em trote de trabalho elevado.",
+    "diretrizes": "Equilíbrio e encurvatura na curva.",
+    "coeficiente": 1
+   },
+   {
+    "num": 3,
+    "local": "E",
+    "descricao": "Círculo de 20m à esquerda, trote de trabalho elevado.",
+    "diretrizes": "Formato e tamanho do círculo, ritmo claro do trote e encurvatura.",
+    "coeficiente": 1
+   },
+   {
+    "num": 4,
+    "local": "Entre K & A",
+    "descricao": "Passo médio.",
+    "diretrizes": "Transição ativa e equilibrada, ritmo do passo.",
+    "coeficiente": 1
+   },
+   {
+    "num": 5,
+    "local": "F-E",
+    "descricao": "Passo livre.",
+    "diretrizes": "Completa liberdade para alongar o pescoço para frente e para baixo; ritmo claro de passo, retidão na diagonal, cobertura de solo.",
+    "coeficiente": 1
+   },
+   {
+    "num": 6,
+    "local": "E-H",
+    "descricao": "Passo médio.",
+    "diretrizes": "Transição ativa e equilibrada, ritmo do passo claro.",
+    "coeficiente": 1
+   },
+   {
+    "num": 7,
+    "local": "Entre H & C",
+    "descricao": "Trote de trabalho elevado.",
+    "diretrizes": "Transição ativa e equilibrada, ritmo do trote claro.",
+    "coeficiente": 1
+   },
+   {
+    "num": 8,
+    "local": "B",
+    "descricao": "Círculo de 20m à direita, trote de trabalho elevado.",
+    "diretrizes": "Formato e tamanho do círculo, ritmo claro do trote e encurvatura.",
+    "coeficiente": 1
+   },
+   {
+    "num": 9,
+    "local": "A / X",
+    "descricao": "Tomar a linha do meio. Alto através do passo médio, saudação.",
+    "diretrizes": "Retidão; atenção; imobilidade (mín. 3 seg.)",
+    "coeficiente": 1
+   }
+  ],
+  "notasConjunto": [
+   {
+    "num": 1,
+    "descricao": "Andaduras",
+    "diretrizes": "Liberdade e regularidade",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "descricao": "Impulsão",
+    "diretrizes": "Desejo de se mover para frente, com descontração do dorso e cadência",
+    "coeficiente": 1
+   },
+   {
+    "num": 3,
+    "descricao": "Submissão",
+    "diretrizes": "Aceitação de um contato estável, atenção e confiança",
+    "coeficiente": 2
+   },
+   {
+    "num": 4,
+    "descricao": "Posição do cavaleiro e assento",
+    "diretrizes": "Mantendo-se em equilíbrio com o cavalo",
+    "coeficiente": 1
+   },
+   {
+    "num": 5,
+    "descricao": "Efeito das ajudas",
+    "diretrizes": "Encurvatura correta e preparação das transições",
+    "coeficiente": 1
+   },
+   {
+    "num": 6,
+    "descricao": "Desenho e precisão",
+    "diretrizes": "Tamanho correto e formato dos círculos e curvas",
+    "coeficiente": 1
+   }
+  ]
+ },
+ {
+  "nome": "Pônei Escola — Teste C (2023)",
+  "pontuacaoMaxima": 200,
+  "qtdMovimentos": 13,
+  "movimentos": [
+   {
+    "num": 1,
+    "local": "A / X",
+    "descricao": "Entrada ao trote de trabalho elevado. Alto através do passo médio. Saudação, partir ao trote de trabalho elevado.",
+    "diretrizes": "Regularidade; qualidade do trote; presteza e calma nas transições; retidão; atenção e imobilidade no alto.",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "local": "C",
+    "descricao": "Pista à direita no trote de trabalho elevado.",
+    "diretrizes": "Regularidade; encurvatura e equilíbrio na mudança de direção e canto.",
+    "coeficiente": 1
+   },
+   {
+    "num": 3,
+    "local": "B",
+    "descricao": "Círculo à direita de 20m no trote de trabalho elevado.",
+    "diretrizes": "Regularidade; forma e tamanho do círculo; encurvatura, equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 4,
+    "local": "A / Antes de A",
+    "descricao": "Círculo à direita de 20m, partindo ao galope de trabalho no pé direito, no primeiro quarto do círculo. Trote de trabalho elevado.",
+    "diretrizes": "Regularidade das andaduras; forma e tamanho do círculo, encurvatura, equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 5,
+    "local": "",
+    "descricao": "Transição para o galope e de volta para o trote.",
+    "diretrizes": "Presteza e calma nas transições.",
+    "coeficiente": 1
+   },
+   {
+    "num": 6,
+    "local": "K-X-M",
+    "descricao": "Mudança de direção no trote de trabalho elevado.",
+    "diretrizes": "Regularidade do trote; retidão, encurvatura e equilíbrio nos cantos.",
+    "coeficiente": 1
+   },
+   {
+    "num": 7,
+    "local": "E",
+    "descricao": "Círculo à esquerda de 20m, ao trote de trabalho elevado.",
+    "diretrizes": "Regularidade; forma e tamanho do círculo, encurvatura, equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 8,
+    "local": "A",
+    "descricao": "Círculo à esquerda de 20m, partindo ao galope de trabalho no pé esquerdo, no primeiro quarto do círculo.",
+    "diretrizes": "Regularidade e qualidade das andaduras, forma e tamanho do círculo, encurvatura, equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 9,
+    "local": "",
+    "descricao": "Transição para o galope e de volta para o trote.",
+    "diretrizes": "Presteza e calma nas transições.",
+    "coeficiente": 1
+   },
+   {
+    "num": 10,
+    "local": "Entre F & B",
+    "descricao": "Passo médio.",
+    "diretrizes": "Presteza e calma na transição, regularidade, qualidade, transpiste.",
+    "coeficiente": 1
+   },
+   {
+    "num": 11,
+    "local": "B-H / H",
+    "descricao": "Passo livre. Passo médio.",
+    "diretrizes": "Regularidade e qualidade dos passos, amplitude e terreno coberto com transpiste, permitindo inteira liberdade para alongar o pescoço para frente e para baixo, retidão, presteza, transições calmas.",
+    "coeficiente": 1
+   },
+   {
+    "num": 12,
+    "local": "Entre C & M",
+    "descricao": "Trote de trabalho elevado até A.",
+    "diretrizes": "Presteza; transição calma, regularidade do trote, encurvatura e equilíbrio no canto, retidão.",
+    "coeficiente": 1
+   },
+   {
+    "num": 13,
+    "local": "A / X",
+    "descricao": "Pela linha do meio. Alto através do passo médio. Saudação.",
+    "diretrizes": "Encurvatura e equilíbrio na mudança de direção, regularidade do trote, franqueza, transição calma, retidão, atenção, imobilidade.",
+    "coeficiente": 1
+   }
+  ],
+  "notasConjunto": [
+   {
+    "num": 1,
+    "descricao": "Andaduras",
+    "diretrizes": "Liberdade e regularidade",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "descricao": "Impulsão",
+    "diretrizes": "Desejo de mover-se para frente, elasticidade das passadas, flexibilidade do dorso, com ritmo",
+    "coeficiente": 2
+   },
+   {
+    "num": 3,
+    "descricao": "Submissão",
+    "diretrizes": "Aceitação de um contato constante, atenção e confiança",
+    "coeficiente": 1
+   },
+   {
+    "num": 4,
+    "descricao": "Cavaleiro",
+    "diretrizes": "Posição e assento em equilíbrio com o cavalo",
+    "coeficiente": 1
+   },
+   {
+    "num": 5,
+    "descricao": "Cavaleiro",
+    "diretrizes": "Correção e efetivo uso das ajudas, encurvatura correta e preparação das transições",
+    "coeficiente": 1
+   },
+   {
+    "num": 6,
+    "descricao": "Precisão",
+    "diretrizes": "Geometria, tamanho e forma corretos dos círculos e mudanças de direção",
+    "coeficiente": 1
+   }
+  ]
+ },
+ {
+  "nome": "Série Média I nº 03 (2023)",
+  "pontuacaoMaxima": 420,
+  "qtdMovimentos": 27,
+  "movimentos": [
+   {
+    "num": 1,
+    "local": "A / X",
+    "descricao": "Entrada ao trote reunido. Alto, saudação. Prosseguir em trote reunido.",
+    "diretrizes": "Engajamento, equilíbrio ascendente e qualidade do trote, transições equilibradas, retidão, atenção, imobilidade (mín. 3 seg.)",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "local": "C / H-X-F / F",
+    "descricao": "Pista à mão esquerda. Mudar de mão ao trote médio. Trote reunido.",
+    "diretrizes": "Encurvatura e equilíbrio nas curvas, aumento moderado na moldura e lances com engajamento, elasticidade, suspensão, retidão e equilíbrio ascendente.",
+    "coeficiente": 1
+   },
+   {
+    "num": 3,
+    "local": "F-A-K",
+    "descricao": "(Transições H e F) Trote reunido.",
+    "diretrizes": "Transições claras e equilibradas, regularidade e qualidade das andaduras; cadência consistente.",
+    "coeficiente": 2
+   },
+   {
+    "num": 4,
+    "local": "K-E",
+    "descricao": "Espádua direita à dentro.",
+    "diretrizes": "Ângulo, encurvatura e equilíbrio, engajamento e qualidade do trote.",
+    "coeficiente": 1
+   },
+   {
+    "num": 5,
+    "local": "E",
+    "descricao": "Volta de 10m à direita.",
+    "diretrizes": "Regularidade e qualidade do trote, formato e tamanho do círculo, encurvatura e equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 6,
+    "local": "E-H",
+    "descricao": "Travers à direita.",
+    "diretrizes": "Ângulo, encurvatura e equilíbrio, engajamento e qualidade do trote.",
+    "coeficiente": 1
+   },
+   {
+    "num": 7,
+    "local": "M-X-K / K",
+    "descricao": "Mudar de mão em trote médio. Trote reunido.",
+    "diretrizes": "Aumento moderado da moldura e lances com engajamento, elasticidade, suspensão, retidão e equilíbrio ascendente.",
+    "coeficiente": 1
+   },
+   {
+    "num": 8,
+    "local": "K-A-F",
+    "descricao": "(Transições M e K) Trote reunido.",
+    "diretrizes": "Transições claras e equilibradas, regularidade e qualidade das andaduras; cadência consistente.",
+    "coeficiente": 2
+   },
+   {
+    "num": 9,
+    "local": "F-B",
+    "descricao": "Espádua esquerda à dentro.",
+    "diretrizes": "Ângulo, encurvatura e equilíbrio, engajamento e qualidade do trote.",
+    "coeficiente": 1
+   },
+   {
+    "num": 10,
+    "local": "B",
+    "descricao": "Volta de 10m à esquerda.",
+    "diretrizes": "Regularidade e qualidade do trote, formato e tamanho do círculo, encurvatura e equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 11,
+    "local": "B-M",
+    "descricao": "Travers à esquerda.",
+    "diretrizes": "Ângulo, encurvatura e equilíbrio, engajamento e qualidade do trote.",
+    "coeficiente": 1
+   },
+   {
+    "num": 12,
+    "local": "C",
+    "descricao": "Alto, recuar 3 ou 4 passos. Prosseguir em passo médio.",
+    "diretrizes": "Imobilidade, fluência nos passos para trás, com número e ritmos corretos; transições claras.",
+    "coeficiente": 2
+   },
+   {
+    "num": 13,
+    "local": "H / Entre G & M",
+    "descricao": "Virar à esquerda. Reunir e executar meia volta sobre as ancas à esquerda. Prosseguir em passo médio.",
+    "diretrizes": "Atividade e qualidade da preparação e execução, encurvatura, equilíbrio, cadência, regularidade e fluência.",
+    "coeficiente": 2
+   },
+   {
+    "num": 14,
+    "local": "Entre G & H / M",
+    "descricao": "Reunir e executar meia volta sobre as ancas à direita. Prosseguir em passo médio. Virar à direita.",
+    "diretrizes": "Atividade e qualidade da preparação e execução, encurvatura, equilíbrio, cadência, regularidade e fluência.",
+    "coeficiente": 2
+   },
+   {
+    "num": 15,
+    "local": "[CHG(M)G(H)GMR]",
+    "descricao": "Passo médio.",
+    "diretrizes": "Regularidade, qualidade, transpiste.",
+    "coeficiente": 1
+   },
+   {
+    "num": 16,
+    "local": "R-V / V",
+    "descricao": "Mudar de mão em passo livre. Passo médio.",
+    "diretrizes": "Regularidade e qualidade dos passos; alcance, transpiste e cobertura de solo do passo livre, permitindo completa liberdade para alongar o pescoço para frente e para baixo; retidão; transições claras e equilibradas.",
+    "coeficiente": 2
+   },
+   {
+    "num": 17,
+    "local": "K",
+    "descricao": "Galope reunido no pé esquerdo.",
+    "diretrizes": "Transição clara e equilibrada; regularidade e qualidade da andadura.",
+    "coeficiente": 1
+   },
+   {
+    "num": 18,
+    "local": "F-M / M",
+    "descricao": "Galope médio. Galope reunido.",
+    "diretrizes": "Aumento moderado da moldura e lances com engajamento, elasticidade, suspensão, retidão e equilíbrio ascendente.",
+    "coeficiente": 1
+   },
+   {
+    "num": 19,
+    "local": "M-C",
+    "descricao": "(Transições F e M) Galope reunido.",
+    "diretrizes": "Transições claras e equilibradas, regularidade e qualidade das andaduras; cadência consistente.",
+    "coeficiente": 1
+   },
+   {
+    "num": 20,
+    "local": "C-A",
+    "descricao": "Serpentina de 3 laços iguais, da largura do picadeiro, sem mudar de pé.",
+    "diretrizes": "Regularidade, qualidade e equilíbrio do galope. Posicionamento e geometria.",
+    "coeficiente": 1
+   },
+   {
+    "num": 21,
+    "local": "F-E / L / E-H-C-M",
+    "descricao": "Mudar de mão. Mudança de pé simples. Galope reunido.",
+    "diretrizes": "Transição clara, equilibrada e reta; regularidade e qualidade da andadura.",
+    "coeficiente": 2
+   },
+   {
+    "num": 22,
+    "local": "M-F / F",
+    "descricao": "Galope médio. Galope reunido.",
+    "diretrizes": "Aumento moderado da moldura e lances com engajamento, elasticidade, suspensão, retidão e equilíbrio ascendente.",
+    "coeficiente": 1
+   },
+   {
+    "num": 23,
+    "local": "F-A",
+    "descricao": "(Transições em M e F) Galope reunido.",
+    "diretrizes": "Transições claras e equilibradas, regularidade e qualidade das andaduras; cadência consistente.",
+    "coeficiente": 1
+   },
+   {
+    "num": 24,
+    "local": "A-C",
+    "descricao": "Serpentina de 3 laços iguais, da largura do picadeiro, sem mudar de pé.",
+    "diretrizes": "Regularidade, qualidade e equilíbrio do galope. Posicionamento e geometria.",
+    "coeficiente": 1
+   },
+   {
+    "num": 25,
+    "local": "M-E / I / E-K",
+    "descricao": "Mudar de mão. Mudança de pé simples. Galope reunido.",
+    "diretrizes": "Transição clara, equilibrada e reta; regularidade e qualidade da andadura.",
+    "coeficiente": 2
+   },
+   {
+    "num": 26,
+    "local": "K",
+    "descricao": "Trote reunido.",
+    "diretrizes": "Transição clara, equilibrada e reta; regularidade e qualidade do trote; cadência consistente.",
+    "coeficiente": 1
+   },
+   {
+    "num": 27,
+    "local": "A / X",
+    "descricao": "Tomar a linha do meio. Alto, saudação.",
+    "diretrizes": "Encurvatura e equilíbrio na curva, engajamento, equilíbrio ascendente e qualidade do trote; transição clara e equilibrada; retidão, atenção e imobilidade (mín. 3 seg.)",
+    "coeficiente": 1
+   }
+  ],
+  "notasConjunto": [
+   {
+    "num": 1,
+    "descricao": "Andaduras",
+    "diretrizes": "Liberdade e regularidade",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "descricao": "Impulsão",
+    "diretrizes": "Desejo de mover-se para frente, elasticidade das passadas, descontração do dorso, engajamento dos posteriores",
+    "coeficiente": 2
+   },
+   {
+    "num": 3,
+    "descricao": "Submissão",
+    "diretrizes": "Cooperação, harmonia, atenção e confiança, aceitação da embocadura e ajudas, retidão, leveza dos anteriores, facilidade dos movimentos",
+    "coeficiente": 2
+   },
+   {
+    "num": 4,
+    "descricao": "Posição do cavaleiro e assento",
+    "diretrizes": "Alinhamento; postura, estabilidade, posicionamento do peso seguindo a mecânica das andaduras",
+    "coeficiente": 1
+   },
+   {
+    "num": 5,
+    "descricao": "Efeito das ajudas",
+    "diretrizes": "Clareza, sutileza, independência, precisão da prova",
+    "coeficiente": 1
+   }
+  ]
+ },
+ {
+  "nome": "Série Média II nº 03 (2023)",
+  "pontuacaoMaxima": 400,
+  "qtdMovimentos": 24,
+  "movimentos": [
+   {
+    "num": 1,
+    "local": "A / X",
+    "descricao": "Entrada ao trote reunido. Alto, saudação. Prosseguir em trote reunido.",
+    "diretrizes": "Engajamento, equilíbrio ascendente e qualidade do trote, transições equilibradas, retidão, atenção, imobilidade (mín. 3 seg.)",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "local": "C / H-X-F / F",
+    "descricao": "Pista à mão esquerda. Mudar de mão ao trote médio. Trote reunido.",
+    "diretrizes": "Aumento moderado da moldura e lances com engajamento, elasticidade, suspensão, retidão e equilíbrio ascendente, cadência consistente e transições bem definidas.",
+    "coeficiente": 1
+   },
+   {
+    "num": 3,
+    "local": "K-E",
+    "descricao": "Espádua direita à dentro.",
+    "diretrizes": "Ângulo, encurvatura e equilíbrio; engajamento e autossustentação.",
+    "coeficiente": 1
+   },
+   {
+    "num": 4,
+    "local": "E-X / X-B",
+    "descricao": "Meia volta de 10m à direita. Meia volta de 10m à esquerda.",
+    "diretrizes": "Formato e tamanho das voltas; mudança de encurvatura flexível na linha do meio; engajamento e autossustentação.",
+    "coeficiente": 1
+   },
+   {
+    "num": 5,
+    "local": "B-G / C",
+    "descricao": "Apoiar à esquerda. Pista à direita.",
+    "diretrizes": "Alinhamento, encurvatura, fluência e cruzamento dos membros; engajamento e autossustentação.",
+    "coeficiente": 2
+   },
+   {
+    "num": 6,
+    "local": "M-X-K / K",
+    "descricao": "Mudar de mão ao trote alongado. Trote reunido.",
+    "diretrizes": "Cobertura de solo extrema com aumento da moldura; elasticidade; engajamento; suspensão, retidão e equilíbrio ascendente.",
+    "coeficiente": 1
+   },
+   {
+    "num": 7,
+    "local": "K-A",
+    "descricao": "(Transições M e K) Trote reunido.",
+    "diretrizes": "Bem definidas, mantendo cadência e equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 8,
+    "local": "A",
+    "descricao": "Alto, recuar 4 passos e prosseguir ao trote reunido.",
+    "diretrizes": "Imobilidade, recuo fluente, com passos em ritmo e número correto; retidão, transições claras.",
+    "coeficiente": 2
+   },
+   {
+    "num": 9,
+    "local": "F-B",
+    "descricao": "Espádua esquerda à dentro.",
+    "diretrizes": "Ângulo, encurvatura e equilíbrio; engajamento e autossustentação.",
+    "coeficiente": 1
+   },
+   {
+    "num": 10,
+    "local": "B-X / X-E",
+    "descricao": "Meia volta de 10m à esquerda. Meia volta de 10m à direita.",
+    "diretrizes": "Formato e tamanho das voltas; mudança de encurvatura flexível na linha do meio; engajamento e autossustentação.",
+    "coeficiente": 1
+   },
+   {
+    "num": 11,
+    "local": "E-G / C",
+    "descricao": "Apoiar à direita. Pista à esquerda.",
+    "diretrizes": "Alinhamento, encurvatura, fluência e cruzamento dos membros; engajamento e autossustentação.",
+    "coeficiente": 2
+   },
+   {
+    "num": 12,
+    "local": "Entre C & H / H / Entre G & M",
+    "descricao": "Passo médio. Virar à esquerda. Reunir e executar meia volta sobre as ancas à esquerda. Prosseguir ao passo médio.",
+    "diretrizes": "Atividade e qualidade da preparação e execução, encurvatura, equilíbrio, cadência, regularidade e fluência.",
+    "coeficiente": 1
+   },
+   {
+    "num": 13,
+    "local": "Entre G & H / M",
+    "descricao": "Reunir e executar meia volta sobre as ancas à direita. Prosseguir ao passo médio. Virar à direita.",
+    "diretrizes": "Atividade e qualidade da preparação e execução, encurvatura, equilíbrio, cadência, regularidade e fluência.",
+    "coeficiente": 1
+   },
+   {
+    "num": 14,
+    "local": "[CHG(M)G(H)GMR]",
+    "descricao": "Passo médio.",
+    "diretrizes": "Regularidade, qualidade, transpiste.",
+    "coeficiente": 2
+   },
+   {
+    "num": 15,
+    "local": "R-V / V",
+    "descricao": "Mudar de mão ao passo alongado. Passo médio.",
+    "diretrizes": "Regularidade, descontração do dorso; atividade; transpiste; liberdade das espáduas, alongando para a embocadura; transições bem definidas.",
+    "coeficiente": 2
+   },
+   {
+    "num": 16,
+    "local": "K",
+    "descricao": "Galope reunido no pé esquerdo.",
+    "diretrizes": "Transição bem definida; regularidade e autossustentação; engajamento e qualidade do galope.",
+    "coeficiente": 1
+   },
+   {
+    "num": 17,
+    "local": "F-X / X-I",
+    "descricao": "Apoiar à esquerda. Galope reunido.",
+    "diretrizes": "Alinhamento, encurvatura, enquanto se move com fluência para frente e para o lado; engajamento e autossustentação.",
+    "coeficiente": 2
+   },
+   {
+    "num": 18,
+    "local": "I-S / S-F",
+    "descricao": "Meia volta de 10m à esquerda. Mudar de mão, mudar de pé perto da linha do meio.",
+    "diretrizes": "Formato e tamanho das voltas; mudança de encurvatura flexível na linha do meio; engajamento e autossustentação.",
+    "coeficiente": 2
+   },
+   {
+    "num": 19,
+    "local": "K-X / X-I",
+    "descricao": "Apoiar à direita. Galope reunido.",
+    "diretrizes": "Alinhamento, encurvatura, enquanto se move com fluência para frente e para o lado; engajamento e autossustentação.",
+    "coeficiente": 2
+   },
+   {
+    "num": 20,
+    "local": "I-R / R-K",
+    "descricao": "Meia volta de 10m à direita. Mudar de mão, mudar de pé perto da linha do meio.",
+    "diretrizes": "Formato e tamanho das voltas; mudança de encurvatura flexível na linha do meio; engajamento e autossustentação.",
+    "coeficiente": 2
+   },
+   {
+    "num": 21,
+    "local": "F-M / M",
+    "descricao": "Galope alongado. Galope reunido.",
+    "diretrizes": "Cobertura de solo extrema com aumento da moldura; elasticidade; engajamento; suspensão, retidão e equilíbrio ascendente.",
+    "coeficiente": 1
+   },
+   {
+    "num": 22,
+    "local": "M-C-H",
+    "descricao": "(Transições F e M) Galope reunido.",
+    "diretrizes": "Bem definidas, mantendo cadência e equilíbrio.",
+    "coeficiente": 1
+   },
+   {
+    "num": 23,
+    "local": "H",
+    "descricao": "Trote reunido.",
+    "diretrizes": "Transição bem definida e equilibrada; engajamento e reunião.",
+    "coeficiente": 1
+   },
+   {
+    "num": 24,
+    "local": "E / X / G",
+    "descricao": "Virar à esquerda. Virar à esquerda. Alto, saudação.",
+    "diretrizes": "Encurvatura e equilíbrio nas curvas; engajamento, autossustentação e qualidade do trote; transição bem definida; retidão; atenção; imobilidade (mín. 3 seg.)",
+    "coeficiente": 1
+   }
+  ],
+  "notasConjunto": [
+   {
+    "num": 1,
+    "descricao": "Andaduras",
+    "diretrizes": "Liberdade e regularidade",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "descricao": "Impulsão",
+    "diretrizes": "Desejo de mover-se para frente, elasticidade das passadas, descontração do dorso, engajamento dos posteriores",
+    "coeficiente": 2
+   },
+   {
+    "num": 3,
+    "descricao": "Submissão",
+    "diretrizes": "Cooperação, harmonia, atenção e confiança, aceitação da embocadura e ajudas, retidão, leveza dos anteriores, facilidade dos movimentos",
+    "coeficiente": 2
+   },
+   {
+    "num": 4,
+    "descricao": "Posição do cavaleiro e assento",
+    "diretrizes": "Alinhamento; postura, estabilidade, posicionamento do peso seguindo a mecânica das andaduras",
+    "coeficiente": 1
+   },
+   {
+    "num": 5,
+    "descricao": "Efeito das ajudas",
+    "diretrizes": "Clareza, sutileza, independência, precisão da prova",
+    "coeficiente": 1
+   }
+  ]
+ },
+ {
+  "nome": "Série Forte I nº 03 (2023)",
+  "pontuacaoMaxima": 360,
+  "qtdMovimentos": 22,
+  "movimentos": [
+   {
+    "num": 1,
+    "local": "A / X",
+    "descricao": "Entrada ao galope reunido. Alto, saudação. Prosseguir ao trote reunido.",
+    "diretrizes": "Engajamento, reunião e qualidade das andaduras; transições bem definidas; retidão; atenção; imobilidade (mín. 3 seg.)",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "local": "C / H-X-F / F",
+    "descricao": "Pista à mão esquerda. Mudar de mão ao trote médio. Trote reunido.",
+    "diretrizes": "Aumento moderado da moldura e das passadas com engajamento, elasticidade, suspensão, retidão e equilíbrio ascendente, cadência constante, transições bem definidas.",
+    "coeficiente": 1
+   },
+   {
+    "num": 3,
+    "local": "K-E",
+    "descricao": "Espádua direita à dentro.",
+    "diretrizes": "Ângulo, encurvatura e equilíbrio; engajamento e reunião.",
+    "coeficiente": 1
+   },
+   {
+    "num": 4,
+    "local": "E-G / C",
+    "descricao": "Apoiar à direita. Pista à mão direita.",
+    "diretrizes": "Alinhamento, encurvatura, fluência e cruzamento dos membros, engajamento e reunião.",
+    "coeficiente": 1
+   },
+   {
+    "num": 5,
+    "local": "M-X-K / K",
+    "descricao": "Trote alongado. Trote reunido.",
+    "diretrizes": "Cobertura máxima de solo com aumento da moldura, engajamento, elasticidade, suspensão, retidão e equilíbrio ascendente.",
+    "coeficiente": 1
+   },
+   {
+    "num": 6,
+    "local": "K-A",
+    "descricao": "(Transições M e K) Trote reunido.",
+    "diretrizes": "Bem definidas, mantendo cadência e equilíbrio.",
+    "coeficiente": 2
+   },
+   {
+    "num": 7,
+    "local": "A",
+    "descricao": "Alto, recuar 4 passos e prosseguir ao trote reunido.",
+    "diretrizes": "Imobilidade, passos fluentes para trás, com ritmo e número corretos; retidão; transições bem definidas.",
+    "coeficiente": 2
+   },
+   {
+    "num": 8,
+    "local": "F-B",
+    "descricao": "Espádua esquerda à dentro.",
+    "diretrizes": "Ângulo, encurvatura e equilíbrio; engajamento e reunião.",
+    "coeficiente": 1
+   },
+   {
+    "num": 9,
+    "local": "B-G / C",
+    "descricao": "Apoiar à esquerda. Pista à mão esquerda.",
+    "diretrizes": "Alinhamento, encurvatura, fluência e cruzamento dos membros, engajamento e reunião.",
+    "coeficiente": 1
+   },
+   {
+    "num": 10,
+    "local": "H",
+    "descricao": "Passo reunido.",
+    "diretrizes": "Qualidade da transição; regularidade, descontração da garupa, atividade; reunião; autossustentação.",
+    "coeficiente": 2
+   },
+   {
+    "num": 11,
+    "local": "S-R / R-M-C",
+    "descricao": "Meio círculo de 20m ao passo alongado. Passo reunido.",
+    "diretrizes": "Regularidade; descontração do dorso; atividade; transpiste; liberdade das espáduas; se alongando para a embocadura; transições bem definidas.",
+    "coeficiente": 2
+   },
+   {
+    "num": 12,
+    "local": "C",
+    "descricao": "Galope reunido à esquerda.",
+    "diretrizes": "Transição precisa e fluente; engajamento, reunião e qualidade do galope.",
+    "coeficiente": 1
+   },
+   {
+    "num": 13,
+    "local": "H-K / K-F",
+    "descricao": "Galope médio. Galope reunido.",
+    "diretrizes": "Aumento moderado da moldura e das passadas com engajamento, elasticidade, suspensão, retidão e equilíbrio ascendente, cadência constante, transições bem definidas.",
+    "coeficiente": 1
+   },
+   {
+    "num": 14,
+    "local": "F-X / I-S",
+    "descricao": "Apoiar à esquerda. Meia volta de 10m.",
+    "diretrizes": "Alinhamento e encurvatura enquanto se move com fluência para frente e para o lado; engajamento e autossustentação; formato e tamanho da meia volta; posicionamento; autossustentação.",
+    "coeficiente": 1
+   },
+   {
+    "num": 15,
+    "local": "S-P / Entre a linha do meio e P",
+    "descricao": "Mudar de mão. Meia pirueta de trabalho à esquerda de cerca de 3m de diâmetro. Prosseguir ao galope reunido.",
+    "diretrizes": "Tamanho, encurvatura e equilíbrio da pirueta de trabalho; retidão, regularidade, engajamento e reunião do galope.",
+    "coeficiente": 2
+   },
+   {
+    "num": 16,
+    "local": "Antes de S",
+    "descricao": "Mudar de pé.",
+    "diretrizes": "Mudança clara, equilibrada, fluente e reta.",
+    "coeficiente": 1
+   },
+   {
+    "num": 17,
+    "local": "M-X / L-V",
+    "descricao": "Apoiar à direita. Meia volta de 10m.",
+    "diretrizes": "Alinhamento e encurvatura enquanto se move com fluência para frente e para o lado; engajamento e autossustentação; formato e tamanho da meia volta; posicionamento; autossustentação.",
+    "coeficiente": 1
+   },
+   {
+    "num": 18,
+    "local": "V-R / Entre a linha do meio e R",
+    "descricao": "Mudar de mão. Meia pirueta de trabalho à direita de cerca de 3m de diâmetro. Prosseguir ao galope reunido.",
+    "diretrizes": "Tamanho, encurvatura e equilíbrio da pirueta de trabalho; retidão, regularidade, engajamento e reunião do galope.",
+    "coeficiente": 2
+   },
+   {
+    "num": 19,
+    "local": "Antes de V",
+    "descricao": "Mudar de pé.",
+    "diretrizes": "Mudança clara, equilibrada, fluente e reta.",
+    "coeficiente": 1
+   },
+   {
+    "num": 20,
+    "local": "F-X-H / H",
+    "descricao": "Galope alongado. Galope reunido e mudança de pé.",
+    "diretrizes": "Cobertura máxima de solo com aumento da moldura, engajamento, elasticidade, suspensão, retidão e equilíbrio ascendente; transições bem definidas; mudança de pé na diagonal clara, fluente e reta.",
+    "coeficiente": 1
+   },
+   {
+    "num": 21,
+    "local": "M-X-K",
+    "descricao": "Três mudanças de pé a cada três tempos de galope.",
+    "diretrizes": "Mudanças de pé claras, equilibradas e fluentes; engajamento e qualidade do galope.",
+    "coeficiente": 2
+   },
+   {
+    "num": 22,
+    "local": "A / X",
+    "descricao": "Tomar a linha do meio. Alto, saudação.",
+    "diretrizes": "Encurvatura e equilíbrio na curva; engajamento, reunião e qualidade do galope; transição bem definida; retidão, atenção; imobilidade (mín. 3 seg.)",
+    "coeficiente": 1
+   }
+  ],
+  "notasConjunto": [
+   {
+    "num": 1,
+    "descricao": "Andaduras",
+    "diretrizes": "Liberdade e regularidade",
+    "coeficiente": 1
+   },
+   {
+    "num": 2,
+    "descricao": "Impulsão",
+    "diretrizes": "Desejo de mover-se para frente, elasticidade das passadas, descontração do dorso, engajamento dos posteriores",
+    "coeficiente": 2
+   },
+   {
+    "num": 3,
+    "descricao": "Submissão",
+    "diretrizes": "Cooperação, harmonia, atenção e confiança, aceitação da embocadura e ajudas, retidão, leveza dos anteriores, facilidade dos movimentos",
+    "coeficiente": 2
+   },
+   {
+    "num": 4,
+    "descricao": "Posição do cavaleiro e assento",
+    "diretrizes": "Alinhamento; postura, estabilidade, posicionamento do peso seguindo a mecânica das andaduras",
+    "coeficiente": 1
+   },
+   {
+    "num": 5,
+    "descricao": "Efeito das ajudas",
+    "diretrizes": "Clareza, sutileza, independência, precisão da prova",
+    "coeficiente": 1
+   }
+  ]
+ }
+]

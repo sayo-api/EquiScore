@@ -1,0 +1,61 @@
+import "server-only";
+import { SignJWT, jwtVerify } from "jose";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
+import { cache } from "react";
+
+/*
+ * Sessão em cookie httpOnly assinado (JWT HS256). Diferente do SAHDI, o token
+ * não fica no localStorage: um script injetado na página não consegue lê-lo.
+ */
+export const COOKIE_SESSAO = "eqs_sessao";
+const DURACAO_H = 24;
+
+export interface Sessao {
+  userId: string;
+  nome: string;
+  role: string;
+}
+
+function chave() {
+  const s = process.env.SESSION_SECRET;
+  if (!s || s.length < 32) throw new Error("SESSION_SECRET ausente ou curta (mín. 32 caracteres).");
+  return new TextEncoder().encode(s);
+}
+
+export async function criarSessao(dados: Sessao) {
+  const expira = new Date(Date.now() + DURACAO_H * 3600_000);
+  const token = await new SignJWT({ ...dados })
+    .setProtectedHeader({ alg: "HS256" })
+    .setIssuedAt()
+    .setExpirationTime(expira)
+    .sign(chave());
+  (await cookies()).set(COOKIE_SESSAO, token, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "lax",
+    path: "/",
+    expires: expira,
+  });
+}
+
+export async function lerSessao(token: string | undefined): Promise<Sessao | null> {
+  if (!token) return null;
+  try {
+    const { payload } = await jwtVerify(token, chave(), { algorithms: ["HS256"] });
+    return { userId: String(payload.userId), nome: String(payload.nome), role: String(payload.role) };
+  } catch {
+    return null;
+  }
+}
+
+export async function encerrarSessao() {
+  (await cookies()).delete(COOKIE_SESSAO);
+}
+
+/** Para páginas e ações protegidas: devolve a sessão ou manda para o login. */
+export const exigirSessao = cache(async (): Promise<Sessao> => {
+  const s = await lerSessao((await cookies()).get(COOKIE_SESSAO)?.value);
+  if (!s) redirect("/entrar");
+  return s;
+});

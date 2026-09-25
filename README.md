@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EquiScore (EQS)
 
-## Getting Started
+Sistema de apuração de provas de **adestramento** e **salto** — inscrições,
+ordem de entrada, julgamento e resultados. Sucessor do SAHDI, com nova
+identidade visual (vermelho e branco) e tecnologia atual.
 
-First, run the development server:
+## Tecnologia
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+| Camada | Escolha | Por quê |
+|---|---|---|
+| Framework | **Next.js 16** (App Router, Turbopack) + **React 19** | Telas e servidor no mesmo projeto, feito para a Vercel |
+| Linguagem | **TypeScript** (strict) | Erros de campo/tipo aparecem antes de ir para o ar |
+| Estilo | **Tailwind CSS 4** | Identidade EQS em tokens (`--color-eqs-*`) |
+| Banco | **MongoDB Atlas** via Mongoose 9 | Mesmo banco do SAHDI: migração sem exportar dados |
+| Sessão | Cookie **httpOnly** assinado (JWT/jose) | O token não fica exposto a scripts da página |
+| Validação | **Zod** | Toda entrada de formulário é validada no servidor |
+| Testes | **Vitest** | Regras de pontuação cobertas por testes |
+
+## Estrutura
+
+```
+src/
+  app/                 páginas (App Router)
+    page.tsx           início
+    entrar/            login (Server Action + useActionState)
+    painel/            área do organizador (protegida)
+    resultados/        resultados publicados (público)
+  proxy.ts             barra /painel sem sessão válida
+  lib/domain/          regras puras de apuração + testes
+  lib/server/          banco, modelos, senha, sessão (só servidor)
+  data/reprises.json   catálogo oficial CBH (21 reprises)
+  components/          componentes de interface
+public/brand/          logo e escudo EquiScore
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Rodando
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+cp .env.example .env.local   # preencha MONGODB_URI e SESSION_SECRET
+npm install
+npm run dev                  # http://localhost:3000
+npm run check                # tipos + lint + testes
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Os logins do SAHDI funcionam no EquiScore (mesmo formato de senha scrypt).
 
-## Learn More
+## Deploy (Vercel)
 
-To learn more about Next.js, take a look at the following resources:
+Importe o repositório na Vercel (framework detectado: Next.js) e cadastre
+`MONGODB_URI` e `SESSION_SECRET` em *Settings → Environment Variables*.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Roteiro
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [x] Base: identidade EQS, login seguro, lista e detalhe de provas, resultados publicados
+- [x] Regras de apuração do adestramento em TypeScript, com testes
+- [ ] Inscrições e aprovação
+- [ ] Ordem de entrada (agrupada ou mesclada, com espaço entre montarias)
+- [ ] Tela do juiz (offline-first, PWA)
+- [ ] Salto: cronômetro, faltas, baremos (Tabela A/C, tempo ideal…)
+- [ ] Equipes / Modo Campeonato
+- [ ] Telões e resultados ao vivo
+- [ ] PDFs oficiais

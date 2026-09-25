@@ -1,26 +1,32 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+/* Identidade EquiScore (EQS): vermelho, branco e preto profundo. */
+@theme {
+  --color-eqs-red: #c1121f;
+  --color-eqs-red-600: #a50f1a;
+  --color-eqs-red-800: #6f0a12;
+  --color-eqs-ink: #0b0b0c;
+  --color-eqs-ink-2: #151517;
+  --color-eqs-line: #26262a;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  color-scheme: dark;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-eqs-ink);
+  color: #f5f5f5;
+}
+
+/* Brilho vermelho da marca, usado com moderação (logo e destaques). */
+.eqs-glow {
+  filter: drop-shadow(0 0 28px rgb(193 18 31 / 0.55));
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-eqs-red);
+  outline-offset: 2px;
 }
