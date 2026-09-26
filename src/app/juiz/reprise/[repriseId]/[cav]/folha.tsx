@@ -1,9 +1,7 @@
 "use client";
-import { useMemo, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
-import { apurarFolha, type Reprise } from "@/lib/domain/adestramento";
-import { IconSalvar, IconCheck } from "@/lib/icons";
-import { somClique, somSucesso } from "@/lib/som";
+import { FolhaNotas, type PayloadNotas } from "@/components/folha-notas";
+import type { Reprise } from "@/lib/domain/adestramento";
 import { salvarNotaJuiz } from "@/app/juiz/actions";
 
 type Mov = { num: number; local?: string; descricao: string; coeficiente: number };
@@ -14,96 +12,19 @@ export function FolhaJuiz({ repriseId, cavId, letra, reprise, salva }: {
   repriseId: string; cavId: string; letra: string; reprise: Reprise & { movimentos: Mov[]; notasConjunto: Conj[] }; salva: Salva | null;
 }) {
   const router = useRouter();
-  const inicial = () => {
-    const map = new Map<string, number>();
-    (salva?.notasPista || []).forEach((n) => map.set("m" + n.num, n.nota));
-    (salva?.notasConjunto || []).forEach((n) => map.set("c" + n.num, n.nota));
-    return { notas: map, erros: salva?.errosPercurso ?? 0 };
-  };
-  const [estado, setEstado] = useState(inicial);
-  const [msg, setMsg] = useState<string>();
-  const [pend, start] = useTransition();
-
-  const setNota = (chave: string, valor: string) => {
-    const v = valor.replace(",", ".").trim();
-    const map = new Map(estado.notas);
-    if (v === "") map.delete(chave);
-    else { const n = Number(v); if (n >= 0 && n <= 10 && Math.round(n * 2) === n * 2) map.set(chave, n); }
-    setEstado({ ...estado, notas: map });
-  };
-
-  const res = useMemo(() => apurarFolha(reprise, {
-    notasPista: reprise.movimentos.map((m) => ({ num: m.num, nota: estado.notas.get("m" + m.num) ?? null })),
-    notasConjunto: reprise.notasConjunto.map((c) => ({ num: c.num, nota: estado.notas.get("c" + c.num) ?? null })),
-    errosPercurso: estado.erros,
-  }), [reprise, estado]);
-  const lancadas = estado.notas.size;
-  const total = reprise.movimentos.length + reprise.notasConjunto.length;
-
-  const salvar = (finalizar: boolean) => start(async () => {
-    await salvarNotaJuiz(cavId, {
-      notasPista: reprise.movimentos.filter((m) => estado.notas.has("m" + m.num)).map((m) => ({ num: m.num, nota: estado.notas.get("m" + m.num)! })),
-      notasConjunto: reprise.notasConjunto.filter((c) => estado.notas.has("c" + c.num)).map((c) => ({ num: c.num, nota: estado.notas.get("c" + c.num)! })),
-      erros: estado.erros, finalizar,
-    });
-    (finalizar ? somSucesso : somClique)();
-    if (finalizar) { router.push(`/juiz/reprise/${repriseId}`); router.refresh(); }
-    else { setMsg("Rascunho salvo."); setTimeout(() => setMsg(undefined), 2500); }
-  });
-
-  const notaInput = (chave: string) => (
-    <input value={estado.notas.get(chave) != null ? String(estado.notas.get(chave)).replace(".", ",") : ""} onChange={(e) => setNota(chave, e.target.value)}
-      inputMode="decimal" placeholder="—" aria-label={"Nota " + chave}
-      className="w-16 rounded-lg border border-line bg-surf px-1 py-2 text-center font-mono text-lg font-bold outline-none focus:border-red" />
-  );
+  const notas: Record<string, number> = {};
+  (salva?.notasPista || []).forEach((n) => { notas["m" + n.num] = n.nota; });
+  (salva?.notasConjunto || []).forEach((n) => { notas["c" + n.num] = n.nota; });
 
   return (
-    <div>
-      <div className="mb-5 flex flex-wrap items-center justify-between gap-4 rounded-xl border-l-[3px] border-red bg-surf px-4 py-3 shadow-sm">
-        <div>
-          <div className={`font-mono text-3xl font-bold tabular-nums ${res.eliminadoPorErros ? "text-red" : ""}`}>
-            {res.eliminadoPorErros ? "ELIMINADO" : res.percentual.toFixed(3).replace(".", ",") + "%"}
-          </div>
-          <div className="text-sm text-mut">Juiz {letra} · percentual</div>
-        </div>
-        <div className="flex gap-5 text-sm text-mut">
-          <span>Pontos<b className="block font-mono text-base text-ink">{res.pontuacaoLiquida}</b></span>
-          <span>Máximo<b className="block font-mono text-base text-ink">{reprise.pontuacaoMaxima}</b></span>
-          <span>Lançadas<b className="block font-mono text-base text-ink">{lancadas}/{total}</b></span>
-        </div>
-        <div className="flex items-center gap-2 text-sm text-mut">Erros de percurso
-          <button onClick={() => setEstado({ ...estado, erros: Math.max(0, estado.erros - 1) })} className="grid size-8 place-items-center rounded-md border border-line font-bold hover:border-red">−</button>
-          <b className="w-4 text-center font-mono text-ink">{estado.erros}</b>
-          <button onClick={() => setEstado({ ...estado, erros: Math.min(3, estado.erros + 1) })} className="grid size-8 place-items-center rounded-md border border-line font-bold hover:border-red">+</button>
-        </div>
-      </div>
-
-      <h3 className="mb-2 text-xs font-bold uppercase tracking-wider text-mut">Movimentos</h3>
-      <div className="overflow-hidden rounded-xl border border-line bg-surf shadow-sm">
-        {reprise.movimentos.map((m) => (
-          <div key={m.num} className="grid grid-cols-[32px_1fr_auto] items-center gap-3 border-t border-line2 px-4 py-2.5 first:border-0">
-            <span className="text-center font-mono font-bold text-mut">{m.num}</span>
-            <span><b className="text-sm font-medium">{m.descricao}</b>{m.coeficiente > 1 && <span className="ml-1.5 rounded bg-redwash px-1.5 py-0.5 align-[1px] text-[10px] font-bold text-red6">×{m.coeficiente}</span>}{m.local && <small className="block text-xs text-mut">{m.local}</small>}</span>
-            {notaInput("m" + m.num)}
-          </div>
-        ))}
-      </div>
-      <h3 className="mb-2 mt-6 text-xs font-bold uppercase tracking-wider text-mut">Notas de conjunto</h3>
-      <div className="overflow-hidden rounded-xl border border-line bg-surf shadow-sm">
-        {reprise.notasConjunto.map((c) => (
-          <div key={c.num} className="grid grid-cols-[32px_1fr_auto] items-center gap-3 border-t border-line2 px-4 py-2.5 first:border-0">
-            <span className="text-center font-mono font-bold text-mut">{c.num}</span>
-            <span><b className="text-sm font-medium">{c.descricao}</b>{c.coeficiente > 1 && <span className="ml-1.5 rounded bg-redwash px-1.5 py-0.5 align-[1px] text-[10px] font-bold text-red6">×{c.coeficiente}</span>}</span>
-            {notaInput("c" + c.num)}
-          </div>
-        ))}
-      </div>
-
-      <div className="sticky bottom-0 mt-5 flex items-center gap-3 border-t border-line bg-bg/90 py-3 backdrop-blur">
-        {msg && <span className="inline-flex items-center gap-1 rounded-lg bg-okwash px-3 py-1.5 text-sm font-semibold text-ok"><IconCheck width={14} height={14} /> {msg}</span>}
-        <button disabled={pend} onClick={() => salvar(false)} className="ml-auto rounded-lg border border-line px-4 py-2.5 text-sm font-semibold hover:border-red">Salvar rascunho</button>
-        <button data-som="off" disabled={pend} onClick={() => salvar(true)} className="inline-flex items-center gap-2 rounded-lg bg-red px-5 py-2.5 font-bold text-white hover:bg-red6 disabled:opacity-60"><IconSalvar width={17} height={17} /> Finalizar folha</button>
-      </div>
-    </div>
+    <FolhaNotas
+      reprise={reprise}
+      letra={letra}
+      inicial={{ notas, erros: salva?.errosPercurso ?? 0 }}
+      cacheKey={`eqs_folha_${letra}_${cavId}`}
+      onSalvarParcial={(p: PayloadNotas) => salvarNotaJuiz(cavId, { ...p, finalizar: false })}
+      onFinalizar={(p: PayloadNotas) => salvarNotaJuiz(cavId, { ...p, finalizar: true })}
+      aposFinalizar={() => { router.push(`/juiz/reprise/${repriseId}`); router.refresh(); }}
+    />
   );
 }
