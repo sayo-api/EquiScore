@@ -222,7 +222,7 @@ export function FolhaNotas({
       </div>
 
       {/* Teclado fixo */}
-      <div className="fixed inset-x-0 bottom-0 z-30 border-t border-line bg-surf/95 shadow-[0_-4px_20px_rgba(0,0,0,.06)] backdrop-blur">
+      <div className="fixed inset-x-0 bottom-0 z-30 border-t border-line bg-surf/95 pb-[env(safe-area-inset-bottom)] shadow-[0_-4px_20px_rgba(0,0,0,.06)] backdrop-blur">
         <div className="mx-auto max-w-4xl px-3 py-2.5">
           <div className="mb-2 flex items-center justify-between gap-3 text-xs">
             <span className="text-mut">

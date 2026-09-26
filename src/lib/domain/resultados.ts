@@ -11,6 +11,7 @@ export interface NotaJuizLinha {
   posicao: number | null; // colocação daquele juiz nesta reprise (estilo FEI)
 }
 export interface LinhaResultado {
+  id?: string;
   posicao: number | null;
   ordemEntrada: number;
   conjunto: string; // "Posto Nome"
@@ -39,6 +40,7 @@ export interface NotaJuizEntrada {
   temNota: boolean;
 }
 export interface EntradaAdest {
+  id?: string;
   ordemEntrada: number;
   conjunto: string;
   cavalo: string;
@@ -82,6 +84,7 @@ export function grupoAdestramento(titulo: string, itens: EntradaAdest[], juizes:
           })
         : undefined;
       return {
+        id: x.id,
         posicao: finalizado ? pos : null,
         ordemEntrada: x.ordemEntrada,
         conjunto: x.conjunto,

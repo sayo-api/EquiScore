@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description: "EquiScore (EQS) — apuração de provas de adestramento e salto.",
   applicationName: "EquiScore",
 };
-export const viewport: Viewport = { themeColor: "#ffffff" };
+export const viewport: Viewport = { themeColor: "#ffffff", width: "device-width", initialScale: 1, viewportFit: "cover" };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (

@@ -117,6 +117,7 @@ export async function montarResultados(prova: Plain): Promise<GrupoResultado[]> 
           return { letra, percentual: r.percentual, temNota: temNota && !r.eliminadoPorErros };
         });
         return {
+          id: String(c._id),
           ordemEntrada: Number(c.ordemEntrada || 0),
           conjunto: nomeConj(c),
           cavalo: String(c.cavalo || ""),
