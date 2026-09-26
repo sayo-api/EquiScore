@@ -53,3 +53,35 @@ export async function remover(provaId: string, cavId: string) {
   await Cavaleiro.deleteOne({ _id: cavId, provaId });
   rev(provaId);
 }
+
+export async function editarInscricao(provaId: string, cavId: string, dados: {
+  nome: string; postoGraduacao: string; cavalo: string; repriseId?: string; categoria?: string;
+}): Promise<{ erro?: string }> {
+  const { prova } = await dono(provaId);
+  if (!Types.ObjectId.isValid(cavId)) return { erro: "Id inválido." };
+  const nome = dados.nome.trim();
+  const cavalo = dados.cavalo.trim();
+  if (!nome || !cavalo) return { erro: "Informe cavaleiro e cavalo." };
+  await conectar();
+  const cav = await Cavaleiro.findOne({ _id: cavId, provaId: prova._id });
+  if (!cav) return { erro: "Inscrição não encontrada." };
+
+  const update: Record<string, unknown> = { nome, cavalo, postoGraduacao: dados.postoGraduacao.trim() };
+  if (prova.tipo === "ADESTRAMENTO") {
+    const repriseId = String(dados.repriseId || "");
+    if (!(prova.reprises as Types.ObjectId[]).map(String).includes(repriseId)) return { erro: "Reprise inválida." };
+    // Ao trocar de reprise, recomeça no fim da nova fila e move as avaliações.
+    if (String(cav.repriseId) !== repriseId) {
+      const ultimo = await Cavaleiro.findOne({ provaId: prova._id, repriseId: new Types.ObjectId(repriseId) }).sort({ ordemEntrada: -1 }).lean<{ ordemEntrada?: number }>();
+      update.repriseId = new Types.ObjectId(repriseId);
+      update.ordemEntrada = (ultimo?.ordemEntrada || 0) + 1;
+      const { Avaliacao } = await import("@/lib/server/models");
+      await Avaliacao.updateMany({ cavaleiroId: cav._id }, { $set: { repriseId: new Types.ObjectId(repriseId) } });
+    }
+  } else {
+    update.categoria = String(dados.categoria || "").trim();
+  }
+  await Cavaleiro.updateOne({ _id: cav._id }, { $set: update });
+  rev(provaId);
+  return {};
+}

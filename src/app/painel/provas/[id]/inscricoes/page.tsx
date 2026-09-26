@@ -5,6 +5,7 @@ import { provaDoDono } from "@/lib/server/consultas";
 import { exigirSessao } from "@/lib/server/sessao";
 import { IconCheck, IconX } from "@/lib/icons";
 import { FormInscricao } from "./form";
+import { EditarInscricao } from "./editar";
 import { aprovar, remover } from "./actions";
 
 export default async function Inscricoes({ params }: PageProps<"/painel/provas/[id]/inscricoes"> ) {
@@ -15,6 +16,7 @@ export default async function Inscricoes({ params }: PageProps<"/painel/provas/[
   const comps = await Cavaleiro.find({ provaId: prova._id }).sort({ ordemEntrada: 1 }).lean();
   const reprises = await Reprise.find({ _id: { $in: (prova.reprises as Types.ObjectId[]) || [] } }, { nome: 1 }).lean();
   const nomeRep = new Map(reprises.map((r) => [String(r._id), String(r.nome)]));
+  const listaReprises = reprises.map((r) => ({ id: String(r._id), nome: String(r.nome) }));
   const pendentes = comps.filter((c) => c.status === "PENDENTE");
   const aprovados = comps.filter((c) => c.status !== "PENDENTE");
   const linha = (c: (typeof comps)[number]) => (
@@ -31,6 +33,9 @@ export default async function Inscricoes({ params }: PageProps<"/painel/provas/[
           <button className="inline-flex items-center gap-1 rounded-md border border-line px-2.5 py-1.5 text-sm font-semibold text-ok hover:border-ok"><IconCheck width={16} height={16} /> Aprovar</button>
         </form>
       )}
+      <EditarInscricao provaId={id} tipo={String(prova.tipo)}
+        inscrito={{ id: String(c._id), nome: String(c.nome || ""), posto: String(c.postoGraduacao || ""), cavalo: String(c.cavalo || ""), repriseId: String(c.repriseId || ""), categoria: String(c.categoria || "") }}
+        reprises={listaReprises} />
       <form action={async () => { "use server"; await remover(id, String(c._id)); }}>
         <button aria-label="Remover" className="inline-flex items-center rounded-md border border-line p-1.5 text-mut hover:border-red hover:text-red"><IconX width={16} height={16} /></button>
       </form>
