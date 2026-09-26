@@ -18,7 +18,7 @@ export function GerenciarJuizes({ provaId, juizes, numJuizes }: { provaId: strin
     <div className="eqs-in">
       <div className="mb-5 rounded-xl border border-line bg-surf2 p-4 text-sm text-mut">
         <p className="flex items-center gap-2 font-semibold text-ink"><IconGavel width={16} height={16} className="text-red" /> Como funciona</p>
-        <p className="mt-1">Crie um login para cada juiz. Cada juiz entra em <span className="font-mono text-ink">/juiz/entrar</span> com seu usuário e senha e lança as notas <b>apenas da sua letra</b>. A nota final é a média dos juízes com nota lançada.</p>
+        <p className="mt-1">Crie um login para cada juiz. Cada juiz entra em <span className="font-mono text-ink">/entrar</span> com seu usuário e senha e lança as notas <b>apenas da sua letra</b>. A nota final é a média dos juízes com nota lançada.</p>
         <p className="mt-1">Esta prova está configurada para <b className="text-ink">{numJuizes}</b> juiz{numJuizes > 1 ? "es" : ""} ({LETRAS.slice(0, numJuizes).join(", ")}).</p>
       </div>
 

@@ -17,7 +17,7 @@ export default function Entrar() {
           <div className="mb-7 flex flex-col items-center text-center">
             <Image src="/brand/escudo-512.png" alt="" width={64} height={64} priority className="size-16 object-contain" />
             <h1 className="mt-3 text-2xl font-black">Equi<span className="text-red">Score</span></h1>
-            <p className="mt-1 text-sm text-mut">Painel do organizador</p>
+            <p className="mt-1 text-sm text-mut">Organizadores e juízes</p>
           </div>
           <FormEntrar />
         </div>

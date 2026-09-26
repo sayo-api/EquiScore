@@ -27,7 +27,7 @@ export function CartoesLink({ provaId }: { provaId: string }) {
       <Cartao Icon={IconUsuarios} titulo="Inscrição pública" desc="Compartilhe para os competidores se inscreverem (entram como pendentes)." path={`/inscricao/${provaId}`} />
       <Cartao Icon={IconTv} titulo="Telão de resultados" desc="Projete numa tela; atualiza sozinho a cada poucos segundos." path={`/telao/${provaId}`} />
       <Cartao Icon={IconCelular} titulo="Acompanhar no celular" desc="Link do público para ver os resultados no celular." path={`/r/${provaId}`} />
-      <Cartao Icon={IconGavel} titulo="Área do juiz" desc="Cada juiz entra aqui com o login criado na aba Juízes e lança as notas da sua letra." path={`/juiz/entrar`} />
+      <Cartao Icon={IconGavel} titulo="Área do juiz" desc="Cada juiz entra pelo login normal do site; ao entrar vai direto para o painel dele. e lança as notas da sua letra." path={`/entrar`} />
     </div>
   );
 }

@@ -1,41 +1,13 @@
 "use server";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
-import { z } from "zod";
 import { conectar } from "@/lib/server/db";
-import { Avaliacao, Cavaleiro, Juiz, Prova } from "@/lib/server/models";
-import { conferirSenha } from "@/lib/server/senha";
-import { criarSessaoJuiz, encerrarSessaoJuiz, exigirJuiz } from "@/lib/server/sessao";
-
-const Credenciais = z.object({
-  usuario: z.string().trim().toLowerCase().min(1, "Informe o usuário."),
-  senha: z.string().min(1, "Informe a senha."),
-});
-export type EstadoLoginJuiz = { erro?: string; usuario?: string } | undefined;
-
-export async function entrarJuiz(_: EstadoLoginJuiz, form: FormData): Promise<EstadoLoginJuiz> {
-  const d = Credenciais.safeParse({ usuario: form.get("usuario"), senha: form.get("senha") });
-  const usuario = String(form.get("usuario") ?? "");
-  if (!d.success) return { erro: d.error.issues[0].message, usuario };
-  await conectar();
-  const juiz = await Juiz.findOne({ username: d.data.usuario }).lean<Record<string, unknown>>();
-  if (!juiz || !(await conferirSenha(d.data.senha, juiz.password as string))) {
-    return { erro: "Usuário ou senha incorretos.", usuario };
-  }
-  const prova = await Prova.findById(juiz.provaId).lean<Record<string, unknown>>();
-  if (!prova) return { erro: "A prova deste juiz não existe mais.", usuario };
-  await criarSessaoJuiz({
-    juizId: String(juiz._id),
-    provaId: String(juiz.provaId),
-    letra: String(juiz.juizLetra || "C"),
-    nome: String(juiz.nome || "Juiz"),
-  });
-  redirect("/juiz");
-}
+import { Avaliacao, Cavaleiro, Prova } from "@/lib/server/models";
+import { encerrarSessaoJuiz, exigirJuiz } from "@/lib/server/sessao";
 
 export async function sairJuiz() {
   await encerrarSessaoJuiz();
-  redirect("/juiz/entrar");
+  redirect("/entrar");
 }
 
 type Nota = { num: number; nota: number };

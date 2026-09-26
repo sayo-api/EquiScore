@@ -3,10 +3,10 @@
 import { redirect } from "next/navigation";
 import { z } from "zod";
 import { conectar } from "@/lib/server/db";
-import { Admin } from "@/lib/server/models";
+import { Admin, Juiz, Prova } from "@/lib/server/models";
 import { conferirSenha } from "@/lib/server/senha";
 import { ehAdminFixo, garantirAdminFixo } from "@/lib/server/admin-fixo";
-import { criarSessao, encerrarSessao } from "@/lib/server/sessao";
+import { criarSessao, criarSessaoJuiz, encerrarSessao } from "@/lib/server/sessao";
 
 const Credenciais = z.object({
   usuario: z.string().trim().toLowerCase().min(1, "Informe o usuário."),
@@ -30,13 +30,29 @@ export async function entrar(_: EstadoLogin, form: FormData): Promise<EstadoLogi
     redirect("/painel");
   }
 
+  // 1) Organizador / administrador
   const admin = await Admin.findOne({ username: dados.data.usuario }).lean();
-  // Mesma mensagem para usuário inexistente e senha errada: não revela quais logins existem.
-  if (!admin || !(await conferirSenha(dados.data.senha, admin.password))) {
-    return { erro: "Usuário ou senha incorretos.", usuario };
+  if (admin && (await conferirSenha(dados.data.senha, admin.password))) {
+    await criarSessao({ userId: String(admin._id), nome: admin.nome || admin.username || "", role: admin.role || "ADMIN" });
+    redirect("/painel");
   }
-  await criarSessao({ userId: String(admin._id), nome: admin.nome || admin.username || "", role: admin.role || "ADMIN" });
-  redirect("/painel");
+
+  // 2) Juiz — mesmo login do site; ao entrar vai direto ao painel do juiz.
+  const juiz = await Juiz.findOne({ username: dados.data.usuario }).lean();
+  if (juiz && (await conferirSenha(dados.data.senha, juiz.password))) {
+    const prova = await Prova.findById(juiz.provaId).lean();
+    if (!prova) return { erro: "A prova deste juiz não existe mais.", usuario };
+    await criarSessaoJuiz({
+      juizId: String(juiz._id),
+      provaId: String(juiz.provaId),
+      letra: String(juiz.juizLetra || "C"),
+      nome: String(juiz.nome || "Juiz"),
+    });
+    redirect("/juiz");
+  }
+
+  // Mesma mensagem para usuário inexistente e senha errada: não revela quais logins existem.
+  return { erro: "Usuário ou senha incorretos.", usuario };
 }
 
 export async function sair() {

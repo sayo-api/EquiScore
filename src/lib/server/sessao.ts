@@ -111,6 +111,6 @@ export async function encerrarSessaoJuiz() {
 /** Para páginas e ações do juiz: devolve a sessão ou manda para o login. */
 export const exigirJuiz = cache(async (): Promise<SessaoJuiz> => {
   const s = await lerSessaoJuiz((await cookies()).get(COOKIE_JUIZ)?.value);
-  if (!s) redirect("/juiz/entrar");
+  if (!s) redirect("/entrar");
   return s;
 });
