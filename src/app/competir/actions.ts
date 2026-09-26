@@ -84,6 +84,23 @@ export async function registrarNaProva(provaId: string, form: FormData): Promise
   return { ok: true };
 }
 
+export async function atualizarPerfil(_: EstadoComp, form: FormData): Promise<EstadoComp> {
+  const sess = await exigirComp();
+  const nome = String(form.get("nome") || "").trim();
+  const senha = String(form.get("senha") || "");
+  if (nome.length < 2) return { erro: "Informe seu nome." };
+  if (senha && senha.length < 6) return { erro: "A nova senha deve ter ao menos 6 caracteres." };
+  await conectar();
+  const update: Record<string, unknown> = {
+    nome, postoGraduacao: String(form.get("postoGraduacao") || "").trim(), telefone: String(form.get("telefone") || "").trim(),
+  };
+  if (senha) update.password = await gerarHash(senha);
+  await Competidor.updateOne({ _id: sess.compId }, { $set: update });
+  await criarSessaoComp({ compId: sess.compId, nome, email: sess.email });
+  revalidatePath("/competir");
+  return { ok: "Perfil atualizado." };
+}
+
 export async function cancelarInscricao(cavId: string): Promise<{ ok?: boolean }> {
   const sess = await exigirComp();
   if (!Types.ObjectId.isValid(cavId)) return {};

@@ -2,14 +2,15 @@
 import { useRouter } from "next/navigation";
 import { useState, useTransition } from "react";
 import { registrarNaProva } from "../../actions";
-import { CamposConjunto, campoCad, rotulo } from "@/components/campos-cadastro";
+import { CamposConjunto, campoCad, rotulo, type CavaloSalvo } from "@/components/campos-cadastro";
 import { ALTURAS_SALTO } from "@/lib/postos";
 import { IconCheck, IconSpinner } from "@/lib/icons";
 import { somSucesso } from "@/lib/som";
 
-export function FormInscricaoComp({ provaId, tipo, reprises, perfil }: {
+export function FormInscricaoComp({ provaId, tipo, reprises, perfil, cavalos }: {
   provaId: string; tipo: string; reprises: { id: string; nome: string }[];
   perfil: { nome: string; postoGraduacao: string; telefone: string; email: string };
+  cavalos: CavaloSalvo[];
 }) {
   const router = useRouter();
   const [erro, setErro] = useState<string>();
@@ -44,7 +45,7 @@ export function FormInscricaoComp({ provaId, tipo, reprises, perfil }: {
           </select>
         </div>
       )}
-      <CamposConjunto categoria={tipo === "ADESTRAMENTO"} v={{ nome: perfil.nome, postoGraduacao: perfil.postoGraduacao, telefone: perfil.telefone, email: perfil.email }} />
+      <CamposConjunto categoria={tipo === "ADESTRAMENTO"} cavalos={cavalos} v={{ nome: perfil.nome, postoGraduacao: perfil.postoGraduacao, telefone: perfil.telefone, email: perfil.email }} />
       {erro && <p role="alert" className="rounded-xl bg-redwash px-3 py-2 text-sm text-red6 eqs-shake">{erro}</p>}
       <button data-som="off" disabled={pend} className="inline-flex items-center justify-center gap-2 rounded-xl bg-red py-3 font-bold text-white shadow-sm transition hover:bg-red6 active:scale-[.99] disabled:opacity-60">
         {pend && <IconSpinner width={18} height={18} />} {pend ? "Enviando…" : "Confirmar inscrição"}

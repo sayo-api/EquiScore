@@ -3,7 +3,7 @@ import { Types } from "mongoose";
 import { conectar } from "@/lib/server/db";
 import { Cavaleiro, Prova, Reprise } from "@/lib/server/models";
 import { exigirComp } from "@/lib/server/sessao";
-import { IconTrofeu, IconPlus, IconCheck, IconRelogio } from "@/lib/icons";
+import { IconTrofeu, IconPlus, IconCheck, IconRelogio, IconUsuarios } from "@/lib/icons";
 import { CancelarInscricao } from "./cliente";
 
 const fmtData = (d: unknown) => (d ? new Date(d as string).toLocaleDateString("pt-BR", { timeZone: "UTC" }) : "Sem data");
@@ -29,8 +29,15 @@ export default async function CompDashboard() {
 
   return (
     <div className="eqs-in">
-      <h1 className="text-2xl font-black tracking-tight">Olá, {s.nome.split(" ")[0] || "competidor"}!</h1>
-      <p className="mt-1 text-sm text-mut">Inscreva-se nas provas abertas e acompanhe suas inscrições.</p>
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <h1 className="text-2xl font-black tracking-tight">Olá, {s.nome.split(" ")[0] || "competidor"}!</h1>
+          <p className="mt-1 text-sm text-mut">Inscreva-se nas provas abertas e acompanhe suas inscrições.</p>
+        </div>
+        <Link href="/competir/perfil" className="inline-flex items-center gap-1.5 rounded-lg border border-line bg-surf px-3.5 py-2 text-sm font-semibold shadow-sm transition hover:border-red hover:text-red">
+          <IconUsuarios width={16} height={16} /> Meu perfil
+        </Link>
+      </div>
 
       <section className="mt-6">
         <h2 className="mb-3 flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-mut"><IconTrofeu width={16} height={16} className="text-red" /> Provas abertas</h2>

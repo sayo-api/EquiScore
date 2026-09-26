@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Types } from "mongoose";
 import { conectar } from "@/lib/server/db";
-import { Competidor, Prova, Reprise } from "@/lib/server/models";
+import { Cavaleiro, Competidor, Prova, Reprise } from "@/lib/server/models";
 import { exigirComp } from "@/lib/server/sessao";
 import { IconVoltar } from "@/lib/icons";
 import { FormInscricaoComp } from "./form";
@@ -18,6 +18,13 @@ export default async function InscreverProva({ params }: PageProps<"/competir/pr
   if (!prova) notFound();
   const reprises = await Reprise.find({ _id: { $in: (prova.reprises as Types.ObjectId[]) || [] } }, { nome: 1 }).lean();
   const perfil = await Competidor.findById(s.compId).lean<Record<string, unknown>>();
+  const passados = await Cavaleiro.find({ competidorId: new Types.ObjectId(s.compId) }, { cavalo: 1, cavaloFiliacao: 1, cavaloPai: 1, cavaloMae: 1, tratador: 1 }).sort({ _id: -1 }).lean();
+  const mapaCav = new Map<string, { nome: string; cavaloFiliacao?: string; cavaloPai?: string; cavaloMae?: string; tratador?: string }>();
+  for (const c of passados) {
+    const nome = String(c.cavalo || "").trim();
+    if (nome && !mapaCav.has(nome.toLowerCase())) mapaCav.set(nome.toLowerCase(), { nome, cavaloFiliacao: String(c.cavaloFiliacao || ""), cavaloPai: String(c.cavaloPai || ""), cavaloMae: String(c.cavaloMae || ""), tratador: String(c.tratador || "") });
+  }
+  const cavalos = [...mapaCav.values()];
 
   return (
     <div className="mx-auto w-full max-w-md eqs-in">
@@ -35,6 +42,7 @@ export default async function InscreverProva({ params }: PageProps<"/competir/pr
           tipo={String(prova.tipo)}
           reprises={reprises.map((r) => ({ id: String(r._id), nome: String(r.nome) }))}
           perfil={{ nome: String(perfil?.nome || s.nome || ""), postoGraduacao: String(perfil?.postoGraduacao || ""), telefone: String(perfil?.telefone || ""), email: String(perfil?.email || s.email || "") }}
+          cavalos={cavalos}
         />
       )}
     </div>
