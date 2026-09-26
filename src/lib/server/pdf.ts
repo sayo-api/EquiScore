@@ -53,8 +53,46 @@ export async function gerarPdfResultados(o: Opcoes): Promise<Uint8Array> {
     page.drawRectangle({ x: M, y: y - 18, width: w, height: 18, color: rgb(0.96, 0.93, 0.93) });
     txt(g.titulo.toUpperCase(), M + 8, y - 13, 9.5, bold, VERM);
     y -= 26;
-    // colunas
-    const cPos = M, cConj = M + 34, cVal = A4.w - M - 90;
+
+    const juizes = g.juizes || [];
+    const cPos = M, cConj = M + 34;
+
+    if (juizes.length) {
+      // Layout com colunas por juiz + média (estilo boletim FEI).
+      const cMedia = A4.w - M - 48;
+      const areaIni = M + 170;
+      const areaFim = cMedia - 12;
+      const passo = juizes.length ? (areaFim - areaIni) / juizes.length : 0;
+      const colJuiz = (i: number) => areaIni + passo * i;
+      const cabecalho = () => {
+        txt("Col.", cPos, y, 8, bold, MUT);
+        txt("Conjunto", cConj, y, 8, bold, MUT);
+        juizes.forEach((l, i) => txt("Juiz " + l, colJuiz(i), y, 8, bold, MUT));
+        txt("Media", cMedia, y, 8, bold, MUT);
+        y -= 4;
+        page.drawLine({ start: { x: M, y }, end: { x: A4.w - M, y }, thickness: 0.7, color: LINE });
+        y -= 14;
+      };
+      cabecalho();
+      for (const l of g.linhas) {
+        if (y - 24 < M + 30) { nova(); cabecalho(); }
+        txt(l.posicao ? `${l.posicao}º` : "—", cPos, y, 9.5, bold, l.posicao ? INK : MUT);
+        txt(l.conjunto, cConj, y, 9, bold);
+        txt(l.cavalo, cConj, y - 10, 8, font, MUT);
+        (l.porJuiz || []).forEach((j, i) => {
+          const rotulo = j.valor + (j.posicao != null ? ` (${j.posicao})` : "");
+          txt(rotulo, colJuiz(i), y, 8.5, font, j.valor === "EL" ? VERM : INK);
+        });
+        txt(l.resumo, cMedia, y, 9.5, l.eliminado ? bold : bold, l.eliminado ? VERM : INK);
+        y -= 22;
+        page.drawLine({ start: { x: M, y: y + 6 }, end: { x: A4.w - M, y: y + 6 }, thickness: 0.4, color: LINE });
+      }
+      y -= 8;
+      continue;
+    }
+
+    // colunas (lista simples)
+    const cVal = A4.w - M - 90;
     txt("Col.", cPos, y, 8, bold, MUT);
     txt("Conjunto", cConj, y, 8, bold, MUT);
     txt(g.colunaValor, cVal, y, 8, bold, MUT);
