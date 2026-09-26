@@ -6,10 +6,11 @@ import { montarResultados, provaDoDono } from "@/lib/server/consultas";
 import { exigirSessao } from "@/lib/server/sessao";
 import { gerarPdfResultados } from "@/lib/server/pdf";
 import { enviarPdf } from "@/lib/server/r2";
+import { registrar } from "@/lib/server/auditoria";
 
 export async function publicar(provaId: string): Promise<{ erro?: string; pdfUrl?: string | null }> {
-  const { userId } = await exigirSessao();
-  const prova = await provaDoDono(provaId, userId);
+  const s = await exigirSessao();
+  const prova = await provaDoDono(provaId, s.userId);
   if (!prova) return { erro: "Prova não encontrada." };
   await conectar();
   const grupos = await montarResultados(prova);
@@ -26,16 +27,18 @@ export async function publicar(provaId: string): Promise<{ erro?: string; pdfUrl
     { upsert: true },
   );
   await Prova.updateOne({ _id: prova._id }, { $set: { publicadoEm: new Date() } });
+  await registrar(prova, s.nome || "", "Resultados publicados", "");
   revalidatePath(`/painel/provas/${provaId}/resultados`);
   return { pdfUrl };
 }
 
 export async function despublicar(provaId: string) {
-  const { userId } = await exigirSessao();
-  const prova = await provaDoDono(provaId, userId);
+  const s = await exigirSessao();
+  const prova = await provaDoDono(provaId, s.userId);
   if (!prova) return;
   await conectar();
   await Publicacao.deleteOne({ provaId: prova._id });
   await Prova.updateOne({ _id: prova._id }, { $set: { publicadoEm: null } });
+  await registrar(prova, s.nome || "", "Publicação retirada", "");
   revalidatePath(`/painel/provas/${provaId}/resultados`);
 }

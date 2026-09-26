@@ -5,6 +5,7 @@ import { conectar } from "@/lib/server/db";
 import { Cavaleiro, Prova } from "@/lib/server/models";
 import { provaDoDono } from "@/lib/server/consultas";
 import { exigirSessao } from "@/lib/server/sessao";
+import { registrar } from "@/lib/server/auditoria";
 import {sortear, type Conjunto} from "@/lib/domain/ordem";
 
 async function dono(provaId: string) {
@@ -13,6 +14,7 @@ async function dono(provaId: string) {
   if (!prova) throw new Error("Prova não encontrada.");
   return prova;
 }
+async function autorAtual() { const s = await exigirSessao(); return s.nome || ""; }
 const chave = (c: { repriseId?: unknown; categoria?: unknown }, tipo: string) =>
   tipo === "ADESTRAMENTO" ? String(c.repriseId || "") : String(c.categoria || "");
 const rev = (id: string) => revalidatePath(`/painel/provas/${id}/ordem`);
@@ -47,6 +49,7 @@ export async function sortearOrdem(provaId: string) {
   const ordem = await ordemChaves(prova);
   const sorteada = sortear(conj, !!prova.mesclar, ordem);
   await salvarOrdem(provaId, sorteada.map((c) => c.id));
+  await registrar(prova, await autorAtual(), "Ordem sorteada", `${sorteada.length} conjuntos`);
 }
 
 /** Salva o horário de início e os minutos por conjunto (grade de horários). */

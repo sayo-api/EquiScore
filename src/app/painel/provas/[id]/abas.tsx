@@ -1,7 +1,7 @@
 "use client";
 import Link, { useLinkStatus } from "next/link";
 import { usePathname } from "next/navigation";
-import { IconUsuarios, IconLista, IconGavel, IconTrofeu, IconLink, IconTv, IconSpinner } from "@/lib/icons";
+import { IconUsuarios, IconLista, IconGavel, IconTrofeu, IconLink, IconTv, IconSpinner, IconRelogio } from "@/lib/icons";
 
 const abas = [
   { slug: "inscricoes", nome: "Inscrições", Icon: IconUsuarios },
@@ -10,6 +10,7 @@ const abas = [
   { slug: "julgar", nome: "Pista", Icon: IconTv },
   { slug: "resultados", nome: "Resultados", Icon: IconTrofeu },
   { slug: "links", nome: "Links", Icon: IconLink },
+  { slug: "historico", nome: "Histórico", Icon: IconRelogio },
 ];
 
 function Indicador({ Icon }: { Icon: (p: { width?: number; height?: number }) => React.ReactElement }) {

@@ -130,6 +130,17 @@ const publicacaoSchema = new Schema(
   opts,
 );
 
+const auditoriaSchema = new Schema(
+  {
+    ownerId: { type: Schema.Types.ObjectId, ref: "Admin", index: true },
+    provaId: { type: Schema.Types.ObjectId, ref: "Prova", index: true },
+    autor: { type: String, default: "" },
+    acao: { type: String, default: "" },
+    resumo: { type: String, default: "" },
+  },
+  opts,
+);
+
 const metaSchema = new Schema({ _id: String, versao: String, em: Date }, { strict: false });
 
 // Schemas usam strict:false e compartilham o banco com o SAHDI; tipar como
@@ -146,4 +157,5 @@ export const ResultadoSalto = modelo("ResultadoSalto", resultadoSaltoSchema);
 export const Juiz = modelo("Juiz", juizSchema);
 export const Reprise = modelo("Reprise", repriseSchema);
 export const Publicacao = modelo("Publicacao", publicacaoSchema);
+export const Auditoria = modelo("Auditoria", auditoriaSchema);
 export const Meta = modelo("Meta", metaSchema);

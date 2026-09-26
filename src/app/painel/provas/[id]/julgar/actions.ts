@@ -4,6 +4,7 @@ import { conectar } from "@/lib/server/db";
 import { Avaliacao, Cavaleiro, Prova, ResultadoSalto } from "@/lib/server/models";
 import { provaDoDono } from "@/lib/server/consultas";
 import { exigirSessao } from "@/lib/server/sessao";
+import { registrar } from "@/lib/server/auditoria";
 import { baremoPorId, calcularPercurso } from "@/lib/domain/salto";
 
 async function dono(provaId: string) {
@@ -12,6 +13,7 @@ async function dono(provaId: string) {
   if (!prova) throw new Error("Prova não encontrada.");
   return prova;
 }
+async function autorAtual() { const s = await exigirSessao(); return s.nome || ""; }
 const letras = (n: number) => ["C", "B", "E", "H", "M"].slice(0, Math.max(1, Math.min(5, n)));
 
 type Nota = { num: number; nota: number };
@@ -72,5 +74,24 @@ export async function marcarEmPista(provaId: string, cavId: string | null) {
   const prova = await dono(provaId);
   await conectar();
   await Prova.updateOne({ _id: prova._id }, { $set: { cavaleiroEmPista: cavId || null } });
+  if (cavId) {
+    const c = await Cavaleiro.findById(cavId).lean<{ nome?: string; cavalo?: string }>();
+    if (c) await registrar(prova, await autorAtual(), "Em pista", `${c.nome} · ${c.cavalo}`);
+  }
   revalidatePath(`/painel/provas/${provaId}/julgar`);
+}
+
+/** Limpa/zera a folha de avaliação de um conjunto (todas as letras). */
+export async function limparAvaliacoes(provaId: string, cavId: string): Promise<{ ok?: boolean; erro?: string }> {
+  const prova = await dono(provaId);
+  await conectar();
+  const cav = await Cavaleiro.findOne({ _id: cavId, provaId: prova._id }).lean<{ nome?: string; cavalo?: string }>();
+  if (!cav) return { erro: "Conjunto não encontrado." };
+  await Avaliacao.deleteMany({ cavaleiroId: cavId, provaId: prova._id });
+  await ResultadoSalto.deleteMany({ cavaleiroId: cavId });
+  await Cavaleiro.updateOne({ _id: cavId }, { $set: { status: "AGUARDANDO" } });
+  await Prova.updateOne({ _id: prova._id, cavaleiroEmPista: cavId }, { $set: { cavaleiroEmPista: null } });
+  await registrar(prova, await autorAtual(), "Folha limpa", `${cav.nome} · ${cav.cavalo}`);
+  revalidatePath(`/painel/provas/${provaId}/julgar`);
+  return { ok: true };
 }

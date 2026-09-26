@@ -6,7 +6,7 @@ import { provaDoDono } from "@/lib/server/consultas";
 import { exigirSessao } from "@/lib/server/sessao";
 import { ordenar } from "@/lib/domain/ordem";
 import { IconTv, IconGavel, IconCheck, IconRelogio, IconVoltar } from "@/lib/icons";
-import { BotaoPista } from "./pista-cliente";
+import { BotaoPista, BotaoReset } from "./pista-cliente";
 
 const BADGE: Record<string, { cls: string; txt: string }> = {
   FINALIZADO: { cls: "bg-okwash text-ok", txt: "Finalizado" },
@@ -89,6 +89,7 @@ export default async function Pista({ params }: PageProps<"/painel/provas/[id]/j
                 <div className="flex flex-1 items-center gap-3">{conteudo}</div>
               )}
               <BotaoPista provaId={id} cavId={cid} atual={atual} />
+              <BotaoReset provaId={id} cavId={cid} nome={[c.postoGraduacao, c.nome].filter(Boolean).join(" ")} />
               {tipo === "SALTO" && (
                 <Link href={`/painel/provas/${id}/julgar/${cid}`} aria-label="Lançar resultado" className="grid size-9 place-items-center rounded-lg border border-line text-mut transition hover:border-red hover:text-red"><IconGavel width={16} height={16} /></Link>
               )}

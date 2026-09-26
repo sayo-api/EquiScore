@@ -4,8 +4,8 @@ import { apurarFolha, type Reprise } from "@/lib/domain/adestramento";
 import { IconSalvar, IconCheck, IconX, IconAlerta } from "@/lib/icons";
 import { somClique, somSucesso, somAviso } from "@/lib/som";
 
-type Mov = { num: number; local?: string; descricao: string; coeficiente: number };
-type Conj = { num: number; descricao: string; coeficiente: number };
+type Mov = { num: number; local?: string; descricao: string; coeficiente: number; diretrizes?: string };
+type Conj = { num: number; descricao: string; coeficiente: number; diretrizes?: string };
 type NotaSalva = { num: number; nota: number; obs?: string };
 export type PayloadNotas = { notasPista: NotaSalva[]; notasConjunto: NotaSalva[]; erros: number };
 
@@ -32,6 +32,10 @@ export function FolhaNotas({
   const [estadoSalvar, setEstadoSalvar] = useState<"ocioso" | "salvando" | "salvo" | "offline">("ocioso");
   const [conferir, setConferir] = useState(false);
   const [finalizando, setFinalizando] = useState(false);
+  const [mostrarDir, setMostrarDir] = useState(true);
+  // eslint-disable-next-line react-hooks/set-state-in-effect
+  useEffect(() => { try { setMostrarDir(localStorage.getItem("eqs_dir") !== "0"); } catch { /* */ } }, []);
+  const alternarDir = () => setMostrarDir((v) => { const n = !v; try { localStorage.setItem("eqs_dir", n ? "1" : "0"); } catch { /* */ } return n; });
 
   const celulas = useMemo<Célula[]>(() => [
     ...reprise.movimentos.map((m) => ({ grupo: "m" as const, num: m.num })),
@@ -165,13 +169,13 @@ export function FolhaNotas({
   const fmt = (v: number | undefined) => (v == null ? "" : String(v).replace(".", ","));
   const selecionar = (c: Célula) => { setAtiva(c); somClique(); };
 
-  const linha = (c: Célula, descricao: string, coef: number, local?: string) => {
+  const linha = (c: Célula, descricao: string, coef: number, local?: string, diretrizes?: string) => {
     const sel = ativa != null && ativa.grupo === c.grupo && ativa.num === c.num;
     const v = notas.get(chave(c));
     return (
       <div key={chave(c)} className={`grid grid-cols-[32px_1fr_auto] items-center gap-3 border-t border-line2 px-4 py-2.5 first:border-0 ${sel ? "bg-redwash" : ""}`}>
         <span className="text-center font-mono font-bold text-mut">{c.num}</span>
-        <span><b className="text-sm font-medium">{descricao}</b>{coef > 1 && <span className="ml-1.5 rounded bg-redwash px-1.5 py-0.5 align-[1px] text-[10px] font-bold text-red6">×{coef}</span>}{obs.has(chave(c)) && <span title="Tem observação" className="ml-1.5 inline-block size-1.5 rounded-full bg-red align-middle" />}{local && <small className="block text-xs text-mut">{local}</small>}{obs.has(chave(c)) && <small className="block truncate text-xs italic text-mut">{obs.get(chave(c))}</small>}</span>
+        <span><b className="text-sm font-medium">{descricao}</b>{coef > 1 && <span className="ml-1.5 rounded bg-redwash px-1.5 py-0.5 align-[1px] text-[10px] font-bold text-red6">×{coef}</span>}{obs.has(chave(c)) && <span title="Tem observação" className="ml-1.5 inline-block size-1.5 rounded-full bg-red align-middle" />}{local && <small className="block text-xs text-mut">{local}</small>}{mostrarDir && diretrizes && <small className="mt-0.5 block text-xs italic text-dim">{diretrizes}</small>}{obs.has(chave(c)) && <small className="block truncate text-xs italic text-red6">Obs.: {obs.get(chave(c))}</small>}</span>
         <button type="button" onClick={() => selecionar(c)}
           aria-label={`Nota do item ${c.num}`}
           className={`h-11 w-16 rounded-lg border text-center font-mono text-lg font-bold tabular-nums transition ${sel ? "border-red ring-2 ring-red/30" : v != null ? "border-line bg-surf" : "border-dashed border-line text-dim"}`}>
@@ -205,13 +209,16 @@ export function FolhaNotas({
         </div>
       </div>
 
-      <h3 className="mb-2 text-xs font-bold uppercase tracking-wider text-mut">Movimentos</h3>
+      <div className="mb-2 flex items-center justify-between">
+        <h3 className="text-xs font-bold uppercase tracking-wider text-mut">Movimentos</h3>
+        <button type="button" onClick={alternarDir} className="text-xs font-semibold text-mut transition hover:text-red">{mostrarDir ? "Ocultar diretrizes" : "Mostrar diretrizes"}</button>
+      </div>
       <div className="overflow-hidden rounded-xl border border-line bg-surf shadow-sm">
-        {reprise.movimentos.map((m) => linha({ grupo: "m", num: m.num }, m.descricao, m.coeficiente, m.local))}
+        {reprise.movimentos.map((m) => linha({ grupo: "m", num: m.num }, m.descricao, m.coeficiente, m.local, m.diretrizes))}
       </div>
       <h3 className="mb-2 mt-6 text-xs font-bold uppercase tracking-wider text-mut">Notas de conjunto</h3>
       <div className="overflow-hidden rounded-xl border border-line bg-surf shadow-sm">
-        {reprise.notasConjunto.map((c) => linha({ grupo: "c", num: c.num }, c.descricao, c.coeficiente))}
+        {reprise.notasConjunto.map((c) => linha({ grupo: "c", num: c.num }, c.descricao, c.coeficiente, undefined, c.diretrizes))}
       </div>
 
       {/* Teclado fixo */}

@@ -7,14 +7,15 @@ import { Juiz } from "@/lib/server/models";
 import { gerarHash } from "@/lib/server/senha";
 import { provaDoDono } from "@/lib/server/consultas";
 import { exigirSessao } from "@/lib/server/sessao";
+import { registrar } from "@/lib/server/auditoria";
 
 export type EstadoJuiz = { erro?: string; ok?: string } | undefined;
 
 async function dono(provaId: string) {
-  const { userId } = await exigirSessao();
-  const prova = await provaDoDono(provaId, userId);
+  const s = await exigirSessao();
+  const prova = await provaDoDono(provaId, s.userId);
   if (!prova) throw new Error("Prova não encontrada.");
-  return { prova, userId };
+  return { prova, userId: s.userId, autor: s.nome || "" };
 }
 
 const Novo = z.object({
@@ -25,7 +26,7 @@ const Novo = z.object({
 });
 
 export async function criarJuiz(provaId: string, _: EstadoJuiz, form: FormData): Promise<EstadoJuiz> {
-  const { prova, userId } = await dono(provaId);
+  const { prova, userId, autor } = await dono(provaId);
   const d = Novo.safeParse({
     usuario: form.get("usuario"),
     nome: form.get("nome") || undefined,
@@ -44,6 +45,7 @@ export async function criarJuiz(provaId: string, _: EstadoJuiz, form: FormData):
     provaId: prova._id,
     ownerId: new Types.ObjectId(userId),
   });
+  await registrar(prova, autor, "Juiz criado", `${d.data.usuario} (letra ${d.data.letra})`);
   revalidatePath(`/painel/provas/${provaId}/juizes`);
   return { ok: `Juiz "${d.data.usuario}" (letra ${d.data.letra}) criado.` };
 }
@@ -80,10 +82,12 @@ export async function editarJuiz(provaId: string, _: EstadoJuiz, form: FormData)
 }
 
 export async function excluirJuiz(provaId: string, id: string): Promise<{ erro?: string; ok?: boolean }> {
-  const { prova } = await dono(provaId);
+  const { prova, autor } = await dono(provaId);
   if (!Types.ObjectId.isValid(id)) return { erro: "Id inválido." };
   await conectar();
+  const j = await Juiz.findOne({ _id: id, provaId: prova._id }).lean<{ username?: string }>();
   await Juiz.deleteOne({ _id: id, provaId: prova._id });
+  await registrar(prova, autor, "Juiz excluído", j?.username || id);
   revalidatePath(`/painel/provas/${provaId}/juizes`);
   return { ok: true };
 }
