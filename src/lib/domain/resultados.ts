@@ -5,6 +5,11 @@
 import { classificar, type StatusAvaliacao } from "./adestramento";
 import { classificarSalto, type BaremoTipo, type StatusPercurso } from "./salto";
 
+export interface NotaJuizLinha {
+  letra: string;
+  valor: string; // percentual formatado, ou "—"/"EL"
+  posicao: number | null; // colocação daquele juiz nesta reprise (estilo FEI)
+}
 export interface LinhaResultado {
   posicao: number | null;
   ordemEntrada: number;
@@ -13,10 +18,12 @@ export interface LinhaResultado {
   status: string;
   resumo: string; // texto curto: percentual, ou penalidades+tempo
   eliminado: boolean;
+  porJuiz?: NotaJuizLinha[]; // colunas por juiz (adestramento)
 }
 export interface GrupoResultado {
   titulo: string;
   colunaValor: string; // "%" ou "Pen · Tempo"
+  juizes?: string[]; // letras dos juízes (adestramento), para as colunas
   linhas: LinhaResultado[];
 }
 
@@ -26,22 +33,54 @@ export const fmtTempo = (ms: number) => {
   return s.toFixed(2).replace(".", ",") + "s";
 };
 
+export interface NotaJuizEntrada {
+  letra: string;
+  percentual: number;
+  temNota: boolean;
+}
 export interface EntradaAdest {
   ordemEntrada: number;
   conjunto: string;
   cavalo: string;
   status: StatusAvaliacao;
   percentual: number;
+  porJuiz?: NotaJuizEntrada[];
 }
-export function grupoAdestramento(titulo: string, itens: EntradaAdest[]): GrupoResultado {
+export function grupoAdestramento(titulo: string, itens: EntradaAdest[], juizes: string[] = []): GrupoResultado {
   const ord = classificar(itens);
   let pos = 0;
+
+  // Sub-ranking por juiz (estilo FEI): para cada letra, ordena os conjuntos
+  // desta reprise que têm nota daquele juiz e grava a colocação (1, 2, 3…).
+  const posJuiz = new Map<string, Map<number, number>>(); // letra -> (ordemEntrada -> posição)
+  for (const letra of juizes) {
+    const comNota = ord
+      .map((x) => ({ x, j: x.porJuiz?.find((p) => p.letra === letra) }))
+      .filter((r) => r.j && r.j.temNota && x_notElim(r.x.status))
+      .sort((a, b) => (b.j!.percentual) - (a.j!.percentual));
+    const m = new Map<number, number>();
+    comNota.forEach((r, i) => m.set(r.x.ordemEntrada, i + 1));
+    posJuiz.set(letra, m);
+  }
+
   return {
     titulo,
     colunaValor: "%",
+    juizes: juizes.length ? juizes : undefined,
     linhas: ord.map((x) => {
       const finalizado = x.status === "FINALIZADO";
       if (finalizado) pos++;
+      const porJuiz: NotaJuizLinha[] | undefined = juizes.length
+        ? juizes.map((letra) => {
+            const j = x.porJuiz?.find((p) => p.letra === letra);
+            const elim = x.status === "ELIMINADO";
+            return {
+              letra,
+              valor: elim ? "EL" : j && j.temNota ? fmtPct(j.percentual) : "—",
+              posicao: !elim && j && j.temNota ? posJuiz.get(letra)?.get(x.ordemEntrada) ?? null : null,
+            };
+          })
+        : undefined;
       return {
         posicao: finalizado ? pos : null,
         ordemEntrada: x.ordemEntrada,
@@ -50,10 +89,13 @@ export function grupoAdestramento(titulo: string, itens: EntradaAdest[]): GrupoR
         status: x.status,
         resumo: x.status === "AGUARDANDO" ? "—" : x.status === "ELIMINADO" ? "EL" : fmtPct(x.percentual),
         eliminado: x.status === "ELIMINADO",
+        porJuiz,
       };
     }),
   };
 }
+
+const x_notElim = (s: StatusAvaliacao) => s !== "ELIMINADO" && s !== "AGUARDANDO";
 
 export interface EntradaSalto {
   ordemEntrada: number;

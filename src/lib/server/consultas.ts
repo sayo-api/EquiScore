@@ -1,8 +1,8 @@
 import "server-only";
 import { isValidObjectId, Types } from "mongoose";
 import { conectar } from "./db";
-import { Avaliacao, Cavaleiro, Prova, Reprise, ResultadoSalto } from "./models";
-import { consolidarJuizes, type FolhaDoJuiz, type Reprise as TReprise } from "@/lib/domain/adestramento";
+import { Avaliacao, Cavaleiro, Juiz, Prova, Reprise, ResultadoSalto } from "./models";
+import { apurarFolha, consolidarJuizes, type FolhaDoJuiz, type Reprise as TReprise } from "@/lib/domain/adestramento";
 import { baremoPorId } from "@/lib/domain/salto";
 import { grupoAdestramento, grupoSalto, type GrupoResultado, type EntradaAdest, type EntradaSalto } from "@/lib/domain/resultados";
 
@@ -67,6 +67,14 @@ export async function montarResultados(prova: Plain): Promise<GrupoResultado[]> 
     const k = String(a.cavaleiroId);
     (porCav.get(k) ?? porCav.set(k, []).get(k)!).push(a);
   }
+
+  // Letras dos juízes: as cadastradas na prova + as presentes nas avaliações.
+  const juizesProva = await Juiz.find({ provaId }).lean<Plain[]>();
+  const letras = [...new Set([
+    ...juizesProva.map((j) => String(j.juizLetra || "C")),
+    ...avals.map((a) => String(a.juizLetra || "C")),
+  ])].sort();
+
   const grupos: GrupoResultado[] = [];
   for (const rid of (prova.reprises || []) as Types.ObjectId[]) {
     const reprise = repriseMap.get(String(rid));
@@ -74,7 +82,8 @@ export async function montarResultados(prova: Plain): Promise<GrupoResultado[]> 
     const itens: EntradaAdest[] = comps
       .filter((c) => String(c.repriseId) === String(rid))
       .map((c) => {
-        const folhas = (porCav.get(String(c._id)) || []).map(
+        const brutas = porCav.get(String(c._id)) || [];
+        const folhas = brutas.map(
           (a): FolhaDoJuiz => ({
             juizLetra: String(a.juizLetra || "C"),
             notasPista: (a.notasPista as { num: number; nota: number }[]) || [],
@@ -84,15 +93,23 @@ export async function montarResultados(prova: Plain): Promise<GrupoResultado[]> 
           }),
         );
         const cons = consolidarJuizes(reprise as unknown as TReprise, folhas);
+        const porJuiz = letras.map((letra) => {
+          const f = folhas.find((x) => x.juizLetra === letra);
+          if (!f) return { letra, percentual: 0, temNota: false };
+          const r = apurarFolha(reprise as unknown as TReprise, f);
+          const temNota = (f.notasPista || []).some((n) => n.nota != null) || (f.notasConjunto || []).some((n) => n.nota != null);
+          return { letra, percentual: r.percentual, temNota: temNota && !r.eliminadoPorErros };
+        });
         return {
           ordemEntrada: Number(c.ordemEntrada || 0),
           conjunto: nomeConj(c),
           cavalo: String(c.cavalo || ""),
           status: cons.status,
           percentual: cons.percentual,
+          porJuiz,
         };
       });
-    grupos.push(grupoAdestramento(String(reprise.nome || "Reprise"), itens));
+    grupos.push(grupoAdestramento(String(reprise.nome || "Reprise"), itens, letras));
   }
   return grupos;
 }

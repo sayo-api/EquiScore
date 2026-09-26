@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { IconUsuarios, IconTv, IconCelular, IconCopiar, IconCheck } from "@/lib/icons";
+import { IconUsuarios, IconTv, IconCelular, IconCopiar, IconCheck, IconGavel } from "@/lib/icons";
 
 function Cartao({ Icon, titulo, desc, path }: { Icon: typeof IconTv; titulo: string; desc: string; path: string }) {
   const [copiado, setCopiado] = useState(false);
@@ -27,6 +27,7 @@ export function CartoesLink({ provaId }: { provaId: string }) {
       <Cartao Icon={IconUsuarios} titulo="Inscrição pública" desc="Compartilhe para os competidores se inscreverem (entram como pendentes)." path={`/inscricao/${provaId}`} />
       <Cartao Icon={IconTv} titulo="Telão de resultados" desc="Projete numa tela; atualiza sozinho a cada poucos segundos." path={`/telao/${provaId}`} />
       <Cartao Icon={IconCelular} titulo="Acompanhar no celular" desc="Link do público para ver os resultados no celular." path={`/r/${provaId}`} />
+      <Cartao Icon={IconGavel} titulo="Área do juiz" desc="Cada juiz entra aqui com o login criado na aba Juízes e lança as notas da sua letra." path={`/juiz/entrar`} />
     </div>
   );
 }

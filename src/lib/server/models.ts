@@ -100,6 +100,19 @@ const repriseSchema = new Schema(
   opts,
 );
 
+const juizSchema = new Schema(
+  {
+    username: { type: String, unique: true },
+    password: String,
+    nome: { type: String, default: "Juiz" },
+    juizLetra: { type: String, default: "C" },
+    provaId: { type: Schema.Types.ObjectId, ref: "Prova", index: true },
+    ownerId: { type: Schema.Types.ObjectId, ref: "Admin", index: true },
+  },
+  opts,
+);
+juizSchema.index({ provaId: 1, juizLetra: 1 }, { unique: true });
+
 const publicacaoSchema = new Schema(
   {
     provaId: { type: Schema.Types.ObjectId, ref: "Prova", index: true, unique: true },
@@ -128,6 +141,7 @@ export const Prova = modelo("Prova", provaSchema);
 export const Cavaleiro = modelo("Cavaleiro", cavaleiroSchema);
 export const Avaliacao = modelo("Avaliacao", avaliacaoSchema);
 export const ResultadoSalto = modelo("ResultadoSalto", resultadoSaltoSchema);
+export const Juiz = modelo("Juiz", juizSchema);
 export const Reprise = modelo("Reprise", repriseSchema);
 export const Publicacao = modelo("Publicacao", publicacaoSchema);
 export const Meta = modelo("Meta", metaSchema);

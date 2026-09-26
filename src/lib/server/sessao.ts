@@ -9,12 +9,20 @@ import { cache } from "react";
  * não fica no localStorage: um script injetado na página não consegue lê-lo.
  */
 export const COOKIE_SESSAO = "eqs_sessao";
+export const COOKIE_JUIZ = "eqs_juiz";
 const DURACAO_H = 24;
 
 export interface Sessao {
   userId: string;
   nome: string;
   role: string;
+}
+
+export interface SessaoJuiz {
+  juizId: string;
+  provaId: string;
+  letra: string;
+  nome: string;
 }
 
 function chave() {
@@ -64,5 +72,45 @@ export const exigirSessao = cache(async (): Promise<Sessao> => {
 export const exigirSuper = cache(async (): Promise<Sessao> => {
   const s = await exigirSessao();
   if (s.role !== "SUPER") redirect("/painel");
+  return s;
+});
+
+
+// ── Sessão do JUIZ (cookie separado do organizador) ───────────
+export async function criarSessaoJuiz(dados: SessaoJuiz) {
+  const expira = new Date(Date.now() + DURACAO_H * 3600_000);
+  const token = await new SignJWT({ ...dados })
+    .setProtectedHeader({ alg: "HS256" })
+    .setIssuedAt()
+    .setExpirationTime(expira)
+    .sign(chave());
+  (await cookies()).set(COOKIE_JUIZ, token, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "lax",
+    path: "/",
+    expires: expira,
+  });
+}
+
+export async function lerSessaoJuiz(token: string | undefined): Promise<SessaoJuiz | null> {
+  if (!token) return null;
+  try {
+    const { payload } = await jwtVerify(token, chave(), { algorithms: ["HS256"] });
+    if (!payload.juizId) return null;
+    return { juizId: String(payload.juizId), provaId: String(payload.provaId), letra: String(payload.letra), nome: String(payload.nome) };
+  } catch {
+    return null;
+  }
+}
+
+export async function encerrarSessaoJuiz() {
+  (await cookies()).delete(COOKIE_JUIZ);
+}
+
+/** Para páginas e ações do juiz: devolve a sessão ou manda para o login. */
+export const exigirJuiz = cache(async (): Promise<SessaoJuiz> => {
+  const s = await lerSessaoJuiz((await cookies()).get(COOKIE_JUIZ)?.value);
+  if (!s) redirect("/juiz/entrar");
   return s;
 });

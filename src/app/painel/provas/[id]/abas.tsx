@@ -6,6 +6,7 @@ import { IconUsuarios, IconLista, IconGavel, IconTrofeu, IconLink } from "@/lib/
 const abas = [
   { slug: "inscricoes", nome: "Inscrições", Icon: IconUsuarios },
   { slug: "ordem", nome: "Ordem de entrada", Icon: IconLista },
+  { slug: "juizes", nome: "Juízes", Icon: IconGavel },
   { slug: "julgar", nome: "Julgar", Icon: IconGavel },
   { slug: "resultados", nome: "Resultados", Icon: IconTrofeu },
   { slug: "links", nome: "Links", Icon: IconLink },
