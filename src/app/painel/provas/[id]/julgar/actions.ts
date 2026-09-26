@@ -1,7 +1,7 @@
 "use server";
 import { revalidatePath } from "next/cache";
 import { conectar } from "@/lib/server/db";
-import { Avaliacao, Cavaleiro, ResultadoSalto } from "@/lib/server/models";
+import { Avaliacao, Cavaleiro, Prova, ResultadoSalto } from "@/lib/server/models";
 import { provaDoDono } from "@/lib/server/consultas";
 import { exigirSessao } from "@/lib/server/sessao";
 import { baremoPorId, calcularPercurso } from "@/lib/domain/salto";
@@ -66,3 +66,11 @@ export async function salvarSalto(provaId: string, cavId: string, dados: {
   revalidatePath(`/painel/provas/${provaId}/julgar`);
 }
 export const letrasDeJuiz = async (n: number) => letras(n);
+
+/** Marca (ou limpa) o conjunto que está entrando na pista. */
+export async function marcarEmPista(provaId: string, cavId: string | null) {
+  const prova = await dono(provaId);
+  await conectar();
+  await Prova.updateOne({ _id: prova._id }, { $set: { cavaleiroEmPista: cavId || null } });
+  revalidatePath(`/painel/provas/${provaId}/julgar`);
+}

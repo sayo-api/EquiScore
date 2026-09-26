@@ -48,3 +48,13 @@ export async function sortearOrdem(provaId: string) {
   const sorteada = sortear(conj, !!prova.mesclar, ordem);
   await salvarOrdem(provaId, sorteada.map((c) => c.id));
 }
+
+/** Salva o horário de início e os minutos por conjunto (grade de horários). */
+export async function salvarHorarios(provaId: string, inicio: string, minutos: number) {
+  const prova = await dono(provaId);
+  await conectar();
+  const hhmm = /^([01]?\d|2[0-3]):[0-5]\d$/.test(inicio) ? inicio : "08:00";
+  const min = Math.max(1, Math.min(60, Math.round(minutos) || 7));
+  await Prova.updateOne({ _id: prova._id }, { $set: { inicioHorario: hhmm, minutosPorConjunto: min } });
+  rev(provaId);
+}

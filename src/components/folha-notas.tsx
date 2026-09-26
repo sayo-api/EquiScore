@@ -6,7 +6,8 @@ import { somClique, somSucesso, somAviso } from "@/lib/som";
 
 type Mov = { num: number; local?: string; descricao: string; coeficiente: number };
 type Conj = { num: number; descricao: string; coeficiente: number };
-export type PayloadNotas = { notasPista: { num: number; nota: number }[]; notasConjunto: { num: number; nota: number }[]; erros: number };
+type NotaSalva = { num: number; nota: number; obs?: string };
+export type PayloadNotas = { notasPista: NotaSalva[]; notasConjunto: NotaSalva[]; erros: number };
 
 type Célula = { grupo: "m" | "c"; num: number };
 const chave = (c: Célula) => c.grupo + c.num;
@@ -17,13 +18,14 @@ export function FolhaNotas({
 }: {
   reprise: Reprise & { movimentos: Mov[]; notasConjunto: Conj[] };
   letra: string;
-  inicial: { notas: Record<string, number>; erros: number };
+  inicial: { notas: Record<string, number>; obs?: Record<string, string>; erros: number };
   cacheKey: string;
   onSalvarParcial?: (p: PayloadNotas) => Promise<void>;
   onFinalizar: (p: PayloadNotas) => Promise<void>;
   aposFinalizar?: () => void;
 }) {
   const [notas, setNotas] = useState<Map<string, number>>(() => new Map(Object.entries(inicial.notas)));
+  const [obs, setObs] = useState<Map<string, string>>(() => new Map(Object.entries(inicial.obs || {})));
   const [erros, setErros] = useState(inicial.erros);
   const [ativa, setAtiva] = useState<Célula | null>(null);
   const [meio, setMeio] = useState(false);
@@ -36,32 +38,38 @@ export function FolhaNotas({
     ...reprise.notasConjunto.map((c) => ({ grupo: "c" as const, num: c.num })),
   ], [reprise]);
 
+  const comObs = (k: string, base: { num: number; nota: number }): NotaSalva => {
+    const o = obs.get(k);
+    return o ? { ...base, obs: o } : base;
+  };
   const payload = useCallback((): PayloadNotas => ({
-    notasPista: reprise.movimentos.filter((m) => notas.has("m" + m.num)).map((m) => ({ num: m.num, nota: notas.get("m" + m.num)! })),
-    notasConjunto: reprise.notasConjunto.filter((c) => notas.has("c" + c.num)).map((c) => ({ num: c.num, nota: notas.get("c" + c.num)! })),
+    notasPista: reprise.movimentos.filter((m) => notas.has("m" + m.num) || obs.has("m" + m.num)).map((m) => comObs("m" + m.num, { num: m.num, nota: notas.get("m" + m.num) ?? 0 })),
+    notasConjunto: reprise.notasConjunto.filter((c) => notas.has("c" + c.num) || obs.has("c" + c.num)).map((c) => comObs("c" + c.num, { num: c.num, nota: notas.get("c" + c.num) ?? 0 })),
     erros,
-  }), [reprise, notas, erros]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }), [reprise, notas, obs, erros]);
 
   // ── Cache offline: recupera um rascunho local mais completo que o servidor ──
   useEffect(() => {
     try {
       const bruto = localStorage.getItem(cacheKey);
       if (!bruto) return;
-      const salvo = JSON.parse(bruto) as { notas: Record<string, number>; erros: number };
+      const salvo = JSON.parse(bruto) as { notas: Record<string, number>; obs?: Record<string, string>; erros: number };
       const local = Object.keys(salvo.notas || {}).length;
       if (local > Object.keys(inicial.notas).length) {
         // Carregamento único do rascunho local (evita perder notas sem rede);
         // feito em efeito de propósito, para não quebrar a hidratação.
         // eslint-disable-next-line react-hooks/set-state-in-effect
         setNotas(new Map(Object.entries(salvo.notas)));
+        setObs(new Map(Object.entries(salvo.obs || {})));
         setErros(salvo.erros || 0);
       }
     } catch { /* ignora */ }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cacheKey]);
 
-  const gravarCache = useCallback((m: Map<string, number>, e: number) => {
-    try { localStorage.setItem(cacheKey, JSON.stringify({ notas: Object.fromEntries(m), erros: e, em: Date.now() })); } catch { /* ignora */ }
+  const gravarCache = useCallback((m: Map<string, number>, e: number, ob: Map<string, string>) => {
+    try { localStorage.setItem(cacheKey, JSON.stringify({ notas: Object.fromEntries(m), obs: Object.fromEntries(ob), erros: e, em: Date.now() })); } catch { /* ignora */ }
   }, [cacheKey]);
 
   // ── Autosave debounced ──────────────────────────────────────
@@ -86,12 +94,23 @@ export function FolhaNotas({
     setNotas((prev) => {
       const m = new Map(prev);
       mut(m);
-      gravarCache(m, novosErros);
+      gravarCache(m, novosErros, obs);
       return m;
     });
     setEstadoSalvar("ocioso");
     agendarSalvar();
-  }, [agendarSalvar, gravarCache, erros]);
+  }, [agendarSalvar, gravarCache, erros, obs]);
+
+  const definirObs = (k: string, texto: string) => {
+    setObs((prev) => {
+      const m = new Map(prev);
+      if (texto) m.set(k, texto); else m.delete(k);
+      gravarCache(notas, erros, m);
+      return m;
+    });
+    setEstadoSalvar("ocioso");
+    agendarSalvar();
+  };
 
   const proxima = (atual: Célula) => {
     const i = celulas.findIndex((c) => c.grupo === atual.grupo && c.num === atual.num);
@@ -152,7 +171,7 @@ export function FolhaNotas({
     return (
       <div key={chave(c)} className={`grid grid-cols-[32px_1fr_auto] items-center gap-3 border-t border-line2 px-4 py-2.5 first:border-0 ${sel ? "bg-redwash" : ""}`}>
         <span className="text-center font-mono font-bold text-mut">{c.num}</span>
-        <span><b className="text-sm font-medium">{descricao}</b>{coef > 1 && <span className="ml-1.5 rounded bg-redwash px-1.5 py-0.5 align-[1px] text-[10px] font-bold text-red6">×{coef}</span>}{local && <small className="block text-xs text-mut">{local}</small>}</span>
+        <span><b className="text-sm font-medium">{descricao}</b>{coef > 1 && <span className="ml-1.5 rounded bg-redwash px-1.5 py-0.5 align-[1px] text-[10px] font-bold text-red6">×{coef}</span>}{obs.has(chave(c)) && <span title="Tem observação" className="ml-1.5 inline-block size-1.5 rounded-full bg-red align-middle" />}{local && <small className="block text-xs text-mut">{local}</small>}{obs.has(chave(c)) && <small className="block truncate text-xs italic text-mut">{obs.get(chave(c))}</small>}</span>
         <button type="button" onClick={() => selecionar(c)}
           aria-label={`Nota do item ${c.num}`}
           className={`h-11 w-16 rounded-lg border text-center font-mono text-lg font-bold tabular-nums transition ${sel ? "border-red ring-2 ring-red/30" : v != null ? "border-line bg-surf" : "border-dashed border-line text-dim"}`}>
@@ -208,6 +227,14 @@ export function FolhaNotas({
               {estadoSalvar === "offline" && <span className="inline-flex items-center gap-1 text-warn"><IconAlerta width={13} height={13} /> salvo no aparelho</span>}
             </span>
           </div>
+          {ativa && (
+            <input
+              value={obs.get(chave(ativa)) ?? ""}
+              onChange={(e) => definirObs(chave(ativa), e.target.value)}
+              placeholder={`Observação do item ${ativa.num} (opcional)`}
+              className="mb-2 w-full rounded-lg border border-line bg-surf px-3 py-2 text-sm outline-none focus:border-red"
+            />
+          )}
           <div className="grid grid-cols-6 gap-1.5 sm:grid-cols-11">
             {Array.from({ length: 11 }, (_, n) => (
               <button key={n} type="button" disabled={!ativa} onClick={() => tocarNumero(n)}

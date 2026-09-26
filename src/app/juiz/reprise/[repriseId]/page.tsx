@@ -2,7 +2,7 @@ import Link from "next/link";
 import { isValidObjectId, Types } from "mongoose";
 import { notFound } from "next/navigation";
 import { conectar } from "@/lib/server/db";
-import { Avaliacao, Cavaleiro, Reprise } from "@/lib/server/models";
+import { Avaliacao, Cavaleiro, Prova, Reprise } from "@/lib/server/models";
 import { exigirJuiz } from "@/lib/server/sessao";
 import { IconVoltar, IconCheck, IconRelogio } from "@/lib/icons";
 
@@ -17,6 +17,8 @@ export default async function JuizReprise({ params }: PageProps<"/juiz/reprise/[
   const comps = await Cavaleiro.find({ provaId, repriseId, status: { $ne: "PENDENTE" } }).sort({ ordemEntrada: 1 }).lean<Record<string, unknown>[]>();
   const avals = await Avaliacao.find({ provaId, repriseId, juizLetra: j.letra }).lean<Record<string, unknown>[]>();
   const porCav = new Map(avals.map((a) => [String(a.cavaleiroId), a]));
+  const prova = await Prova.findById(provaId).lean<Record<string, unknown>>();
+  const emPista = prova?.cavaleiroEmPista ? String(prova.cavaleiroEmPista) : "";
 
   return (
     <div className="eqs-in">
@@ -32,12 +34,13 @@ export default async function JuizReprise({ params }: PageProps<"/juiz/reprise/[
             const a = porCav.get(String(c._id));
             const st = a?.status as string | undefined;
             const nome = [c.postoGraduacao, c.nome].filter(Boolean).join(" ");
+            const naPista = String(c._id) === emPista;
             return (
               <li key={String(c._id)}>
-                <Link href={`/juiz/reprise/${repriseId}/${c._id}`} className="flex items-center gap-3 border-t border-line2 px-4 py-3 transition first:border-0 hover:bg-surf2 active:scale-[.99]">
+                <Link href={`/juiz/reprise/${repriseId}/${c._id}`} className={`flex items-center gap-3 border-t border-line2 px-4 py-3 transition first:border-0 hover:bg-surf2 active:scale-[.99] ${naPista ? "bg-redwash" : ""}`}>
                   <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-surf2 font-mono text-sm font-bold text-mut">{Number(c.ordemEntrada) || "–"}</span>
                   <div className="min-w-0 flex-1">
-                    <div className="truncate font-semibold">{nome}</div>
+                    <div className="truncate font-semibold">{nome}{naPista && <span className="ml-2 rounded-full bg-red px-2 py-0.5 align-[1px] text-[10px] font-bold text-white">EM PISTA</span>}</div>
                     <div className="truncate text-xs text-mut">{String(c.cavalo)}</div>
                   </div>
                   {st === "FINALIZADO" ? (

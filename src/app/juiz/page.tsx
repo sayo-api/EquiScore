@@ -3,7 +3,7 @@ import { Types } from "mongoose";
 import { conectar } from "@/lib/server/db";
 import { Cavaleiro, Prova, Reprise } from "@/lib/server/models";
 import { exigirJuiz } from "@/lib/server/sessao";
-import { IconLista, IconVoltar } from "@/lib/icons";
+import { IconLista, IconVoltar, IconTv } from "@/lib/icons";
 
 export default async function JuizInicio() {
   const j = await exigirJuiz();
@@ -12,6 +12,10 @@ export default async function JuizInicio() {
   const ordem = ((prova?.reprises || []) as Types.ObjectId[]).map(String);
   const reprises = await Reprise.find({ _id: { $in: ordem } }).lean<Record<string, unknown>[]>();
   reprises.sort((a, b) => ordem.indexOf(String(a._id)) - ordem.indexOf(String(b._id)));
+
+  const emPista = prova?.cavaleiroEmPista
+    ? await Cavaleiro.findById(prova.cavaleiroEmPista).lean<Record<string, unknown>>()
+    : null;
 
   const provaId = new Types.ObjectId(String(j.provaId));
   const contagem = await Cavaleiro.aggregate<{ _id: { r: Types.ObjectId; s: string }; n: number }>([
@@ -30,6 +34,18 @@ export default async function JuizInicio() {
     <div className="eqs-in">
       <h1 className="text-2xl font-black tracking-tight">Séries / Reprises</h1>
       <p className="mt-1 text-sm text-mut">Escolha a reprise para lançar as notas da letra <b className="text-red">{j.letra}</b>.</p>
+      {emPista && (
+        <Link href={`/juiz/reprise/${String(emPista.repriseId)}/${String(emPista._id)}`}
+          className="mt-4 flex items-center gap-3 rounded-xl border border-red bg-redwash p-4 shadow-sm transition hover:shadow-md active:scale-[.99] eqs-pop">
+          <span className="grid size-10 shrink-0 place-items-center rounded-lg bg-red text-white"><IconTv width={20} height={20} /></span>
+          <span className="min-w-0 flex-1">
+            <span className="block text-xs font-bold uppercase tracking-wider text-red6">Em pista agora</span>
+            <span className="block truncate font-black">{[emPista.postoGraduacao, emPista.nome].filter(Boolean).join(" ")}</span>
+            <span className="block truncate text-sm opacity-80">{String(emPista.cavalo)}</span>
+          </span>
+          <span className="whitespace-nowrap rounded-lg bg-red px-3 py-2 text-sm font-bold text-white">Lançar →</span>
+        </Link>
+      )}
       {reprises.length === 0 ? (
         <p className="mt-6 rounded-xl border border-dashed border-line p-10 text-center text-mut">Nenhuma reprise nesta prova.</p>
       ) : (

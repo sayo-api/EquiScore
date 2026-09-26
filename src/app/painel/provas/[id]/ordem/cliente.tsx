@@ -1,7 +1,7 @@
 "use client";
 import { useMemo, useState, useTransition } from "react";
-import { IconUp, IconDown, IconDado, IconSalvar, IconAlerta } from "@/lib/icons";
-import { salvarOrdem, sortearOrdem, toggleMesclar } from "./actions";
+import { IconUp, IconDown, IconDado, IconSalvar, IconAlerta, IconRelogio } from "@/lib/icons";
+import { salvarHorarios, salvarOrdem, sortearOrdem, toggleMesclar } from "./actions";
 
 type Item = { id: string; nome: string; posto: string; cavalo: string; chaveReprise: string; rotulo: string; ordemEntrada: number };
 
@@ -22,6 +22,9 @@ export function OrdemCliente({ provaId, mesclar, itens, inicio, minutos }: {
   const [lista, setLista] = useState(itens);
   const [sujo, setSujo] = useState(false);
   const [pend, start] = useTransition();
+  const [ini, setIni] = useState(inicio);
+  const [min, setMin] = useState(minutos);
+  const [hMsg, setHMsg] = useState(false);
   const avisos = useMemo(() => GAPavisos(lista.map((i) => i.nome)), [lista]);
 
   const grupos = useMemo(() => {
@@ -47,6 +50,19 @@ export function OrdemCliente({ provaId, mesclar, itens, inicio, minutos }: {
   let idx = 0;
   return (
     <div>
+      <div className="mb-4 flex flex-wrap items-end gap-4 rounded-xl border border-line bg-surf2 p-4">
+        <div className="flex items-center gap-2 text-sm font-semibold text-mut"><IconRelogio width={18} height={18} className="text-red" /> Grade de horários</div>
+        <label className="text-xs font-semibold text-mut">Início
+          <input type="time" value={ini} onChange={(e) => setIni(e.target.value)} className="mt-1 block rounded-lg border border-line bg-surf px-3 py-2 font-mono text-sm outline-none focus:border-red" />
+        </label>
+        <label className="text-xs font-semibold text-mut">Min. por conjunto
+          <input type="number" min={1} max={60} value={min} onChange={(e) => setMin(Number(e.target.value))} className="mt-1 block w-24 rounded-lg border border-line bg-surf px-3 py-2 font-mono text-sm outline-none focus:border-red" />
+        </label>
+        <button type="button" disabled={pend || (ini === inicio && min === minutos)}
+          onClick={() => start(async () => { await salvarHorarios(provaId, ini, min); setHMsg(true); setTimeout(() => setHMsg(false), 2000); })}
+          className="rounded-lg border border-line bg-surf px-3.5 py-2 text-sm font-semibold shadow-sm transition hover:border-red disabled:opacity-50">Aplicar</button>
+        {hMsg && <span className="text-sm font-semibold text-ok">Horários atualizados.</span>}
+      </div>
       <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
         <button type="button" role="switch" aria-checked={mesclar}
           onClick={() => start(async () => { await toggleMesclar(provaId, !mesclar); })}
@@ -82,7 +98,7 @@ export function OrdemCliente({ provaId, mesclar, itens, inicio, minutos }: {
                 return (
                   <div key={it.id} className="grid grid-cols-[34px_52px_1fr_auto] items-center gap-3 border-t border-line2 px-3 py-2.5 first:border-0">
                     <span className="text-center font-mono font-bold text-red">{i + 1}º</span>
-                    <span className="font-mono text-sm text-mut tabular-nums">{hora(inicio, minutos, i)}</span>
+                    <span className="font-mono text-sm text-mut tabular-nums">{hora(ini, min, i)}</span>
                     <span>
                       <span className="block font-semibold">{[it.posto, it.nome].filter(Boolean).join(" ")}
                         {mesclar && <span className="ml-1.5 rounded bg-redwash px-1.5 py-0.5 align-[1px] text-[10px] font-bold text-red6">{it.rotulo}</span>}

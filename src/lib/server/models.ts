@@ -28,6 +28,7 @@ const provaSchema = new Schema(
     mesclar: { type: Boolean, default: false },
     inicioHorario: { type: String, default: "08:00" },
     minutosPorConjunto: { type: Number, default: 7 },
+    cavaleiroEmPista: { type: Schema.Types.ObjectId, ref: "Cavaleiro", default: null },
     publicadoEm: { type: Date, default: null },
     ownerId: { type: Schema.Types.ObjectId, ref: "Admin", required: true, index: true },
   },
