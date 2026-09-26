@@ -6,6 +6,7 @@ import { Cavaleiro } from "@/lib/server/models";
 import { provaDoDono } from "@/lib/server/consultas";
 import { exigirSessao } from "@/lib/server/sessao";
 import { registrar } from "@/lib/server/auditoria";
+import { camposDoForm } from "@/lib/server/cadastro";
 
 async function dono(provaId: string) {
   const s = await exigirSessao();
@@ -17,28 +18,26 @@ const rev = (id: string) => revalidatePath(`/painel/provas/${id}/inscricoes`);
 
 export async function adicionarInscricao(provaId: string, form: FormData): Promise<{ erro?: string }> {
   const { prova, autor: autorAdd } = await dono(provaId);
-  const nome = String(form.get("nome") || "").trim();
-  const cavalo = String(form.get("cavalo") || "").trim();
-  if (!nome || !cavalo) return { erro: "Informe cavaleiro e cavalo." };
+  const campos = camposDoForm(form);
+  if (!campos.nome || !campos.cavalo) return { erro: "Informe cavaleiro e cavalo." };
   await conectar();
   const repriseId = prova.tipo === "ADESTRAMENTO" ? String(form.get("repriseId") || "") : "";
   if (prova.tipo === "ADESTRAMENTO" && !repriseId) return { erro: "Selecione a reprise." };
   if (prova.tipo === "ADESTRAMENTO" && !(prova.reprises as Types.ObjectId[]).map(String).includes(repriseId))
     return { erro: "Reprise inválida." };
+  const categoria = prova.tipo === "SALTO" ? String(form.get("categoria") || form.get("altura") || "").trim() : campos.categoria;
   const filtroOrdem = prova.tipo === "ADESTRAMENTO"
     ? { provaId: prova._id, repriseId: new Types.ObjectId(repriseId) }
     : { provaId: prova._id };
   const ultimo = await Cavaleiro.findOne(filtroOrdem).sort({ ordemEntrada: -1 }).lean<{ ordemEntrada?: number }>();
   await Cavaleiro.create({
-    nome, cavalo,
-    postoGraduacao: String(form.get("postoGraduacao") || "").trim(),
-    categoria: String(form.get("categoria") || "").trim(),
+    ...campos, categoria,
     provaId: prova._id, ownerId: prova.ownerId,
     repriseId: repriseId ? new Types.ObjectId(repriseId) : null,
     ordemEntrada: (ultimo?.ordemEntrada || 0) + 1,
     status: "AGUARDANDO",
   });
-  await registrar(prova, autorAdd, "Inscrição adicionada", `${nome} · ${cavalo}`);
+  await registrar(prova, autorAdd, "Inscrição adicionada", `${campos.nome} · ${campos.cavalo}`);
   rev(provaId);
   return {};
 }
@@ -60,6 +59,7 @@ export async function remover(provaId: string, cavId: string) {
 
 export async function editarInscricao(provaId: string, cavId: string, dados: {
   nome: string; postoGraduacao: string; cavalo: string; repriseId?: string; categoria?: string;
+  cavaloFiliacao?: string; cavaloPai?: string; cavaloMae?: string; tratador?: string; equipe?: string; email?: string; telefone?: string;
 }): Promise<{ erro?: string }> {
   const { prova, autor: autorEd } = await dono(provaId);
   if (!Types.ObjectId.isValid(cavId)) return { erro: "Id inválido." };
@@ -70,7 +70,12 @@ export async function editarInscricao(provaId: string, cavId: string, dados: {
   const cav = await Cavaleiro.findOne({ _id: cavId, provaId: prova._id });
   if (!cav) return { erro: "Inscrição não encontrada." };
 
-  const update: Record<string, unknown> = { nome, cavalo, postoGraduacao: dados.postoGraduacao.trim() };
+  const update: Record<string, unknown> = {
+    nome, cavalo, postoGraduacao: dados.postoGraduacao.trim(),
+    cavaloFiliacao: (dados.cavaloFiliacao || "").trim(), cavaloPai: (dados.cavaloPai || "").trim(),
+    cavaloMae: (dados.cavaloMae || "").trim(), tratador: (dados.tratador || "").trim(),
+    equipe: (dados.equipe || "").trim(), email: (dados.email || "").trim(), telefone: (dados.telefone || "").trim(),
+  };
   if (prova.tipo === "ADESTRAMENTO") {
     const repriseId = String(dados.repriseId || "");
     if (!(prova.reprises as Types.ObjectId[]).map(String).includes(repriseId)) return { erro: "Reprise inválida." };

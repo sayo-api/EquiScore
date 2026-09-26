@@ -34,7 +34,8 @@ export default async function Inscricoes({ params }: PageProps<"/painel/provas/[
         </form>
       )}
       <EditarInscricao provaId={id} tipo={String(prova.tipo)}
-        inscrito={{ id: String(c._id), nome: String(c.nome || ""), posto: String(c.postoGraduacao || ""), cavalo: String(c.cavalo || ""), repriseId: String(c.repriseId || ""), categoria: String(c.categoria || "") }}
+        inscrito={{ id: String(c._id), nome: String(c.nome || ""), posto: String(c.postoGraduacao || ""), cavalo: String(c.cavalo || ""), repriseId: String(c.repriseId || ""), categoria: String(c.categoria || ""),
+          cavaloFiliacao: String(c.cavaloFiliacao || ""), cavaloPai: String(c.cavaloPai || ""), cavaloMae: String(c.cavaloMae || ""), tratador: String(c.tratador || ""), equipe: String(c.equipe || ""), email: String(c.email || ""), telefone: String(c.telefone || "") }}
         reprises={listaReprises} />
       <form action={async () => { "use server"; await remover(id, String(c._id)); }}>
         <button aria-label="Remover" className="inline-flex items-center rounded-md border border-line p-1.5 text-mut hover:border-red hover:text-red"><IconX width={16} height={16} /></button>
