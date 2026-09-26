@@ -10,9 +10,12 @@ export function FormCadastroComp() {
     <form action={acao} className="flex flex-col gap-4">
       <div className="grid grid-cols-[110px_1fr] gap-3">
         <div><label className={rotulo}>Posto/Grad.</label><PostoSelect /></div>
-        <div><label className={rotulo}>Nome <span className="text-red">*</span></label>
+        <div><label className={rotulo}>Nome completo <span className="text-red">*</span></label>
           <input name="nome" placeholder="Nome completo" required className={campoCad} autoComplete="name" /></div>
       </div>
+      <div><label className={rotulo}>Nome de guerra <span className="text-red">*</span></label>
+        <input name="nomeGuerra" placeholder="Como aparece nas provas (ex.: Silva)" required className={campoCad} autoComplete="off" />
+        <small className="mt-1 block text-xs text-dim">É o que aparece nas provas e nos resultados.</small></div>
       <div><label className={rotulo}>E-mail <span className="text-red">*</span></label>
         <input name="email" type="email" placeholder="voce@email.com" required className={campoCad} autoComplete="email" /></div>
       <div><label className={rotulo}>Telefone</label>

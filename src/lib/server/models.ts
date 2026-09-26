@@ -39,6 +39,7 @@ const provaSchema = new Schema(
 const cavaleiroSchema = new Schema(
   {
     nome: { type: String, required: true },
+    nomeCompleto: { type: String, default: "" },
     cavalo: { type: String, required: true },
     postoGraduacao: { type: String, default: "" },
     categoria: { type: String, default: "" },
@@ -126,6 +127,7 @@ const competidorSchema = new Schema(
     email: { type: String, unique: true },
     password: String,
     nome: { type: String, default: "" },
+    nomeGuerra: { type: String, default: "" },
     postoGraduacao: { type: String, default: "" },
     telefone: { type: String, default: "" },
   },

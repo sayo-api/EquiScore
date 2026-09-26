@@ -31,7 +31,7 @@ export function CategoriaSelect({ valor }: { valor?: string }) {
 }
 
 /** Bloco comum do cadastro do conjunto (mesmos campos do sistema antigo). */
-export function CamposConjunto({ v, categoria = true, cavalos }: { v?: ValoresCadastro; categoria?: boolean; cavalos?: CavaloSalvo[] }) {
+export function CamposConjunto({ v, categoria = true, cavalos, modo = "completo" }: { v?: ValoresCadastro; categoria?: boolean; cavalos?: CavaloSalvo[]; modo?: "completo" | "cavalo" }) {
   const listId = useId();
   const preencher = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!cavalos?.length) return;
@@ -50,12 +50,16 @@ export function CamposConjunto({ v, categoria = true, cavalos }: { v?: ValoresCa
   };
   return (
     <>
-      <div className="grid grid-cols-[110px_1fr] gap-3">
-        <div><label className={rotulo}>Posto/Grad.</label><PostoSelect valor={v?.postoGraduacao} /></div>
-        <div><label className={rotulo}>Nome do cavaleiro <span className="text-red">*</span></label>
-          <input name="nome" defaultValue={v?.nome} placeholder="Nome completo" required className={campoCad} autoComplete="off" /></div>
-      </div>
-      {categoria && <div><label className={rotulo}>Categoria</label><CategoriaSelect valor={v?.categoria} /></div>}
+      {modo === "completo" && (
+        <>
+          <div className="grid grid-cols-[110px_1fr] gap-3">
+            <div><label className={rotulo}>Posto/Grad.</label><PostoSelect valor={v?.postoGraduacao} /></div>
+            <div><label className={rotulo}>Nome do cavaleiro <span className="text-red">*</span></label>
+              <input name="nome" defaultValue={v?.nome} placeholder="Nome completo" required className={campoCad} autoComplete="off" /></div>
+          </div>
+          {categoria && <div><label className={rotulo}>Categoria</label><CategoriaSelect valor={v?.categoria} /></div>}
+        </>
+      )}
       <div><label className={rotulo}>Nome do cavalo <span className="text-red">*</span></label>
         <input name="cavalo" defaultValue={v?.cavalo} placeholder="Nome da montada" required className={campoCad} autoComplete="off"
           list={cavalos?.length ? listId : undefined} onChange={cavalos?.length ? preencher : undefined} />
@@ -74,10 +78,12 @@ export function CamposConjunto({ v, categoria = true, cavalos }: { v?: ValoresCa
             <div><label className={rotulo}>Tratador</label><input name="tratador" defaultValue={v?.tratador} placeholder="opcional" className={campoCad} autoComplete="off" /></div>
             <div><label className={rotulo}>Equipe</label><input name="equipe" defaultValue={v?.equipe} placeholder="opcional" className={campoCad} autoComplete="off" /></div>
           </div>
-          <div className="grid grid-cols-2 gap-3">
-            <div><label className={rotulo}>E-mail</label><input name="email" type="email" defaultValue={v?.email} placeholder="opcional" className={campoCad} /></div>
-            <div><label className={rotulo}>Telefone</label><input name="telefone" type="tel" defaultValue={v?.telefone} placeholder="opcional" className={campoCad} /></div>
-          </div>
+          {modo === "completo" && (
+            <div className="grid grid-cols-2 gap-3">
+              <div><label className={rotulo}>E-mail</label><input name="email" type="email" defaultValue={v?.email} placeholder="opcional" className={campoCad} /></div>
+              <div><label className={rotulo}>Telefone</label><input name="telefone" type="tel" defaultValue={v?.telefone} placeholder="opcional" className={campoCad} /></div>
+            </div>
+          )}
         </div>
       </details>
     </>

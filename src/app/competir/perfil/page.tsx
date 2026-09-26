@@ -18,7 +18,7 @@ export default async function Perfil() {
       <Link href="/competir" className="inline-flex items-center gap-1 text-sm text-mut transition hover:text-red"><IconVoltar width={16} height={16} /> Voltar</Link>
       <h1 className="mt-2 mb-1 text-2xl font-black">Meu perfil</h1>
       <p className="mb-5 text-sm text-mut">{String(perfil?.email || s.email)}</p>
-      <FormPerfil valores={{ nome: String(perfil?.nome || ""), postoGraduacao: String(perfil?.postoGraduacao || ""), telefone: String(perfil?.telefone || "") }} />
+      <FormPerfil valores={{ nome: String(perfil?.nome || ""), nomeGuerra: String(perfil?.nomeGuerra || ""), postoGraduacao: String(perfil?.postoGraduacao || ""), telefone: String(perfil?.telefone || "") }} />
 
       <div className="mt-6 rounded-2xl border border-line bg-surf p-5 shadow-sm">
         <h2 className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-mut"><IconCelular width={16} height={16} className="text-red" /> Meus cavalos</h2>

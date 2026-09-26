@@ -41,7 +41,7 @@ export default async function InscreverProva({ params }: PageProps<"/competir/pr
           provaId={id}
           tipo={String(prova.tipo)}
           reprises={reprises.map((r) => ({ id: String(r._id), nome: String(r.nome) }))}
-          perfil={{ nome: String(perfil?.nome || s.nome || ""), postoGraduacao: String(perfil?.postoGraduacao || ""), telefone: String(perfil?.telefone || ""), email: String(perfil?.email || s.email || "") }}
+          perfil={{ nome: String(perfil?.nome || s.nome || ""), nomeGuerra: String(perfil?.nomeGuerra || ""), postoGraduacao: String(perfil?.postoGraduacao || ""), telefone: String(perfil?.telefone || ""), email: String(perfil?.email || s.email || "") }}
           cavalos={cavalos}
         />
       )}

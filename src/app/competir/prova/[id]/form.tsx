@@ -9,7 +9,7 @@ import { somSucesso } from "@/lib/som";
 
 export function FormInscricaoComp({ provaId, tipo, reprises, perfil, cavalos }: {
   provaId: string; tipo: string; reprises: { id: string; nome: string }[];
-  perfil: { nome: string; postoGraduacao: string; telefone: string; email: string };
+  perfil: { nome: string; nomeGuerra: string; postoGraduacao: string; telefone: string; email: string };
   cavalos: CavaloSalvo[];
 }) {
   const router = useRouter();
@@ -30,6 +30,11 @@ export function FormInscricaoComp({ provaId, tipo, reprises, perfil, cavalos }: 
   return (
     <form action={(fd) => start(async () => { const r = await registrarNaProva(provaId, fd); if (r.erro) setErro(r.erro); else { somSucesso(); setOk(true); router.refresh(); } })}
       className="flex flex-col gap-4 rounded-2xl border border-line bg-surf p-5 shadow-sm">
+      <div className="rounded-xl border border-line bg-surf2 px-3.5 py-2.5">
+        <div className="text-[11px] font-bold uppercase tracking-wide text-mut">Você vai competir como</div>
+        <div className="font-black">{[perfil.postoGraduacao, perfil.nomeGuerra || perfil.nome].filter(Boolean).join(" ")}</div>
+        <a href="/competir/perfil" className="text-xs font-semibold text-red hover:underline">Editar meus dados</a>
+      </div>
       {tipo === "ADESTRAMENTO" ? (
         <div><label className={rotulo}>Reprise <span className="text-red">*</span></label>
           <select name="repriseId" required defaultValue="" className={campoCad}>
@@ -45,7 +50,7 @@ export function FormInscricaoComp({ provaId, tipo, reprises, perfil, cavalos }: 
           </select>
         </div>
       )}
-      <CamposConjunto categoria={tipo === "ADESTRAMENTO"} cavalos={cavalos} v={{ nome: perfil.nome, postoGraduacao: perfil.postoGraduacao, telefone: perfil.telefone, email: perfil.email }} />
+      <CamposConjunto modo="cavalo" cavalos={cavalos} />
       {erro && <p role="alert" className="rounded-xl bg-redwash px-3 py-2 text-sm text-red6 eqs-shake">{erro}</p>}
       <button data-som="off" disabled={pend} className="inline-flex items-center justify-center gap-2 rounded-xl bg-red py-3 font-bold text-white shadow-sm transition hover:bg-red6 active:scale-[.99] disabled:opacity-60">
         {pend && <IconSpinner width={18} height={18} />} {pend ? "Enviando…" : "Confirmar inscrição"}
