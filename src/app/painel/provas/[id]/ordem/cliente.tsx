@@ -1,6 +1,6 @@
 "use client";
 import { useMemo, useState, useTransition } from "react";
-import { IconUp, IconDown, IconDado, IconSalvar, IconAlerta, IconRelogio, IconPdf } from "@/lib/icons";
+import { IconUp, IconDown, IconDado, IconSalvar, IconAlerta, IconRelogio, IconPdf, IconSpinner } from "@/lib/icons";
 import { salvarHorarios, salvarIntervalos, salvarOrdem, sortearOrdem, toggleMesclar } from "./actions";
 
 type Item = { id: string; nome: string; posto: string; cavalo: string; chaveReprise: string; rotulo: string; ordemEntrada: number };
@@ -106,12 +106,12 @@ export function OrdemCliente({ provaId, mesclar, itens, inicio, minutos, interva
         <div className="flex gap-2">
           <button type="button" disabled={pend} onClick={() => start(async () => { await sortearOrdem(provaId); location.reload(); })}
             className="inline-flex items-center gap-1.5 rounded-lg border border-line bg-surf px-3.5 py-2 text-sm font-semibold shadow-sm hover:border-red disabled:opacity-60">
-            <IconDado width={16} height={16} /> Sortear ordem
+            {pend ? <IconSpinner width={16} height={16} /> : <IconDado width={16} height={16} />} Sortear ordem
           </button>
           <button type="button" disabled={!sujo || pend}
             onClick={() => start(async () => { await salvarOrdem(provaId, lista.map((i) => i.id)); setSujo(false); })}
             className="inline-flex items-center gap-1.5 rounded-lg bg-red px-3.5 py-2 text-sm font-bold text-white shadow-sm hover:bg-red6 disabled:opacity-50">
-            <IconSalvar width={16} height={16} /> Salvar ordem
+            {pend ? <IconSpinner width={16} height={16} /> : <IconSalvar width={16} height={16} />} Salvar ordem
           </button>
           <a href={`/api/prova/${provaId}/ordem-pdf`} target="_blank" className="inline-flex items-center gap-1.5 rounded-lg border border-line bg-surf px-3.5 py-2 text-sm font-semibold shadow-sm transition hover:border-red">
             <IconPdf width={16} height={16} /> PDF
