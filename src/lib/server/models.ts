@@ -29,6 +29,7 @@ const provaSchema = new Schema(
     inicioHorario: { type: String, default: "08:00" },
     minutosPorConjunto: { type: Number, default: 7 },
     cavaleiroEmPista: { type: Schema.Types.ObjectId, ref: "Cavaleiro", default: null },
+    intervalos: { type: [{ aposOrdem: Number, minutos: Number, _id: false }], default: [] },
     publicadoEm: { type: Date, default: null },
     ownerId: { type: Schema.Types.ObjectId, ref: "Admin", required: true, index: true },
   },

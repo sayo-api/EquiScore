@@ -23,6 +23,22 @@ export async function provaPublica(id: string) {
 
 const nomeConj = (c: Plain) => [c.postoGraduacao, c.nome].filter(Boolean).join(" ").trim();
 
+/** Conjunto atualmente em pista (para telão/acompanhar), ou null. */
+export async function emPistaPublico(prova: Plain): Promise<{ conjunto: string; cavalo: string; reprise: string } | null> {
+  if (!prova.cavaleiroEmPista) return null;
+  await conectar();
+  const c = await Cavaleiro.findById(prova.cavaleiroEmPista).lean<Plain>();
+  if (!c) return null;
+  let reprise = "";
+  if (c.repriseId) {
+    const r = await Reprise.findById(c.repriseId).lean<Plain>();
+    reprise = String(r?.nome || "");
+  } else if (c.categoria) {
+    reprise = String(c.categoria);
+  }
+  return { conjunto: nomeConj(c), cavalo: String(c.cavalo || ""), reprise };
+}
+
 /** Monta os grupos de resultado de uma prova (adestramento ou salto). */
 export async function montarResultados(prova: Plain): Promise<GrupoResultado[]> {
   await conectar();

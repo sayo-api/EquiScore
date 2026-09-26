@@ -58,3 +58,15 @@ export async function salvarHorarios(provaId: string, inicio: string, minutos: n
   await Prova.updateOne({ _id: prova._id }, { $set: { inicioHorario: hhmm, minutosPorConjunto: min } });
   rev(provaId);
 }
+
+/** Salva os intervalos da grade (pausa de N minutos após o conjunto X). */
+export async function salvarIntervalos(provaId: string, intervalos: { aposOrdem: number; minutos: number }[]) {
+  const prova = await dono(provaId);
+  await conectar();
+  const limpos = (intervalos || [])
+    .map((i) => ({ aposOrdem: Math.max(1, Math.round(Number(i.aposOrdem) || 0)), minutos: Math.max(1, Math.min(240, Math.round(Number(i.minutos) || 0))) }))
+    .filter((i) => i.aposOrdem >= 1)
+    .sort((a, b) => a.aposOrdem - b.aposOrdem);
+  await Prova.updateOne({ _id: prova._id }, { $set: { intervalos: limpos } });
+  rev(provaId);
+}

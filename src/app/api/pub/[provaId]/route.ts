@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { montarResultados, provaPublica } from "@/lib/server/consultas";
+import { emPistaPublico, montarResultados, provaPublica } from "@/lib/server/consultas";
 
 /** Resultados públicos de uma prova (telão/acompanhar fazem polling aqui). */
 export async function GET(_: Request, { params }: RouteContext<"/api/pub/[provaId]">) {
@@ -7,8 +7,9 @@ export async function GET(_: Request, { params }: RouteContext<"/api/pub/[provaI
   const prova = await provaPublica(provaId);
   if (!prova) return NextResponse.json({ erro: "Prova não encontrada." }, { status: 404 });
   const grupos = await montarResultados(prova);
+  const emPista = await emPistaPublico(prova);
   return NextResponse.json(
-    { prova: { nome: prova.nome, local: prova.local, tipo: prova.tipo }, grupos },
+    { prova: { nome: prova.nome, local: prova.local, tipo: prova.tipo }, emPista, grupos },
     { headers: { "Cache-Control": "public, max-age=0, s-maxage=5" } },
   );
 }

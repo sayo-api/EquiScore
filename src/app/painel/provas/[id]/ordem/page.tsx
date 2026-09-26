@@ -25,6 +25,7 @@ export default async function Ordem({ params }: PageProps<"/painel/provas/[id]/o
   const avisos = [...avisosDeGap(itens.map((i) => i.nome))];
   return (
     <OrdemCliente provaId={id} mesclar={!!prova.mesclar} itens={itens} avisosIniciais={avisos}
-      inicio={String(prova.inicioHorario || "08:00")} minutos={Number(prova.minutosPorConjunto || 7)} />
+      inicio={String(prova.inicioHorario || "08:00")} minutos={Number(prova.minutosPorConjunto || 7)}
+      intervalos={((prova.intervalos as { aposOrdem: number; minutos: number }[]) || []).map((i) => ({ aposOrdem: Number(i.aposOrdem), minutos: Number(i.minutos) }))} />
   );
 }
