@@ -3,10 +3,10 @@
 import { redirect } from "next/navigation";
 import { z } from "zod";
 import { conectar } from "@/lib/server/db";
-import { Admin, Juiz, Prova } from "@/lib/server/models";
+import { Admin, Competidor, Juiz, Prova } from "@/lib/server/models";
 import { conferirSenha } from "@/lib/server/senha";
 import { ehAdminFixo, garantirAdminFixo } from "@/lib/server/admin-fixo";
-import { criarSessao, criarSessaoJuiz, encerrarSessao } from "@/lib/server/sessao";
+import { criarSessao, criarSessaoJuiz, criarSessaoComp, encerrarSessao } from "@/lib/server/sessao";
 
 const Credenciais = z.object({
   usuario: z.string().trim().toLowerCase().min(1, "Informe o usuário."),
@@ -49,6 +49,13 @@ export async function entrar(_: EstadoLogin, form: FormData): Promise<EstadoLogi
       nome: String(juiz.nome || "Juiz"),
     });
     redirect("/juiz");
+  }
+
+  // 3) Competidor (cavaleiro) — login por e-mail; vai para a área de inscrições.
+  const comp = await Competidor.findOne({ email: dados.data.usuario }).lean();
+  if (comp && (await conferirSenha(dados.data.senha, comp.password))) {
+    await criarSessaoComp({ compId: String(comp._id), nome: String(comp.nome || ""), email: String(comp.email || "") });
+    redirect("/competir");
   }
 
   // Mesma mensagem para usuário inexistente e senha errada: não revela quais logins existem.

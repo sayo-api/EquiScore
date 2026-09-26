@@ -9,6 +9,7 @@ export default function Inicio() {
           <MarcaHorizontal />
           <nav className="flex items-center gap-2 text-sm">
             <Link href="/resultados" className="rounded-lg px-3 py-2 font-semibold text-mut transition hover:text-ink">Resultados</Link>
+            <Link href="/competir" className="rounded-lg px-3 py-2 font-semibold text-mut transition hover:text-ink">Competir</Link>
             <Link href="/entrar" className="rounded-lg border border-line px-4 py-2 font-semibold transition hover:border-red hover:text-red">Entrar</Link>
           </nav>
         </div>
@@ -30,8 +31,8 @@ export default function Inicio() {
             <Link href="/entrar" className="rounded-lg bg-red px-6 py-3 font-bold text-white shadow-sm transition hover:bg-red6">
               Entrar no painel
             </Link>
-            <Link href="/resultados" className="rounded-lg border border-line bg-surf px-6 py-3 font-semibold shadow-sm transition hover:border-red hover:text-red">
-              Ver resultados
+            <Link href="/competir" className="rounded-lg border border-line bg-surf px-6 py-3 font-semibold shadow-sm transition hover:border-red hover:text-red">
+              Sou competidor
             </Link>
           </div>
         </section>

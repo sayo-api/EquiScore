@@ -10,6 +10,7 @@ import { cache } from "react";
  */
 export const COOKIE_SESSAO = "eqs_sessao";
 export const COOKIE_JUIZ = "eqs_juiz";
+export const COOKIE_COMP = "eqs_comp";
 const DURACAO_H = 24;
 
 export interface Sessao {
@@ -23,6 +24,12 @@ export interface SessaoJuiz {
   provaId: string;
   letra: string;
   nome: string;
+}
+
+export interface SessaoComp {
+  compId: string;
+  nome: string;
+  email: string;
 }
 
 function chave() {
@@ -112,5 +119,45 @@ export async function encerrarSessaoJuiz() {
 export const exigirJuiz = cache(async (): Promise<SessaoJuiz> => {
   const s = await lerSessaoJuiz((await cookies()).get(COOKIE_JUIZ)?.value);
   if (!s) redirect("/entrar");
+  return s;
+});
+
+
+// ── Sessão do COMPETIDOR (cavaleiro) ─────────────────────────
+export async function criarSessaoComp(dados: SessaoComp) {
+  const expira = new Date(Date.now() + DURACAO_H * 3600_000);
+  const token = await new SignJWT({ ...dados })
+    .setProtectedHeader({ alg: "HS256" })
+    .setIssuedAt()
+    .setExpirationTime(expira)
+    .sign(chave());
+  (await cookies()).set(COOKIE_COMP, token, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "lax",
+    path: "/",
+    expires: expira,
+  });
+}
+
+export async function lerSessaoComp(token: string | undefined): Promise<SessaoComp | null> {
+  if (!token) return null;
+  try {
+    const { payload } = await jwtVerify(token, chave(), { algorithms: ["HS256"] });
+    if (!payload.compId) return null;
+    return { compId: String(payload.compId), nome: String(payload.nome), email: String(payload.email) };
+  } catch {
+    return null;
+  }
+}
+
+export async function encerrarSessaoComp() {
+  (await cookies()).delete(COOKIE_COMP);
+}
+
+/** Para páginas e ações do competidor: devolve a sessão ou manda para o login. */
+export const exigirComp = cache(async (): Promise<SessaoComp> => {
+  const s = await lerSessaoComp((await cookies()).get(COOKIE_COMP)?.value);
+  if (!s) redirect("/competir/entrar");
   return s;
 });

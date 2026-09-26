@@ -50,6 +50,7 @@ const cavaleiroSchema = new Schema(
     email: { type: String, default: "" },
     telefone: { type: String, default: "" },
     provaId: { type: Schema.Types.ObjectId, ref: "Prova", index: true },
+    competidorId: { type: Schema.Types.ObjectId, ref: "Competidor", default: null, index: true },
     repriseId: { type: Schema.Types.ObjectId, ref: "Reprise", default: null },
     ownerId: { type: Schema.Types.ObjectId, ref: "Admin", index: true },
     ordemEntrada: { type: Number, default: 0 },
@@ -120,6 +121,17 @@ const juizSchema = new Schema(
 );
 juizSchema.index({ provaId: 1, juizLetra: 1 }, { unique: true });
 
+const competidorSchema = new Schema(
+  {
+    email: { type: String, unique: true },
+    password: String,
+    nome: { type: String, default: "" },
+    postoGraduacao: { type: String, default: "" },
+    telefone: { type: String, default: "" },
+  },
+  opts,
+);
+
 const publicacaoSchema = new Schema(
   {
     provaId: { type: Schema.Types.ObjectId, ref: "Prova", index: true, unique: true },
@@ -160,6 +172,7 @@ export const Cavaleiro = modelo("Cavaleiro", cavaleiroSchema);
 export const Avaliacao = modelo("Avaliacao", avaliacaoSchema);
 export const ResultadoSalto = modelo("ResultadoSalto", resultadoSaltoSchema);
 export const Juiz = modelo("Juiz", juizSchema);
+export const Competidor = modelo("Competidor", competidorSchema);
 export const Reprise = modelo("Reprise", repriseSchema);
 export const Publicacao = modelo("Publicacao", publicacaoSchema);
 export const Auditoria = modelo("Auditoria", auditoriaSchema);
