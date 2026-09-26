@@ -33,3 +33,4 @@ export const IconEscudo = (p: SVGProps<SVGSVGElement>) => (<svg {...base(p)}><pa
 export const IconChave = (p: SVGProps<SVGSVGElement>) => (<svg {...base(p)}><circle cx="7.5" cy="15.5" r="4.5"/><path d="m10.5 12.5 8-8M17 7l2 2M14 7l2 2"/></svg>);
 export const IconLapis = (p: SVGProps<SVGSVGElement>) => (<svg {...base(p)}><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>);
 export const IconSpinner = (p: SVGProps<SVGSVGElement>) => (<svg {...base(p)} className={"animate-spin " + (p.className ?? "")}><path d="M21 12a9 9 0 1 1-6.219-8.56" /></svg>);
+export const IconWhats = (p: SVGProps<SVGSVGElement>) => (<svg {...base(p)}><path d="M3 21l1.9-5.5a8.5 8.5 0 1 1 3.6 3.6L3 21Z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5.6 0 1.2-.4 1.2-1v-1l-2-.8-1 1a4.3 4.3 0 0 1-1.9-1.9l1-1L11 8.3H10c-.6 0-1 .6-1 1.2Z"/></svg>);
